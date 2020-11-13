@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>@adi_agarwal- Contact</title>
+
+{% endblock %}
+
+
+{% block body %} 
+
+<section class="contact section" id="contact">
+    <h2 class="section-title">Let's get in touch</h2>
+    <div class="contact__container bd-grid">
+
+            <form action="/contact" method="post" class="contact__form">
+                <input name="name" type="text" placeholder="Name" id="name" maxlength="50" class="contact__input" required>
+                <input name="contact" type="text" placeholder="Contact No." maxlength="15" id="contact" class="contact__input">
+                <input name="email" type="mail" placeholder="Email" id="email" maxlength="50" class="contact__input" required>
+                <textarea name="message" name="" placeholder="Message" id="message" maxlength="100" cols="0" rows="7" class="contact__input" required></textarea>
+                <input type="submit" value="Senden" class="contact__button button">
+            </form>
+
+    <center>
+        <!-- <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdhaeFLSxmIkcokGg7isdgm0IV4Vbg0mr3B4iJ2T3S9l3HkMA/viewform?embedded=true"
+            width="400" height="750" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+
+        <!-- <iframe width="450px" height="1150px"
+            src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__cfywgFUOUNCT0NRSTFMRDBRVjJNNEpMMkVSRFBPWS4u&embed=true"
+            frameborder="0" marginwidth="0" marginheight="0"
+            style="border: none; max-width:100%; max-height:100%"> </iframe> -->
+    </center>
+
+</section>
+
+{% endblock %}

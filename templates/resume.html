@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block head %} 
+
+<title>@adi_agarwal- Resume</title>
+
+{% endblock %}
+
+
+
+{% block body %} 
+
+
+<section>
+    <div class="document__preview">
+        <iframe src="{{ url_for('static', filename='doc/aditya agarwal.pdf') }}" height="900sp" width=100%></iframe>
+    </div>
+</section>
+
+
+{% endblock %}
