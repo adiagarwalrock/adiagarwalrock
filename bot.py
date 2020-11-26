@@ -1,9 +1,10 @@
 def bot(message, name=None, email=None, contact=None):
 
     from twilio.rest import Client 
+    import config
 
-    sid = 'AC26add13cb99c160e2f8f85e850cce5bb'
-    token = '8f4b8fbc6f9e8f7e844bdc12435f800b'
+    sid = config.BOT_SID
+    token = config.BOT_TOKEN
 
     client = Client(sid, token)
 

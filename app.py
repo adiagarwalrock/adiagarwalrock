@@ -28,7 +28,7 @@ def contact():
             return redirect('/')                    # Add ThankYou Page
 
         except:
-            bot(message="ERROR IN SENDING A RESPONSE PAGE !!!!")
+            # bot(message="ERROR IN SENDING A RESPONSE PAGE !!!!")
             return "ERROR IN SENDING YOUR RESPONSE PAGE !!!! /nPLEASE TRY AGAIN IN SOME TIME. /nStage: Bot Function_Call from app"  
 
     else:
