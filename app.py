@@ -16,24 +16,34 @@ def resume_page():
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    
-    if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        contact = request.form['contact']
-        message = request.form['message']
+    try:
+        if request.method == 'POST':
+            name = request.form['name']
+            email = request.form['email']
+            contact = request.form['contact']
+            message = request.form['message']
+            try:
+                bot(message, name, email, contact)
+                try:
+                    return redirect('thankyou')
 
-        try:
-            bot(message, name, email, contact)
-            return redirect('/')                    # Add ThankYou Page
+                except:
+                    return redirect('/')
 
-        except:
-            # bot(message="ERROR IN SENDING A RESPONSE PAGE !!!!")
-            return "ERROR IN SENDING YOUR RESPONSE PAGE !!!! /nPLEASE TRY AGAIN IN SOME TIME. /nStage: Bot Function_Call from app"  
+            except:
+                return "ERROR IN SENDING YOUR RESPONSE PAGE !!!! <br>PLEASE TRY AGAIN IN SOME TIME. <br>Stage: Bot Function_Call from app"
 
-    else:
-        return render_template("contact.html")  # Add 404 page
+        else:
+            return render_template("contact.html")
+
+    except:
+        return redirect('/')
 
 
-if __name__ =="__main__":
+@app.route('/thankyou')
+def thankyou():
+    return render_template("thanksPage.html")
+
+
+if __name__ == "__main__":
     app.run(debug=True)
