@@ -25,10 +25,10 @@ Reach out to me on social media or send me an email.
 
 ## IDEAS
 1. Cards for projects
-
    - https://codepen.io/FlorinPop17/pen/dyPvNKK
    - https://codepen.io/markmead/pen/MqmOVB
 
+2. Mailing the contact info  
 
 
 ## STUFFS
@@ -36,6 +36,7 @@ Reach out to me on social media or send me an email.
 1. Icons
 
    - https://iconscout.com/icons/college
+   - https://boxicons.com/
 
 2. Form
    - Microsoft- https://forms.office.com/Pages/DesignPage.aspx?origin=OfficeDotCom&lang=en-US&Action=Create&route=Start&fromAR=1#FormId=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__cfywgFUOUNCT0NRSTFMRDBRVjJNNEpMMkVSRFBPWS4u&FlexPane=Settings
