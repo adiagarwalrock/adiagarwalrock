@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>@adi_agarwal- 😃✌</title>
+
+
+{% endblock %}
+
+
+{% block body %}
+
+
+<section class="about section" id="thanks">
+
+    <div class="about__container bd-grid" style="height:100%">
+        <div class="about__img">
+            <img src="{{ url_for('static', filename='img/hands.png') }}" alt="Joining Hands">
+        </div>
+
+        <div>
+            <h1 calss="about_subtitle">Thanks, I appriciate it.</h1>
+            <br>
+            <br>
+            <br>
+            <p class="about__text">You will automatically be redirected to the Home.</p>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
