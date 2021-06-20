@@ -7,22 +7,40 @@
 
 {% endblock %}
 
-
 {% block body %}
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="http://code.jquery.com/jquery-1.5.js"></script>
+<script>
+    function countChar(val) {
+        var len = val.value.length;
+        if (len >= 500) {
+            val.value = val.value.substring(0, 500);
+        } else {
+            $('#charNum').text(500 - len);
+        }
+    };
+</script>
 
 <section class="contact section" id="contact">
     <h2 class="section-title">Contact</h2>
     <div class="contact__container bd-grid">
 
-        <form action="/contact" method="post" class="contact__form">
+        <form action={{ url_for('contact') }} method="POST" class="contact__form">
             <input name="name" type="text" placeholder="Name" id="name" maxlength="50" class="contact__input" required>
-            <input name="contact" type="text" placeholder="Contact No." maxlength="15" id="contact"
+            <input name="contact" type="number" placeholder="Contact No." maxlength="15" id="contact"
                 class="contact__input">
             <input name="email" type="mail" placeholder="Email" id="email" maxlength="50" class="contact__input"
                 required>
-            <textarea name="message" name="" placeholder="Message" id="message" maxlength="100" cols="0" rows="7"
-                class="contact__input" required></textarea>
-            <input type="submit" value="Senden" class="contact__button button">
+            <textarea name="message" name="" placeholder="Message" id="message" maxlength="500" cols="0" rows="7"
+                class="contact__input" onkeyup="countChar(this)" required></textarea>
+            <div class="contact__input" id="the-count">
+                <span id="current">0</span>
+                <span id="maximum">/ 500</span>
+
+                <div class="g-recaptcha contact__input" data-sitekey="{{ sitekey }}"></div> <br />
+            <div>
+                <input type="submit" value="Senden" class="contact__button button">
+            </div>
         </form>
 
 </section>

@@ -1,49 +1,27 @@
 import config
 from flask import redirect
+
+
 class Bot():
-    # def __init__(self):
-    # #     self.message = message
-    # #     self.name = name
-    # #     self.email = email
-    # #     self.contact = contact
-    #     return
 
     def slack_bot(self, message, name, email, contact=None):
-        try: 
+        try:
             import slack
-        
+
             try:
-                name = name
-                message = message
-                email = email
-                contact = contact
-
                 client = slack.WebClient(token=config.SLACK_TOKEN)
-                text = name + "\nEmail: " + email + "\nContact: " + contact + "\nMessage: " + message
-                channel = '#portfolio_website'
+                notification = "%s \nEmail: %s \nContact: %s \nMessage: %s" % (
+                    name, email, contact, message)
+                client.chat_postMessage(
+                    channel='#portfolio_website', text=notification)
+                return True
 
-                client.chat_postMessage(channel=channel, text=text)
+            except:
+                return False
 
-                return redirect('thankyou')
-        
-            except: 
-                return "ERROR IN SENDING YOUR RESPONSE PAGE !!!! <br>PLEASE TRY AGAIN IN SOME TIME. <br>Stage: Bot Function_Execution from bot"
-
-        except: 
-                return "ERROR IN SENDING YOUR RESPONSE PAGE !!!! <br>PLEASE TRY AGAIN IN SOME TIME. <br>Stage: Bot Library Import"
+        except:
+            return False
 
 
-# def bot(message, name=None, email=None, contact=None):
-#     from twilio.rest import Client 
-#     import config
-
-#     sid = config.BOT_SID
-#     token = config.BOT_TOKEN
-#     client = Client(sid, token)
-#   body = "*" + name + "*" + " wishes to contact you-- " +"\nEmail: " + email + "\nContact: " + contact + "\nMessage: " + message  from_whatsapp_number = 'whatsapp:+14155238886'
-#     to_whatsapp_number = 'whatsapp:+918791678138'
-#     
-#     try:
-#         client.messages.create(body=body, from_=from_whatsapp_number, to=to_whatsapp_number)
-#     except :
-#         return "ERROR IN SENDING YOUR RESPONSE/n Stage: Bot Function"
+# bot = Bot()
+# bot.slack_bot("message", "name", "email", "1564894613")
