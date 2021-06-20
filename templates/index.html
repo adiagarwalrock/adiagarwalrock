@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
+
+{% block cssblock %}
+
+
+{% endblock %}
+
+
 {% set active_item = 'home' %}
 
 {% block head %}
@@ -36,235 +43,29 @@
 <!--===== ABOUT =====-->
 <section class="about section " id="about">
     <h2 class="section-title">1. About</h2>
-
     <div class="about__container bd-grid">
         <div class="about__img">
             <img src="{{ url_for('static', filename='img/about.jpg') }}" alt="">
         </div>
-
         <div>
             <h2 class="about__subtitle">I'm Aditya 😃</h2>
             <p class="about__text">Learning and Exploring fascinates me.<br>I like meeting more people and connecting.
                 I am still a student but have biG plans for The Future.
                 <br>If you are intrigued, you can view my profile or head to the Resume section.
                 <br><br>Reach out to me on social media or at<a style="color:#2975cc"
-                    href="mailto:aditya.ag1234@gmail.com"> aditya.ag1234@gmail.com</a>.</p>
-        </div>
-    </div>
-</section>
-
-<!--===== timeline ===== -->
-<section class="time section">
-    <div class="timeline">
-        <div class="container right">
-            <div class="content">
-                <h2>2017-2021</h2>
-                <p>
-                <h3>Alliance University 🎓</h3>
-                Bachelor's in Technology
-                <br>Computer Science Engineering
-                </p>
-            </div>
-        </div>
-        <div class="container left">
-            <div class="content">
-                <h2>2015-2017</h2>
-                <p>
-                <h3>Milton Public School, Agra 🏫</h3>
-                Senior Secondary Schooling
-                <br>(12th Grade)
-                </p>
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-                <h2>2015</h2>
-                <p>
-                <h3>Delhi Public School Agra 🏢</h3>
-                Compleated Secondary Schooling
-                <br>(10th Grade)
-                </p>
-            </div>
+                    href="mailto:aditya.ag1234@gmail.com"> aditya.ag1234@gmail.com</a>.
+            </p>
         </div>
     </div>
 </section>
 
 <!--===== SKILLS =====-->
-<section class="skills section" id="skills">
-    <h2 class="section-title">2. Skills</h2>
-    <div class="skills__container bd-grid">
-        <!-- ===LANGUAGES=== -->
-        <div>
-            <h2 class="skills__subtitle">Languages</h2>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/python.png') }}" class="skills__icon">
-                    <span class="skills__name">Python</span>
-                </div>
-                <div>
-                    <span class="skills__percentage">95%</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/java.png') }}" class="skills__icon">
-                    <span class="skills__name">Java</span>
-                </div>
-                <div>
-                    <span class="skills__percentage">85%</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/c++.png') }}" class="skills__icon">
-                    <span class="skills__name">C++</span>
-                </div>
+{% include "skills.html" %}
 
-                <div>
-                    <span class="skills__percentage">65%</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/c.png') }}" class="skills__icon">
-                    <span class="skills__name">C</span>
-                </div>
-                <div>
-                    <span class="skills__percentage">85%</span>
-                </div>
-            </div>
-        </div>
-        <!-- ===DATABASES=== -->
-        <div>
-            <h2 class="skills__subtitle">Databases</h2>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/mysql.png') }}" class="skills__icon">
-                    <span class="skills__name">MySQL</span>
-                </div>
-                <div class="skills__bar skills__html">
 
-                </div>
-                <div>
-                    <span class="skills__percentage">95%</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/sqlite.png') }}" class="skills__icon">
-                    <span class="skills__name">SQLite</span>
-                </div>
-                <div class="skills__bar skills__css">
-
-                </div>
-                <div>
-                    <span class="skills__percentage">85%</span>
-                </div>
-            </div>
-        </div>
-        <!-- ===TECHNOLOGIES=== -->
-        <div>
-            <h2 class="skills__subtitle">Technologies</h2>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <i class='bx bxl-html5 skills__icon'></i>
-                    <span class="skills__name">TensorFlow</span>
-                </div>
-                <div class="skills__bar skills__html">
-
-                </div>
-                <div>
-                    <span class="skills__percentage">95%</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/opencv.png') }}" class="skills__icon">
-                    <span class="skills__name">OpenCV</span>
-                </div>
-                <div class="skills__bar skills__css">
-
-                </div>
-                <div>
-                    <span class="skills__percentage">85%</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/cnn.png') }}" class="skills__icon">
-                    <span class="skills__name">Convolutional Neural Network</span>
-                </div>
-                <div class="skills__bar skills__js">
-
-                </div>
-                <div>
-                    <span class="skills__percentage">65%</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/ann.png') }}" class="skills__icon">
-                    <span class="skills__name">Artificial Neural Network</span>
-                </div>
-                <div class="skills__bar skills__ux">
-
-                </div>
-                <div>
-                    <span class="skills__percentage">85%</span>
-                </div>
-            </div>
-        </div>
-        <!-- ===WEB TECHNOLOGIES=== -->
-        <div>
-            <h2 class="skills__subtitle"> Web Technologies</h2>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <!-- <img src="{{ url_for('static', filename='icons/html.png') }}" class="skills__icon"> -->
-                    <i class='bx bxl-html5 skills__icon'></i>
-                    <span class="skills__name">HTML</span>
-                </div>
-                <div class="skills__bar skills__html">
-
-                </div>
-                <div>
-                    <span class="skills__percentage">95%</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <!-- <img src="{{ url_for('static', filename='icons/css.png') }}" class="skills__icon"> -->
-                    <i class='bx bxl-css3 skills__icon'></i>
-                    <span class="skills__name">CSS3</span>
-                </div>
-                <div class="skills__bar skills__css">
-
-                </div>
-                <div>
-                    <span class="skills__percentage">85%</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <!-- <img src="{{ url_for('static', filename='icons/javascript.png') }}" class="skills__icon"> -->
-                    <i class='bx bxl-javascript skills__icon'></i>
-                    <span class="skills__name">JAVASCRIPT</span>
-                </div>
-                <div class="skills__bar skills__js">
-
-                </div>
-                <div>
-                    <span class="skills__percentage">65%</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-<!--===== projects =====-->
+<!--===== PROJECTS =====-->
 <section class="projects section" id="projects">
     <h2 class="section-title">3. Projects</h2>
-
     <div class="projects__container bd-grid">
         <div class="projects__img">
             <img src="{{ url_for('static', filename='img/work1.jpg') }}" alt="">
@@ -277,5 +78,22 @@
         </div>
     </div>
 </section>
+
+<!--===== RESUME BUTTON =====-->
+<section class="skills section" styles="margin: 20px">
+    <div class="download_button">
+        <center>
+            <a href="{{ url_for('resume_page') }}">
+                <input type="button" value="Resume" href="{{ url_for('resume_page') }}" class="download__button button">
+            </a>
+        </center>
+    </div>
+</section>
+
+
+{% endblock %}
+
+
+{% block scripts %}
 
 {% endblock %}
