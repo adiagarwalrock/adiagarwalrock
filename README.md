@@ -28,8 +28,9 @@ Reach out to me on social media or send me an email.
    - https://codepen.io/FlorinPop17/pen/dyPvNKK
    - https://codepen.io/markmead/pen/MqmOVB
 
-2. Mailing the contact info  
-
+2. Mailing the contact info  <-- Converted to SLACK
+3. Google Analytics
+4. https://codepen.io/AdamKimmerer/pen/RraRbb/?editors=0010
 
 ## STUFFS
 
