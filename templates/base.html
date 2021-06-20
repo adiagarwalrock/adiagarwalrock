@@ -14,6 +14,7 @@
             href="{{ url_for('static', filename='icons/touch-icon-152x152-precomposed.png') }}" />
 
         <!-- =====CSS===== -->
+        {% block cssblock %} {% endblock %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/socialPanel.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
@@ -27,6 +28,7 @@
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
             integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
             crossorigin="anonymous" />
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
         <!-- =====JS FOR LOADING SCREEN===== -->
         <script>
@@ -47,38 +49,7 @@
         </div>
 
         <!--===== HEADER =====-->
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="/" class="nav__logo">
-                        <b>
-                            <h1>@adi_agarwal</h1>
-                        </b>
-                    </a>
-                </div>
-
-                {% set active_item = active_item|default('home') %}
-                <div class="nav__menu" id="nav-menu">
-                    <ol class="nav__list" start='0'>
-                        <li class="nav__item"><a href="/"
-                                class="nav__link {% if active_item == 'home' %}active{% endif %}">Home</a></li>
-                        <li class="nav__item"><a href="/#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="/#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="/#projects" class="nav__link">Projects</a></li>
-                        <!-- 
-                        <li class="nav__item"><a href="{{ url_for('contact') }}"
-                                class="nav__link {% if active_item == 'contact' %}active{% endif %}">Contact</a></li> -->
-
-                        <li class="nav__item"><a href="{{ url_for('resume_page') }}"
-                                class="nav__link {% if active_item == 'resume' %}active{% endif %}">Resume</a></li>
-                    </ol>
-                </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
+        {% include "header.html" %}
 
         <main class="l-main">
 
@@ -125,29 +96,9 @@
             <i class='bx bxs-user bx-tada-hover floating-btn'></i>
         </div>
 
+        
         <!--===== FOOTER =====-->
-        <footer class="footer">
-            <p class="footer__title">print("Let's get in touch.")</p>
-            <div class="footer__social">
-                <a href="https://www.facebook.com/adiagarwalrock" class="footer__icon">
-                    <i class='bx bxl-facebook bx-tada-hover'></i>
-                </a>
-                <a href="https://www.instagram.com/adi_aagarwal/" class="footer__icon">
-                    <i class='bx bxl-instagram bx-tada-hover'></i>
-                </a>
-                <a href="https://github.com/adiagarwalrock" class="footer__icon">
-                    <i class='bx bxl-github bx-tada-hover'></i>
-                </a>
-                <a href="https://www.linkedin.com/in/adityaagarwal1999/" class="footer__icon">
-                    <i class='bx bxl-linkedin bx-tada-hover'></i>
-                </a>
-            </div>
-            <p><a href="mailto:aditya.ag1234@gmail.com"> --> aditya.ag1234@gmail.com <-- </a>
-            </p>
-            <p><br>&#169; 2020 copyright all right reserved</p>
-            <p calss="footer__link">Made with ❤ in <a href="https://en.wikipedia.org/wiki/India">INDIA</a></p>
-
-        </footer>
+        {% include "footer.html" %}
 
         <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
