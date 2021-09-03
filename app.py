@@ -30,6 +30,16 @@ def resume_page():
     return render_template("resume.html")
 
 
+@app.route('/qwerty/here/nothing/admin/picture/', methods=['GET', 'POST'])
+def admin_page():
+    return render_template("administrator.html")
+
+
+@app.route('/more')
+def more():
+    return render_template("more.html")
+
+
 @app.route('/projects')
 def project_page():
     return render_template("test.html")
@@ -56,7 +66,7 @@ def contact():
                     status = "Detail submitted successfully."
                     flash(status)
                     return redirect('/')
-                
+
                 else:
                     status = "Error incurred while submitting, Please try later !"
                     flash(status)
