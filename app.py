@@ -3,6 +3,7 @@ import requests
 from bot import Bot
 import config
 
+
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = config.SECRET_KEY[0]
@@ -85,5 +86,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.jinja_env.auto_reload = True
     app.run(debug=True)
