@@ -22,25 +22,44 @@
 </script>
 
 <section class="contact section" id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact__container bd-grid">
+    <h2 class="section-title">contact me</h2>
+    <div class="my-3">
 
-        <form action={{ url_for('contact') }} method="POST" class="contact__form">
-            <input name="name" type="text" placeholder="Name" id="name" maxlength="50" class="contact__input" required>
-            <input name="contact" type="number" placeholder="Contact No." maxlength="15" id="contact"
-                class="contact__input">
-            <input name="email" type="mail" placeholder="Email" id="email" maxlength="50" class="contact__input"
-                required>
-            <textarea name="message" name="" placeholder="Message" id="message" maxlength="500" cols="0" rows="7"
-                class="contact__input" onkeyup="countChar(this)" required></textarea>
-            <div class="contact__input" id="the-count">
-                <span id="current">0</span>
-                <span id="maximum">/ 500</span>
+        <form action={{ url_for('contact') }} method="POST" class="lg-4">
 
-                <div class="g-recaptcha contact__input" data-sitekey="{{ sitekey }}"></div> <br />
-            <div>
-                <input type="submit" value="Senden" class="contact__button button">
+            <div class="my-2">
+                <label id="name" class="form-label">full name</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="full name" required>
             </div>
+
+            <div class="my-2">
+                <label id="contact" class="form-label">phone (optional)</label>
+                <input type="tel" name="contact" class="form-control" id="contact" placeholder="contact no.">
+            </div>
+
+            <div class="my-2">
+                <label id="email" class="form-label">email address</label>
+                <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com"
+                    required>
+            </div>
+
+            <div class="my-2">
+                <label id="message" class="form-label">message</label>
+                <textarea type="textbox" name="message" class="form-control" id="message" placeholder="message ..."
+                    maxlength="500" cols="0" rows="5" onkeyup="countChar(this)"></textarea>
+
+                <div class="contact__input" id="the-count">
+                    <span id="current">0</span>
+                    <span id="maximum">/ 500</span>
+                </div>
+            </div>
+
+            <div class="g-recaptcha my-2" data-sitekey="{{ sitekey }}"></div>
+            <br>
+            <div class="text-center my-2">
+                <input type="submit" value="Senden" class="btn btn-success">
+            </div>
+
         </form>
 
 </section>

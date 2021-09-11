@@ -1,0 +1,33 @@
+<section class="projects section" id="projects">
+    <center>
+        <h2 class="display-5">2. projects</h2>
+    </center>
+
+    <div class="row">
+        {{to_display}}
+
+        {% for item in content%}
+        {% if item in to_display %}
+        <div class="col-lg-4 col-md-6">
+            <div class="card my-2">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <b>{{item.full_name}}</b>
+                    </h5>
+                    <p class="card-text">{{item.description}}</p>
+                    <a href="{{item.html_url}}" class="btn btn-outline-primary">View</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+    <div class="my-2">
+        <center>
+            <a href="{{ url_for('project_page') }}" class="btn btn-outline-primary">More...</a>
+        </center>
+    </div>
+
+</section>

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block cssblock %}
+{% endblock %}
+
+
+{% block head %}
+<title>ADMIN</title>
+{% endblock %}
+
+
+{% block body %}
+
+
+<section id="landing_page_projects">
+    <h2><b>LANDING PAGE PROJECTS</b></h2>
+
+    <form method="POST" action="">
+        <div class="row">
+            {% for item in content%}
+            <div class="col-lg-4 col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input" name="landing_page" type="checkbox" value="{{item.full_name}}"
+                        id="{{item.full_name}}">
+                    <label class="form-check-label" for="{{item.full_name}}">
+                        {{item.full_name.split('/')[1]}}
+                    </label>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="m-2 text-center">
+            <input class="btn btn-warning" type="reset" value="Reset">
+            <input class="btn btn-success" type="submit" value="Submit" name="landing_page_submit"
+                value="landing_page_submit">
+        </div>
+    </form>
+
+</section>
+<hr>
+
+{% endblock %}

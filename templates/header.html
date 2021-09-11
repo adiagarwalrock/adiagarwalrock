@@ -1,26 +1,5 @@
-<!-- 
-
-    {% set active_item = active_item|default('home') %}
-    <div class="nav__menu" id="nav-menu">
-        <ol class="nav__list" start='0'>
-            <li class="nav__item"><a href="/" class="nav__link {% if active_item == 'home' %}active{% endif %}">Home</a>
-            </li>
-            <li class="nav__item"><a href="/#about" class="nav__link">About</a></li>
-            <li class="nav__item"><a href="/#skills" class="nav__link">Skills</a></li>
-            <li class="nav__item"><a href="{{ url_for('resume_page') }}"
-                    class="nav__link {% if active_item == 'resume' %}active{% endif %}">Resume</a></li>
-        </ol>
-    </div>
-
-    <div class="nav__toggle" id="nav-toggle">
-        <i class='bx bx-menu'></i>
-    </div>
-</nav> -->
-
-
 <div class="container">
-
-    <nav class="navbar fixed-top navbar-expand-lg m-2 navbar-light translucent_card bg-light">
+    <nav class="navbar navbar-expand-lg translucent_card navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="/"><strong>
 
@@ -36,28 +15,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="/" class="nav-link active {% if active_item == 'home' %}active{% endif %}"
-                            aria-current="page" href="/#">0.0 Home</a>
+                        <a class="nav-link active" aria-current="page" href="/#home">0. Home🏠</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/#about">1.0 About</a>
+                        <a class="nav-link active" href="/#skills" aria-current="page">1. Skills👨‍💻</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#skills" aria-current=" page">2.0 Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#projects" aria-current="page">3.0 Projects</a>
+                        <a class="nav-link active" href="{{ url_for('project_page') }}" aria-current="page">2.
+                            Projects✍</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">4.0 More</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">3. More➕</a>
                     </li>
                 </ul>
                 <form class="d-flex">
 
-                    <a href="{{ url_for('resume_page') }}" class="btn btn-outline-primary">Resume</a>
+                    <a href="{{ url_for('resume_page') }}" class="btn btn-outline-primary">Resume📜</a>
                 </form>
             </div>
         </div>
     </nav>
+
 </div>

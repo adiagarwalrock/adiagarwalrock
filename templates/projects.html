@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% set active_item = 'resume' %}
+
+{% block head %}
+
+<title>@adi_agarwal- projects</title>
+
+{% endblock %}
+
+
+{% block body %}
+
+
+<section class="projects section" id="projects">
+    <h2 class="display-5">2. projects</h2>
+
+    <div class="row">
+        {% for item in content%}
+        <div class="col-lg-4 col-md-6">
+            <div class="card my-2">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <b><img class="p-1" src="https://img.icons8.com/ios-filled/30/000000/github-2.png" />
+                            <a href="{{item.html_url}}" class="url text-dark">
+                                {{item.full_name.split('/')[1]}}</b>
+                        </a>
+                    </h5>
+                    {% if item.description %}
+                    <p class="card-text"><b>Desc:</b> {{item.description[:45]}}...</p>
+                    {% else %}
+                    <p class="card-text">No description</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor%}
+    </div>
+
+</section>
+
+{% endblock %}

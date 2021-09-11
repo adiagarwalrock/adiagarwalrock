@@ -1,27 +1,28 @@
 import config
-from flask import redirect
+from github import Github
 
 
 class Bot():
+    def __init__(self):
+        import slack
+        self.client = slack.WebClient(token=config.SLACK_TOKEN)
 
-    def slack_bot(self, message, name, email, contact=None):
+    def contact_slack_bot(self, message, name, email, contact=None):
         try:
-            import slack
-
-            try:
-                client = slack.WebClient(token=config.SLACK_TOKEN)
-                notification = "%s \nEmail: %s \nContact: %s \nMessage: %s" % (
-                    name, email, contact, message)
-                client.chat_postMessage(
-                    channel='#portfolio_website', text=notification)
-                return True
-
-            except:
-                return False
+            notification = "%s \nEmail: %s \nContact: %s \nMessage: %s" % (
+                name, email, contact, message)
+            self.client.chat_postMessage(
+                channel='#portfolio_website', text=notification)
+            print(notification)
+            return True
 
         except:
             return False
 
 
-# bot = Bot()
-# bot.slack_bot("message", "name", "email", "1564894613")
+class Github_Bot():
+
+    def get_public_repo(self):
+        github_obj = Github()
+        user = github_obj.get_user('adiagarwalrock')
+        return user.get_repos()

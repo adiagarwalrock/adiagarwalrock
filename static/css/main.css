@@ -4,9 +4,37 @@
 
 .translucent_card {
   background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 0 8px 32px 0 rgb(39, 50, 209);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 2px solid rgb(38, 57, 224);
+}
+
+.skills__names {
+  background: rgb(#ffffff);
+  box-shadow: 0 8px 25px 0 rgb(rgba(0, 0, 0, 0.329));
+  backdrop-filter: blur( 15px);
+  -webkit-backdrop-filter: blur( 20px);
+  border-radius: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  width: fit-content;
+  padding: 7px;
+}
+
+.skills__data {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  align-items: center;
+}
+
+.url {
+  text-decoration: none;
+}
+
+.footer {
+  padding: 20px;
+  left: 0;
+  width: 100%;
+  bottom: 0;
 }
