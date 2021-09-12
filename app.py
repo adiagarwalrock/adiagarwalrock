@@ -6,7 +6,7 @@ from views import admin_page_view, contact_view, index_view, project_page_view
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = config.SECRET_KEY[0]
+app.config['SECRET_KEY'] = config.APP_SECRET
 
 
 @app.route('/')
@@ -19,12 +19,12 @@ def resume_page():
     return render_template("resume.html")
 
 
-@app.route('/qwerty/here/nothing/admin/picture/', methods=['GET', 'POST'])
+@app.route('/qwerty/admin/myadmin/', methods=['GET', 'POST'])
 def admin_page():
     return admin_page_view()
 
 
-@app.route('/qwerty/here/nothing/admin/picture/success/', methods=['GET', 'POST'])
+@app.route('/qwerty/admin/myadmin/success/', methods=['GET', 'POST'])
 def success():
     return redirect(url_for('admin_page'))
 

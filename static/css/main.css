@@ -38,3 +38,7 @@
   width: 100%;
   bottom: 0;
 }
+
+.inline {
+  display: inline-block;
+}

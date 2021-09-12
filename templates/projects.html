@@ -12,7 +12,7 @@
 
 
 <section class="projects section" id="projects">
-    <h2 class="display-5">2. projects</h2>
+    <h2 class="display-5">Projects</h2>
 
     <div class="row">
         {% for item in content%}
@@ -30,6 +30,7 @@
                     {% else %}
                     <p class="card-text">No description</p>
                     {% endif %}
+                    <a href="{{item.html_url}}" class="btn btn-outline-primary">View</a>
                 </div>
             </div>
         </div>

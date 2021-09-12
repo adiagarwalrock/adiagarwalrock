@@ -1,20 +1,25 @@
-<section class="projects section" id="projects">
+<section class="my-4 py-4" id="projects">
     <center>
-        <h2 class="display-5">2. projects</h2>
+        <h2 class="display-5">2. Projects</h2>
     </center>
 
     <div class="row">
-        {{to_display}}
-
         {% for item in content%}
-        {% if item in to_display %}
+        {% if item.full_name in to_display %}
         <div class="col-lg-4 col-md-6">
             <div class="card my-2">
                 <div class="card-body">
                     <h5 class="card-title">
-                        <b>{{item.full_name}}</b>
+                        <b><img src="https://img.icons8.com/glyph-neue/30/000000/repository.png" />
+                            <a href="{{item.html_url}}" class="url text-dark">
+                                {{item.full_name.split('/')[1]}}</b>
+                        </a>
                     </h5>
-                    <p class="card-text">{{item.description}}</p>
+                    {% if item.description %}
+                    <p class="card-text"><b>Desc:</b> {{item.description[:45]}}...</p>
+                    {% else %}
+                    <p class="card-text">no description</p>
+                    {% endif %}
                     <a href="{{item.html_url}}" class="btn btn-outline-primary">View</a>
                 </div>
             </div>
@@ -24,9 +29,9 @@
 
     </div>
 
-    <div class="my-2">
+    <div class="py-2 my-2">
         <center>
-            <a href="{{ url_for('project_page') }}" class="btn btn-outline-primary">More...</a>
+            <a href="{{ url_for('project_page') }}" class="btn btn-outline-primary">More projects...</a>
         </center>
     </div>
 

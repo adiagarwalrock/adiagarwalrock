@@ -9,7 +9,7 @@ DB_FILENAME = 'static/db/landing_page_projects.csv'
 
 
 def is_human(captcha_response):
-    secret = config.CAPTCHA[1]
+    secret = config.CAPTCHA_SECRET
     payload = {'response': captcha_response, 'secret': secret}
     response = requests.post(
         "https://www.google.com/recaptcha/api/siteverify", payload)
@@ -37,12 +37,13 @@ def admin_page_view():
 def index_view():
     github_bot = Github_Bot()
     github_repos = github_bot.get_public_repo()
-    to_display = {}
+    to_display = []
+
     with open(DB_FILENAME, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
             # HELP
-            to_display['repo'] = row[0]
+            to_display.append(row[0])
 
     return render_template("index.html", content=github_repos, to_display=to_display)
 
@@ -55,7 +56,7 @@ def project_page_view():
 
 def contact_view():
     try:
-        sitekey = config.CAPTCHA[0]
+        sitekey = config.CAPTCHA_SITE
 
         if request.method == 'POST':
             name = str(request.form['name'])
