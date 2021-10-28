@@ -1,21 +1,28 @@
 /* LOADER */
+
+* {
+  font-family: "Inconsolata", Courier, monospace;
+  box-sizing: border-box;
+}
+
 .loader-wrapper {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #f0e5cf;
+  background-color: #00385e;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .loader {
   display: inline-block;
   width: 30px;
   height: 30px;
   position: relative;
-  border: 4px solid #000;
+  border: 4px solid rgb(255, 255, 255);
   animation: loader 2s infinite ease;
 }
 
@@ -23,9 +30,10 @@
   vertical-align: top;
   display: inline-block;
   width: 100%;
-  background-color: #000;
+  background-color: rgb(255, 255, 255);
   animation: loader-inner 2s infinite ease-in;
 }
+
 @keyframes loader {
   0% {
     transform: rotate(0deg);
@@ -43,6 +51,7 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes loader-inner {
   0% {
     height: 0%;

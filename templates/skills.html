@@ -1,228 +1,32 @@
-<section class="my-4 py-4" id="skills">
-
-    <div>
-        <center>
-            <h2 class="display-5">1. Skills</h2>
-        </center>
-
-        <div class="container">
-            <div class="card text-white bg-dark">
-                <div class="card-body">
-                    <div class="d-flex align-items-start">
-                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
-                            aria-orientation="vertical">
-
-                            <a class="nav-link active" id="tab-language-tab" data-bs-toggle="pill" href="#tab-language"
-                                role="tab" aria-controls="tab-language" aria-selected="true">Languages</a>
-
-                            <a class="nav-link" id="tab-db-tab" data-bs-toggle="pill" href="#tab-db" role="tab"
-                                aria-controls="tab-db" aria-selected="false">Databases</a>
-
-                            <a class="nav-link" id="tab-tech-tab" data-bs-toggle="pill" href="#tab-tech" role="tab"
-                                aria-controls="tab-tech" aria-selected="false">Technologies</a>
-
-                            <a class="nav-link" id="tab-web-tab" data-bs-toggle="pill" href="#tab-web" role="tab"
-                                aria-controls="tab-web" aria-selected="false">Web Dev</a>
-
-                            <a class="nav-link" id="tab-fws-tab" data-bs-toggle="pill" href="#tab-fws" role="tab"
-                                aria-controls="tab-fws" aria-selected="false">Frameworks</a>
-                        </div>
-
-                        <div class="tab-content flex-grow-1" id="tab-tabContent">
-
-                            <!-- ====Lang tab==== -->
-                            <div class="tab-pane fade show active " id="tab-language" role="tabpanel"
-                                aria-labelledby="tab-language-tab">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/python.png') }}"
-                                                    class="skills__icon">
-                                                <nobr>
-                                                    <span class="skills__name">Python 3.x</span>
-                                                </nobr>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/java.png') }}"
-                                                    class="skills__icon">
-                                                <nobr>
-                                                    <span class="skills__name">Core Java</span>
-                                                </nobr>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/c++.png') }}"
-                                                    class="skills__icon">
-                                                <span class="skills__name">C++</span>
-                                            </div>
-                                        </div>
-                                    </div>
+<section class="pt-5 pb-2 my-2" id="skills">
+    <div class="text-center text-light">
+        <div>
+            <div class="container">
+                <center>
+                    <h2 class="display-5">1. Skills 👨‍💻</h2>
+                </center>
+                <hr>
+                <div class="row row-cols-1 row-cols-md-2">
+                    {% for cat in skill_category %}
+                    <div class="col pb-4">
+                        <div class="mt-3">
+                            <p class="text-center">
+                            <h3 class="">> {{cat | capitalize}}</h3>
+                            </p>
+                            {% for item in skills_data[cat] %}
+                            <span class="skills__data">
+                                <div class="py-1 px-2">
+                                    {% if item != 'nan' %}
+                                    {% set path_img = 'icons/' + item + '.png'%}
+                                    <img src="{{ url_for('static', filename=path_img)}}" alt="{{item}}">
+                                    {{item}}
+                                    {%endif%}
                                 </div>
-
-                            </div>
-                            <!-- ====Lang tab==== -->
-
-                            <!-- ====Database tab==== -->
-                            <div class="tab-pane fade" id="tab-db" role="tabpanel" aria-labelledby="tab-db-tab">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/mysql.png') }}"
-                                                    class="skills__icon">
-                                                <span class="skills__name">MySQL</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/sqlite.png') }}"
-                                                    class="skills__icon">
-                                                <span class="skills__name">SQLite</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/neo4j.png') }}"
-                                                    class="skills__icon">
-                                                <span class="skills__name">Neo4j</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/mongodb.png') }}"
-                                                    class="skills__icon">
-                                                <span class="skills__name">MongoDB</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- ====Database tab==== -->
-
-                            <!-- ====Technologies tab==== -->
-                            <div class="tab-pane fade" id="tab-tech" role="tabpanel" aria-labelledby="tab-tech-tab">
-
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/opencv.png') }}"
-                                                    class="skills__icon">
-                                                <span class="skills__name">OpenCV</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/cnn.png') }}"
-                                                    class="skills__icon">
-                                                <nobr>
-                                                    <span class="skills__name">Neural Networks</span>
-                                                </nobr>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/docker.png') }}"
-                                                    class="skills__icon">
-                                                <span class="skills__name">Docker</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ====Technologies tab==== -->
-
-                            <!-- ====Wed Dev tab==== -->
-                            <div class="tab-pane fade" id="tab-web" role="tabpanel" aria-labelledby="tab-web-tab">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <i class='bx bxl-html5 skills__icon'></i>
-                                                <span class="skills__name">HTML</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/css.png') }}"
-                                                    class="skills__icon">
-                                                <span class="skills__name">CSS3</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <!-- <i class='bx bxl-javascript skills__icon'></i> -->
-                                                <img src="{{ url_for('static', filename='icons/js.png') }}"
-                                                    class="skills__icon">
-                                                <nobr>
-                                                    <span class="skills__name">Java script</span>
-                                                </nobr>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ====Wed Dev tab==== -->
-
-                            <!-- ====Frameworks tab==== -->
-                            <div class="tab-pane fade" id="tab-fws" role="tabpanel" aria-labelledby="tab-fws-tab">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/tensorflow.png') }}"
-                                                    class="skills__icon">
-                                                <span class="skills__name">TensorFlow</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/flask.png') }}"
-                                                    class="skills__icon">
-                                                <span class="skills__name">Flask</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-auto d-flex justify-content-center col-md-auto">
-                                        <div class="skills__data">
-                                            <div class="skills__names">
-                                                <img src="{{ url_for('static', filename='icons/django.png') }}"
-                                                    class="skills__icon">
-                                                <span class="skills__name">Django</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ====Frameworks tab==== -->
-
+                            </span>
+                            {% endfor %}
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

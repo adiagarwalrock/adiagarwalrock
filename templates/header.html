@@ -13,7 +13,7 @@
             </button>
             {% set active_item = active_item|default('home') %}
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ol class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/#home">0. Home🏠</a>
                     </li>
@@ -28,7 +28,7 @@
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">3. More➕</a>
                     </li>
-                </ul>
+                </ol>
                 <form class="d-flex">
 
                     <a href="{{ url_for('resume_page') }}" class="btn btn-outline-primary">Resume📜</a>

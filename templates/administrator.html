@@ -40,5 +40,28 @@
 
 </section>
 <hr>
+<section id="landing_page_projects">
+    <h2><b>Add Skills</b></h2>
+    <form method="POST" action="">
+        <div class="my-3">
+            <label for="new_skill" class="form-label">New Skill</label>
+            <input type="text" class="form-control" name="new_skill" id="new_skill" placeholder="Input new Skill">
+        </div>
+        <div class="my-3">
+            <select class="form-select" name="skill_category" id="skill_category" aria-label="Default select example">
+                <option selected>--Select--</option>
+                <option value="Languages">Languages</option>
+                <option value="Databases">Databases</option>
+                <option value="Technologies">Technologies</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Frameworks">Frameworks</option>
+            </select>
+        </div>
+        <div class="my-3">
+            <input class="btn btn-success" type="submit" value="Submit" name="skill_submit" value="skill_submit">
+        </div>
+
+    </form>
+</section>
 
 {% endblock %}

@@ -1,24 +1,40 @@
-# from github import Github
-# import base64
-# import requests
-# from pprint import pprint
+# import pandas
+# import config
 
-# username = "adiagarwalrock"
-# url = f"https://api.github.com/users/{username}"
+# df = pandas.read_csv(config.SKLILLS_DB_PATH)
 
-# user_data = requests.get(url).json()
+# print("\nDF: ", df)
 
-# pprint(user_data)
-
-# print("########################")
-
-# g = Github()
-
-# user = g.get_user(username)
-
-# for repo in user.get_repos():
-#     print(repo.full_name.split('/')[1])
-#     print(repo.description)
+# list_of_column_names = list(df.columns)
+# print("\nlist_of_column_names: ", list_of_column_names)
 
 
-# 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
+# for i in df['Languages']:
+#     print(i)
+
+# print(df['Languages'])
+# Python program to read
+# json file
+
+
+import json
+
+f = open('data.json',)
+
+data = json.load(f)
+
+cat = [
+    'Languages',
+    'Databases',
+    'Technologies',
+    'Web Development',
+    'Frameworks'
+]
+
+
+for c in cat:
+    print(c)
+    for i in data['skills'][cat]:
+        print(i)
+
+f.close()

@@ -22,7 +22,7 @@
 </script>
 
 <section class="contact section" id="contact">
-    <h2 class="section-title text-center">contact me</h2>
+    <h2 class="section-title  text-center">contact me</h2>
 
 
 
@@ -34,7 +34,6 @@
                     <img style="justify-content: center" src="{{ url_for('static', filename='img/contact.svg') }}"
                         alt="@adi_agarwal" class="d-block user-select-none rounded-3 mx-lg-auto img-fluid" height="600"
                         loading="lazy">
-
                 </center>
             </div>
 
@@ -45,30 +44,30 @@
                     <form action={{ url_for('contact') }} method="POST" class="lg-4">
 
                         <div class="my-2">
-                            <label id="name" class="form-label">full name</label>
+                            <label id="name" class="form-label text-light">full name</label>
                             <input type="text" name="name" class="form-control" id="name" placeholder="full name"
                                 required>
                         </div>
 
                         <div class="my-2">
-                            <label id="contact" class="form-label">phone (optional)</label>
+                            <label id="contact" class="form-label text-light">phone (optional)</label>
                             <input type="tel" name="contact" class="form-control" id="contact"
                                 placeholder="contact no.">
                         </div>
 
                         <div class="my-2">
-                            <label id="email" class="form-label">email address</label>
+                            <label id="email" class="form-label text-light">email address</label>
                             <input name="email" type="email" class="form-control" id="email"
                                 placeholder="name@example.com" required>
                         </div>
 
                         <div class="my-2">
-                            <label id="message" class="form-label">message</label>
+                            <label id="message" class="form-label text-light">message</label>
                             <textarea type="textbox" name="message" class="form-control" id="message"
                                 placeholder="message ..." maxlength="500" cols="0" rows="5"
                                 onkeyup="countChar(this)"></textarea>
 
-                            <div class="contact__input" id="the-count">
+                            <div class="contact__input text-light" id="the-count">
                                 <span id="current">0</span>
                                 <span id="maximum">/ 500</span>
                             </div>
