@@ -7,7 +7,7 @@ CAPTCHA_SITE = '6LfNUEcbAAAAAPza4237MnlUNDJvbO5UWw6Bl81a'
 CAPTCHA_SECRET = '6LfNUEcbAAAAAL8cvPz410kirQAm_VaXqoRw0sBm'
 APP_SECRET = '3itlYZUGWYW6wAclw2wz'
 
-ADMIN_URL = ""
+ADMIN_URL = "/qwerty/admin/myadmin/"
 
-# FAV_PROJ_DB_PATH = 'static/db/landing_page_projects.csv'
+
 # SKLILLS_DB_PATH = 'static/db/skills.csv'
