@@ -4,20 +4,26 @@ import requests
 import json
 import csv
 import pandas
+import os
+from dotenv import load_dotenv
+from pathlib import Path
 
 from bot import Bot, Github_Bot
-import config
 
-DATA_FILE = 'data.json'
-SITEKEY = config.CAPTCHA_SITE
 
-f = open(DATA_FILE,)
+f = open("data.json", 'r')
 data = json.load(f)
 f.close()
 
+ENV_PATH = Path('.') / '.env'
+load_dotenv(dotenv_path=ENV_PATH)
+
+SITEKEY = os.environ['CAPTCHA_SITE_KEY']
+FAV_PROJ_DB_PATH = 'static/db/landing_page_projects.csv'
+
 
 def is_human(captcha_response):
-    secret = config.CAPTCHA_SECRET
+    secret = os.environ['CAPTCHA_SECRET']
     payload = {'response': captcha_response, 'secret': secret}
     response = requests.post(
         "https://www.google.com/recaptcha/api/siteverify", payload)
@@ -35,7 +41,7 @@ def admin_page_view():
             landing_page_items = request.form.getlist('landing_page')
             print("landing_page: ", landing_page_items)
 
-            with open(config.FAV_PROJ_DB_PATH, 'w', newline='') as file:
+            with open(FAV_PROJ_DB_PATH, 'w', newline='') as file:
                 writer = csv.writer(file)
                 for item in range(len(landing_page_items)):
                     writer.writerow([landing_page_items[item]])

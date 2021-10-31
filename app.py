@@ -1,11 +1,17 @@
 from flask import Flask, render_template, redirect
 from flask.helpers import url_for
-import config
+from dotenv import load_dotenv
+from pathlib import Path
+import os
 
 from views import admin_page_view, index_view, project_page_view, v3_view
 
+ENV_PATH = Path('.') / '.env'
+load_dotenv(dotenv_path=ENV_PATH)
+
+
 app = Flask(__name__)
-app.config['SECRET_KEY'] = config.APP_SECRET
+app.secret_key = os.environ['APP_SECRET']
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -18,12 +24,12 @@ def resume_page():
     return render_template("resume.html")
 
 
-@app.route(config.ADMIN_URL, methods=['GET', 'POST'])
+@app.route(os.environ['ADMIN_URL'], methods=['GET', 'POST'])
 def admin_page():
     return admin_page_view()
 
 
-@app.route(config.ADMIN_URL+'success/', methods=['GET', 'POST'])
+@app.route(os.environ['ADMIN_URL']+'success/', methods=['GET', 'POST'])
 def success():
     return redirect(url_for('admin_page'))
 
