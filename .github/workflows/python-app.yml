@@ -32,7 +32,7 @@ jobs:
     - name: Run Tests
       
       run: |
-        echo $x_rapidapi_key
-        python rec_webapp/manage.py test
+        echo $ADMIN_URL
+        python app.py
       env:
-        x_rapidapi_key: ${{secrets.ADMIN_URL}}
+        ADMIN_URL: ${{secrets.ADMIN_URL}}
