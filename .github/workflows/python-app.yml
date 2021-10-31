@@ -16,7 +16,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.8, 3.9]
+        python-version: [3.8]
 
     steps:
     - uses: actions/checkout@v2
@@ -36,3 +36,7 @@ jobs:
         python app.py
       env:
         ADMIN_URL: ${{secrets.ADMIN_URL}}
+        APP_SECRET: ${{secrets.APP_SECRET}}
+        CAPTCHA_SECRET: ${{secrets.CAPTCHA_SECRET}}
+        CAPTCHA_SITE_KEY: ${{secrets.CAPTCHA_SITE_KEY}}
+        SLACK_TOKEN: ${{secrets.SLACK_TOKEN}}
