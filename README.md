@@ -5,7 +5,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-adiagawralrock-lightgrey)](https://github.com/adiagarwalrock)
 <br>
 
-## I'm a Student, Software Developer !!
+## I'm a Software Developer !!
 
 - 🔭 I am aiming to obtain my Graduate Degree in Computer Science.
 - 🌱 I’m currently learning Machine Learning.
