@@ -8,23 +8,12 @@
 {% endblock %}
 
 {% block body %}
+
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script src="http://code.jquery.com/jquery-1.5.js"></script>
-<script>
-    function countChar(val) {
-        var len = val.value.length;
-        if (len >= 500) {
-            val.value = val.value.substring(0, 500);
-        } else {
-            $('#charNum').text(500 - len);
-        }
-    };
-</script>
 
 <section class="contact section" id="contact">
     <h2 class="section-title  text-center">contact me</h2>
-
-
 
     <div class="container col-xxl-8 px-2">
         <div class="row flex-lg-row-reverse align-items-center py-2">
@@ -38,10 +27,9 @@
             </div>
 
             <div class="col-lg-6 my-2">
-
                 <div class="my-2">
 
-                    <form action={{ url_for('contact') }} method="POST" class="lg-4">
+                    <form action="{{ url_for('contact') }} " method="POST" class="lg-4">
 
                         <div class="my-2">
                             <label id="name" class="form-label text-light">full name</label>
@@ -78,20 +66,11 @@
                         <div class="text-center my-2">
                             <input type="submit" value="Senden" class="btn btn-success">
                         </div>
-
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
 
 </section>
 
