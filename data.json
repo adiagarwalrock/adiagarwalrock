@@ -34,12 +34,5 @@
             "Django",
             "Bootstrap"
         ]
-    },
-    "projects": [
-        "adiagarwalrock/Asstistant_using_Python",
-        "adiagarwalrock/ChatBot",
-        "adiagarwalrock/Data-Sctuctures-and-Algorithms",
-        "adiagarwalrock/PasswordManager",
-        "adiagarwalrock/ShoppingApp-proj"
-    ]
+    }
 }
