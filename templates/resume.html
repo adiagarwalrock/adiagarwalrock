@@ -13,8 +13,17 @@
 
 <section>
     <div class="document__preview">
-        <iframe src="{{ url_for('static', filename='doc/aditya_agarwal_cv.pdf') }}" height="900sp" width=100%></iframe>
+        <!-- <iframe src="{{ url_for('static', filename='doc/aditya_agarwal_cv.pdf') }}" height="900sp" width=100%></iframe> -->
+
+        <iframe src="{{ url_for('static', filename='doc/aditya_agarwal_cv.pdf') }}" width="100%" height="900sp"
+            allow="autoplay"></iframe>
     </div>
+
+    <div class="text-center">
+        <a href="{{ url_for('static', filename='doc/aditya_agarwal_cv.pdf') }}" type="button"
+            class="btn btn-outline-light btn-lg" download>Download</a>
+    </div>
+
 </section>
 
 
