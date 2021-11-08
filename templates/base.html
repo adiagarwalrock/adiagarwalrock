@@ -50,6 +50,9 @@
 
 <body style="background-color: #093657;">
 
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="http://code.jquery.com/jquery-1.5.js"></script>
+
     <!-- ====Loader==== -->
     <!-- <div class="loader-wrapper">
         <span class="loader"><span class="loader-inner"></span>
@@ -157,27 +160,11 @@
     </footer>
     <!--===== FOOTER =====-->
 
-
     <!--===== SCROLL REVEAL =====-->
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!--===== MAIN JS =====-->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-
-    <!--===== SocialPanel JS =====-->
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script src="http://code.jquery.com/jquery-1.5.js"></script>
-    <script>
-        function countChar(val) {
-            var len = val.value.length;
-            if (len >= 500) {
-                val.value = val.value.substring(0, 500);
-            } else {
-                $('#charNum').text(500 - len);
-            }
-        };
-    </script>
-    {% block scripts %} {% endblock %}
 
 </body>
 
