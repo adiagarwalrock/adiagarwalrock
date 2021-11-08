@@ -8,10 +8,16 @@
 ## I'm a Student, Software Developer !!
 
 - 🔭 I am aiming to obtain my Graduate Degree in Computer Science.
+- 🎨 I love to code in Python, Java, and C++.
+- 💻 I am a self-taught programmer and I am always looking to learn new things.
 - 🌱 I’m currently learning Machine Learning.
 - 👯 I’m looking to collaborate with other developers.
 - 🥅 2021 Goals: Build up my portfolio.
-- ⚡ Fun fact: I love to Paint and Game
+- ⚡ Fun fact: I love to Paint and Game.
+- 🤝 I like meeting people and connecting.
+- ⚛ Still a novice but have biG plans for the future.
+- 🎮 I love to play games and watch movies.
+
   <br>
 
 ## Connect with me:
@@ -51,7 +57,15 @@
 <img align="left" alt="Visual Studio Code" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" />
 
 <img align="left" alt="Terminal" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png" />
-<br />
+<br>
+
+
+## GitHub Stats
+
+[![Aditya's GitHub Stats](https://github-readme-stats.vercel.app/api?username=adiagarwalrock)][github]
+
+
+
 
 [website]: http://www.adityaagarwal.me/
 [linkedin]: https://www.linkedin.com/in/adityaagarwal1999/
