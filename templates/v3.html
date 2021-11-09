@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="sr" lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- =====FAVICON===== -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='icons/logo.png') }}">
 
@@ -13,22 +13,29 @@
         href="{{ url_for('static', filename='icons/touch-icon-120x120-precomposed.png') }}" />
     <link rel="apple-touch-icon" sizes="152x152"
         href="{{ url_for('static', filename='icons/touch-icon-152x152-precomposed.png') }}" />
+
     <!-- =====Bootstrap CSS===== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
     <!-- =====Bootstrap js===== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/socialPanel.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
     <!-- =====BOX ICONS===== -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    <title>adi_agarwal</title>
+
+
+    <title>@aditya_agarwal</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <style>
@@ -37,7 +44,11 @@
     }
 </style>
 
-<body class="container-sm py-4 px-5 font-monospace">
+<body class="container-sm py-5">
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="http://code.jquery.com/jquery-1.5.js"></script>
+
 
     <button class="floating-social-btn" type="button" data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
@@ -45,59 +56,102 @@
         </i>
     </button>
 
-    <section class="py-3" id="intro">
-        <h2 class="user-select-none">Hello World,<br>I'm Aditya Agarwal😃
-        </h2>
-        <p class="">
-        <ul class="fs-5 list-inline">
-            <li class="list-inline-item">
-                <a class="text-decoration-none" href="https://www.linkedin.com/in/adityaagarwal1999/" target="_blank">
-                    LinkedIn</a>
-            </li>
-            <li class="list-inline-item">
-                <a class="text-decoration-none" href="https://www.github.com/adiagarwalrock/" target="_blank">
-                    Github</a>
-            </li>
-            <li class="list-inline-item">
-                <a class="text-decoration-none" href="{{url_for('static', filename='/doc/aditya_agarwal_cv.pdf')}}"
-                    download>Resume</a>
-            </li>
-            <li class="list-inline-item">
-                <a class="text-decoration-none" href="https://www.hackerrank.com/aditya_ag1234?hr_r=1" target="_blank">
-                    HackerRank</a>
-            </li>
-            <li class="list-inline-item">
-                <a class="text-decoration-none" href="mailto:aditya.ag1234@gmail.com" target="_blank">
-                    Mail</a>
-            </li>
-        </ul>
 
-        </p>
-        <p class="text-justify fs-4 lead py-1">
-            Learning and exploring fascinates me. I like meeting people and connecting.
-            Still a novice but have biG plans for the future.
-            <br>If you are intrigued, go ahead to my profile or head to the
-            <a class="text-decoration-none" href="{{url_for('static', filename='/doc/aditya_agarwal_cv.pdf')}}"
-                download>
-                RÉSUMÉ.
-            </a>
-        </p>
+    <section class="py-3" id="intro">
+        <div class="row flex-lg-row-reverse d-flex justify-content-between py-auto">
+            <div class="col-10 col-sm-8 col-lg-6" style="align-items: center!important;">
+                <center>
+                    <img style="max-height: 200px; border-radius: 50%; float: right;"
+                        src="{{ url_for('static', filename='img/about-circle.jpg') }}" loading="eager"
+                        alt="@adi_agarwal" class="user-select-none align-center home__img img-fluid" loading="lazy">
+                </center>
+            </div>
+
+            <div class="col-lg-6 my-3">
+                <h1 class="user-select-none home__title">Hello World,<br>I'm Aditya Agarwal😃
+                </h1>
+                <p class="">
+                <ul class="fs-5 list-inline home__social-icon">
+                    <li class="list-inline-item">
+                        <a class="text-decoration-none" href="https://www.linkedin.com/in/adityaagarwal1999/"
+                            target="_blank">
+                            LinkedIn</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="text-decoration-none" href="https://www.github.com/adiagarwalrock/" target="_blank">
+                            Github</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="text-decoration-none"
+                            href="{{url_for('static', filename='/doc/aditya_agarwal_cv.pdf')}}" download>Resume</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="text-decoration-none" href="https://www.hackerrank.com/aditya_ag1234?hr_r=1"
+                            target="_blank">
+                            HackerRank</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="text-decoration-none" href="mailto:aditya.ag1234@gmail.com" target="_blank">
+                            Mail</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <p class="about__text">
+            <ul class="text-justify fs-4 lead py-1 about__text" styles="list-style-type: '-';">
+                <li>
+                    🔭 I am aiming to obtain my Graduate Degree in Machine Learning.
+                </li>
+                <li>
+                    🎨 Love to code in Python, Java, and C++.
+                </li>
+                <li>
+                    💻 I am a selftaught programmer and I am always looking to learn new things.
+                </li>
+                <li>
+                    🌱 Currently learning Machine Learning.
+                </li>
+                <li>
+                    👯 I’m looking to collaborate with other developers.
+                </li>
+                <li>
+                    🥅 2021 Goals: Build up my portfolio.
+                </li>
+                <li>
+                    ⚡ Fun fact: I love to Paint and Game.
+                </li>
+                <li>
+                    🤝 I like meeting people and connecting.
+                </li>
+                <li>
+                    ⚛ Still a novice but have biG plans for the future.
+                </li>
+                <li>
+                    🎮 I love to play games and watch movies.
+                </li>
+                <li>
+                    ✌ If you are intrigued, go ahead to my profile or head to the
+                    <a class="text-decoration-none" href="{{url_for('static', filename='/doc/aditya_agarwal_cv.pdf')}}"
+                        download>RÉSUMÉ
+                        📜.</a>
+                </li>
+            </ul>
+            </p>
+        </div>
     </section>
 
     <section class="py-3" id="skills">
-        <h2 class="user-select-none">> Skills 👨‍💻</h2>
+        <h2 class="user-select-none fw-bold">> Skills 👨‍💻</h2>
         <hr>
-
         <div>
             <div class="row row-cols-1 row-cols-md-2">
                 {% for cat in skill_category %}
-                <div class="col pb-4">
+                <div class="col all__skills pb-4">
                     <div class="mt-3">
-                        <p class="text-center">
-                        <h3 class="">- {{cat | capitalize}}</h3>
-                        </p>
+                        <p class="h3">- {{cat | capitalize}}</p>
                         <div>
-
                             {% for item in skills_data[cat] %}
                             <div classs="p-2" style="display:inline;">
                                 <span style="border-radius: 10px;" class="skills__data fs-5">
@@ -120,23 +174,22 @@
                 {% endfor %}
             </div>
         </div>
-
     </section>
 
     <section class="py-3" id="projects">
-        <h2 class="user-select-none">> Projects ✍</h2>
+        <h2 class="user-select-none fw-bold">> Projects ✍</h2>
         <hr>
-
         <div class="">
             <div class="row">
                 {% for item in content%}
                 {% if item.full_name in projects_data %}
-                <div class="col-lg-4 text-dark col-md-6">
-                    <div class="card border-dark mt-3 mb-2">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-dark project__card mt-3 mb-2">
                         <div class="card-body">
                             <h5 class="card-title project__card__title">
-                                <img src="https://img.icons8.com/glyph-neue/30/000000/repository.png" />
-                                <a href="{{item.html_url}}" class="url text-dark fs-4 fw-bold">
+                                <img src="https://img.icons8.com/glyph-neue/30/000000/repository.png"
+                                    alt="repository-image" />
+                                <a href="{{item.html_url}}" class="url fs-4 fw-bold">
                                     {{item.full_name.split('/')[1]}}
                                 </a>
                             </h5>
@@ -149,7 +202,6 @@
                                     {% endif %}
                                 </p>
                             </div>
-
                             <div class="text-end">
                                 <span class="">
                                     <a href="{{item.html_url}}" class="btn text-align-end btn-outline-primary">View</a>
@@ -165,7 +217,7 @@
 
             <div class="py-2 my-2">
                 <center>
-                    <a href="https://www.github.com/adiagarwalrock" class="btn p-1 btn-primary btn-lg">
+                    <a href="https://www.github.com/adiagarwalrock" class="btn btn-primary btn-lg">
                         <span class="p-2">
                             More projects...
                         </span>
@@ -175,13 +227,32 @@
         </div>
     </section>
 
-    <section class="py-3" id="skills">
 
-
-
+    <section class="py-3" id="certificates">
+        <h2 class="user-select-none fw-bold">> Certificates 📜</h2>
+        <hr>
+        <ol class="list-group list-group-numbered">
+            {% for item in cert_data %}
+            <li class="list-group-item fs-4 certifi__all d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">{{item[0]}}</div>
+                    <figcaption class="blockquote">
+                        {% if item[2] != '' %}
+                        {{item[2]}} |
+                        {% endif %}
+                        <cite title="{{item[1]}}">
+                            {{item[1]}}
+                        </cite>
+                    </figcaption>
+                </div>
+                <span class="badge bg-success rounded-pill">{{item[3]}}</span>
+            </li>
+            {% endfor %}
+        </ol>
     </section>
 
 
+    <!-- CONTACT FORM CARD -->
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
         aria-labelledby="offcanvasWithBothOptionsLabel">
         <div class="offcanvas-header">
@@ -260,18 +331,13 @@
             </div>
         </div>
     </div>
+    <!-- CONTACT FORM CARD -->
+
+
 
 
 </body>
-
-<!-- Socal Panel JS -->
-
-<script src="https://www.google.com/recaptcha/api.js"></script>
-<script src="http://code.jquery.com/jquery-1.5.js"></script>
-
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<!--===== MAIN JS =====-->
+<!--===== JS =====-->
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 </html>

@@ -9,7 +9,7 @@ const sr = ScrollReveal({
 /*SCROLL HOME*/
 sr.reveal(".home__title", {});
 sr.reveal(".home__img", { delay: 200 });
-sr.reveal(".home__social-icon", { interval: 200 });
+sr.reveal(".home__social-icon", { delay: 200 });
 
 /*SCROLL ABOUT*/
 // sr.reveal(".about__img", {});
@@ -17,13 +17,13 @@ sr.reveal(".home__social-icon", { interval: 200 });
 sr.reveal(".about__text", { delay: 400 });
 
 /*SCROLL SKILLS*/
-sr.reveal(".all__skills", { interval: 200 });
+sr.reveal(".all__skills", { delay: 200 });
 
 /*SCROLL PROJECTS*/
-sr.reveal(".project__card", { interval: 200 });
+sr.reveal(".project__card", { delay: 200 });
 
 /*SCROLL CERTIFICATES*/
-sr.reveal(".certifi__all", { interval: 200 });
+sr.reveal(".certifi__all", { delay: 200 });
 
 
 function countChar(val) {

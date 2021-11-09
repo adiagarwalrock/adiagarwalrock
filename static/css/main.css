@@ -3,6 +3,20 @@
   box-sizing: border-box;
 }
 
+html.sr .load-hidden {
+  visibility: hidden;
+}
+
+.about__text {
+  list-style-type: none;
+}
+
+.about__text li:before {
+  content: '-';
+  /* position: absolute; */
+  /* margin-left: 10px; */
+}
+
 .translucent_card {
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 0 8px 32px 0 rgb(39, 50, 209);
