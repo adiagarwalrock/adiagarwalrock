@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 import os
 
-from views import admin_page_view, index_view, project_page_view, v3_view
+from views import *
 
 ENV_PATH = Path('.') / '.env'
 load_dotenv(dotenv_path=ENV_PATH)
@@ -16,7 +16,14 @@ app.secret_key = os.environ['APP_SECRET']
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return index_view()
+    context = index_page_view()
+    return render_template("v3.html", **context)
+
+
+# @app.route('/v3/', methods=['GET', 'POST'])
+# def v3():
+#     context = index_page_view()
+#     return render_template("index.html", **context)
 
 
 @app.route('/resume/', methods=['GET', 'POST'])
@@ -34,19 +41,14 @@ def success():
     return redirect(url_for('admin_page'))
 
 
-@app.route('/more/')
-def more():
-    return render_template("more.html")
+# @app.route('/more/')
+# def more():
+#     return render_template("more.html")
 
 
-@app.route('/projects/')
-def project_page():
-    return project_page_view()
-
-
-@app.route('/v3/', methods=['GET', 'POST'])
-def v3():
-    return v3_view()
+# @app.route('/contact/', methods=['GET', 'POST'])
+# def contact():
+#     return contact_view()
 
 
 if __name__ == "__main__":
