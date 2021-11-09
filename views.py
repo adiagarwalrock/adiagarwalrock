@@ -3,7 +3,7 @@ from flask.helpers import url_for
 import requests
 import json
 import csv
-import pandas
+# import pandas
 import os
 from dotenv import load_dotenv
 from pathlib import Path
@@ -14,7 +14,7 @@ from bot import Bot, Github_Bot
 ENV_PATH = Path('.') / '.env'
 load_dotenv(dotenv_path=ENV_PATH)
 
-SITEKEY = os.environ['CAPTCHA_SITE_KEY']
+SITEKEY = os.environ['CAPTCHA_SITE']
 
 FAV_PROJ_DB_PATH = 'static/db/landing_page_projects.csv'
 CERT_DB_PATH = 'static/db/certs.csv'
@@ -110,11 +110,11 @@ def index_page_view():
             if response:
                 status = "Detail submitted successfully."
                 flash(status)
-                return redirect('v3')
+                return redirect('/')
             else:
                 status = "Error incurred while submitting, Please try later !"
                 flash(status)
-                return redirect('v3')
+                return redirect('/')
 
         else:
             status = "Sorry ! Please check the CAPTCHA"
@@ -129,4 +129,4 @@ def index_page_view():
         "skills_data": data['skills'],
     }
 
-    return context
+    return render_template("v3.html", **context)

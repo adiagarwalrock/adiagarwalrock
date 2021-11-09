@@ -16,8 +16,9 @@ app.secret_key = os.environ['APP_SECRET']
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    context = index_page_view()
-    return render_template("v3.html", **context)
+    # context = index_page_view()
+    return index_page_view()
+    # return render_template("v3.html", **context)
 
 
 # @app.route('/v3/', methods=['GET', 'POST'])
