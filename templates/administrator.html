@@ -6,62 +6,67 @@
 
 
 {% block head %}
-<title>ADMIN</title>
+<title>MY ADMIN</title>
 {% endblock %}
 
 
 {% block body %}
 
+<div class="container text-light">
 
-<section id="landing_page_projects">
-    <h2><b>LANDING PAGE PROJECTS</b></h2>
 
-    <form method="POST" action="">
-        <div class="row">
-            {% for item in content%}
-            <div class="col-lg-4 col-md-6">
-                <div class="form-check">
-                    <input class="form-check-input" name="landing_page" type="checkbox" value="{{item.full_name}}"
-                        id="{{item.full_name}}">
-                    <label class="form-check-label" for="{{item.full_name}}">
-                        {{item.full_name.split('/')[1]}}
-                    </label>
+    <section id="landing_page_projects">
+        <h2><b>LANDING PAGE PROJECTS</b></h2>
+
+        <form method="POST" action="">
+            <div class="row">
+                {% for item in content%}
+                <div class="col-lg-4 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" name="landing_page" type="checkbox" value="{{item.full_name}}"
+                            id="{{item.full_name}}">
+                        <label class="form-check-label" for="{{item.full_name}}">
+                            {{item.full_name.split('/')[1]}}
+                        </label>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
 
-        <div class="m-2 text-center">
-            <input class="btn btn-warning" type="reset" value="Reset">
-            <input class="btn btn-success" type="submit" value="Submit" name="landing_page_submit"
-                value="landing_page_submit">
-        </div>
-    </form>
+            <div class="m-2 text-center">
+                <input class="btn btn-warning" type="reset" value="Reset">
+                <input class="btn btn-success" type="submit" value="Submit" name="landing_page_submit"
+                    value="landing_page_submit">
+            </div>
+        </form>
 
-</section>
-<hr>
-<section id="landing_page_projects">
-    <h2><b>Add Skills</b></h2>
-    <form method="POST" action="">
-        <div class="my-3">
-            <label for="new_skill" class="form-label">New Skill</label>
-            <input type="text" class="form-control" name="new_skill" id="new_skill" placeholder="Input new Skill">
-        </div>
-        <div class="my-3">
-            <select class="form-select" name="skill_category" id="skill_category" aria-label="Default select example">
-                <option selected>--Select--</option>
-                <option value="Languages">Languages</option>
-                <option value="Databases">Databases</option>
-                <option value="Technologies">Technologies</option>
-                <option value="Web Development">Web Development</option>
-                <option value="Frameworks">Frameworks</option>
-            </select>
-        </div>
-        <div class="my-3">
-            <input class="btn btn-success" type="submit" value="Submit" name="skill_submit" value="skill_submit">
-        </div>
+    </section>
 
-    </form>
-</section>
+    <hr>
+    <section id="landing_page_projects">
+        <h2><b>Add Skills</b></h2>
+        <form method="POST" action="">
+            <div class="my-3">
+                <label for="new_skill" class="form-label">New Skill</label>
+                <input type="text" class="form-control" name="new_skill" id="new_skill" placeholder="Input new Skill">
+            </div>
+            <div class="my-3">
+                <select class="form-select" name="skill_category" id="skill_category"
+                    aria-label="Default select example">
+                    <option selected>--Select--</option>
+                    <option value="Languages">Languages</option>
+                    <option value="Databases">Databases</option>
+                    <option value="Technologies">Technologies</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Frameworks">Frameworks</option>
+                </select>
+            </div>
+            <div class="my-3">
+                <input class="btn btn-success" type="submit" value="Submit" name="skill_submit" value="skill_submit">
+            </div>
+        </form>
+    </section>
 
+
+</div>
 {% endblock %}
