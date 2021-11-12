@@ -8,40 +8,69 @@
 {% endblock %}
 
 {% block body %}
+
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script src="http://code.jquery.com/jquery-1.5.js"></script>
-<script>
-    function countChar(val) {
-        var len = val.value.length;
-        if (len >= 500) {
-            val.value = val.value.substring(0, 500);
-        } else {
-            $('#charNum').text(500 - len);
-        }
-    };
-</script>
 
 <section class="contact section" id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact__container bd-grid">
+    <h2 class="section-title  text-center">contact me</h2>
 
-        <form action={{ url_for('contact') }} method="POST" class="contact__form">
-            <input name="name" type="text" placeholder="Name" id="name" maxlength="50" class="contact__input" required>
-            <input name="contact" type="number" placeholder="Contact No." maxlength="15" id="contact"
-                class="contact__input">
-            <input name="email" type="mail" placeholder="Email" id="email" maxlength="50" class="contact__input"
-                required>
-            <textarea name="message" name="" placeholder="Message" id="message" maxlength="500" cols="0" rows="7"
-                class="contact__input" onkeyup="countChar(this)" required></textarea>
-            <div class="contact__input" id="the-count">
-                <span id="current">0</span>
-                <span id="maximum">/ 500</span>
+    <div class="container col-xxl-8 px-2">
+        <div class="row flex-lg-row-reverse align-items-center py-2">
 
-                <div class="g-recaptcha contact__input" data-sitekey="{{ sitekey }}"></div> <br />
-            <div>
-                <input type="submit" value="Senden" class="contact__button button">
+            <div class="col-10 col-sm-8 mx-auto col-lg-6">
+                <center>
+                    <img style="justify-content: center" src="{{ url_for('static', filename='img/contact.svg') }}"
+                        alt="@adi_agarwal" class="d-block user-select-none rounded-3 mx-lg-auto img-fluid" height="600"
+                        loading="lazy">
+                </center>
             </div>
-        </form>
+
+            <div class="col-lg-6 my-2">
+                <div class="my-2">
+
+                    <form action="{{ url_for('contact') }} " method="POST" class="lg-4">
+
+                        <div class="my-2">
+                            <label id="name" class="form-label text-light">full name</label>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="full name"
+                                required>
+                        </div>
+
+                        <div class="my-2">
+                            <label id="contact" class="form-label text-light">phone (optional)</label>
+                            <input type="tel" name="contact" class="form-control" id="contact"
+                                placeholder="contact no.">
+                        </div>
+
+                        <div class="my-2">
+                            <label id="email" class="form-label text-light">email address</label>
+                            <input name="email" type="email" class="form-control" id="email"
+                                placeholder="name@example.com" required>
+                        </div>
+
+                        <div class="my-2">
+                            <label id="message" class="form-label text-light">message</label>
+                            <textarea type="textbox" name="message" class="form-control" id="message"
+                                placeholder="message ..." maxlength="500" cols="0" rows="5"
+                                onkeyup="countChar(this)"></textarea>
+
+                            <div class="contact__input text-light" id="the-count">
+                                <span id="current">0</span>
+                                <span id="maximum">/ 500</span>
+                            </div>
+                        </div>
+
+                        <div class="g-recaptcha my-2" data-sitekey="{{ sitekey }}"></div>
+                        <br>
+                        <div class="text-center my-2">
+                            <input type="submit" value="Senden" class="btn btn-success">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </section>
 

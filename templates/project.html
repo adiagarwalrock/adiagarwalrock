@@ -1,0 +1,56 @@
+<section class="py-2 my-2" id="projects">
+    <div class="">
+
+        <div class="container">
+
+            <div class="text-light p-3">
+                <center>
+                    <h2 class="display-5 pt-4">2. Projects ✍</h2>
+                </center>
+                <hr>
+
+                <div class="row">
+                    {% for item in content%}
+                    {% if item.full_name in projects_data %}
+                    <div class="col-lg-4 text-dark col-md-6">
+                        <div class="card project__card mt-3 mb-2">
+                            <div class="card-body">
+                                <h5 class="card-title project__card__title">
+                                    <img src="https://img.icons8.com/glyph-neue/30/000000/repository.png" />
+                                    <a href="{{item.html_url}}" class="url text-dark fw-bold">
+                                        {{item.full_name.split('/')[1]}}
+                                    </a>
+                                </h5>
+                                <div card="card-text">
+                                    {% if item.description %}
+                                    <p class="card-text project__desc__card"><b>Desc:</b> {{item.description[:45]}}...
+                                    </p>
+                                    {% else %}
+                                    <p class="card-text project__desc__card">no description</p>
+                                    {% endif %}
+                                </div>
+
+                                <div class="text-end">
+                                    <span class="">
+                                        <a href="{{item.html_url}}" class="btn text-align-end btn-outline-dark">View</a>
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="py-2 my-2">
+                    <center>
+                        <a href="https://www.github.com/adiagarwalrock" class="btn btn-light btn-lg">More
+                            projects...</a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

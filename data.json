@@ -1,0 +1,38 @@
+{
+    "categories": [
+        "Languages",
+        "Databases",
+        "Technologies",
+        "Web Development",
+        "Frameworks"
+    ],
+    "skills": {
+        "Languages": [
+            "Python 3.x",
+            "Core Java",
+            "C++"
+        ],
+        "Databases": [
+            "MySQL",
+            "SQLite",
+            "Neo4j",
+            "MongoDB"
+        ],
+        "Technologies": [
+            "OpenCV",
+            "Neural Networks",
+            "Docker"
+        ],
+        "Web Development": [
+            "HTML5",
+            "CSS3",
+            "Java Script"
+        ],
+        "Frameworks": [
+            "Tensorflow",
+            "Flask",
+            "Django",
+            "Bootstrap"
+        ]
+    }
+}

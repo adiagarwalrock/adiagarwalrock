@@ -1,99 +1,80 @@
 {% extends 'base.html' %}
 
+
 {% block cssblock %}
-
-
 {% endblock %}
 
 
 {% set active_item = 'home' %}
 
+
 {% block head %}
-
 <title>@adi_agarwal</title>
-
 {% endblock %}
 
 
 {% block body %}
 
 <!--===== HOME =====-->
-<section class="home bd-grid" id="home">
-    <div class="home__data" style="z-index:2">
-        <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Aditya,</span><br> Computer
-            Science<br> Student</h1>
-    </div>
 
-    <div class="home__img" style="z-index:1">
-        <img src="{{ url_for('static', filename='img/perfil.jpg') }}" alt="@adi_agarwal">
-    </div>
 
-    <div class="home__social">
-        <a href="https://www.linkedin.com/in/adityaagarwal1999/" class="home__social-icon"><i
-                class='bx bxl-linkedin'></i></a>
-        <a href="https://www.hackerrank.com/aditya_ag1234?hr_r=1" class="home__social-icon"><i
-                class="fab fa-hackerrank"></i></a>
-        <a href="https://github.com/adiagarwalrock" class="home__social-icon"><i class='bx bxl-github'></i></a>
-        <a href="https://www.kaggle.com/adiagarwalrock" class="home__social-icon"><i
-                class="fab fa-kaggle fa-sm"></i></i></a>
-    </div>
+<section class="" id="home">
+    <div class="container text-light py-t pb-3 mb-3">
+        <div class="container col-xxl-8 p-4">
+            <div class="row flex-lg-row-reverse align-items-center py-auto">
 
-</section>
+                <div class="col-10 col-sm-8 mx-auto col-lg-6" style="align-items: center!important;">
+                    <center>
+                        <img style="justify-content: center; border: 2px solid rgb(255, 255, 255);"
+                            src="{{ url_for('static', filename='img/about.jpg') }}" loading="eager" alt="@adi_agarwal"
+                            class="d-block user-select-none rounded-3 mx-lg-auto img-fluid" height="600" loading="lazy">
+                    </center>
+                </div>
 
-<!--===== ABOUT =====-->
-<section class="about section " id="about">
-    <h2 class="section-title">1. About</h2>
-    <div class="about__container bd-grid">
-        <div class="about__img">
-            <img src="{{ url_for('static', filename='img/about.jpg') }}" alt="">
+                <div class="col-lg-6 my-3">
+                    <h1 class="display-4 user-select-none p-2 lh-1 mb-3">Hello World,<br>I'm Aditya 😃
+                    </h1>
+                    <p class="text-justify">
+                        Learning and exploring fascinates me.<br>I like meeting people and connecting.
+                        <br>Still a novice but have biG plans for the future.
+                        <br>If you are intrigued, go ahead to my profile or head to the RÉSUMÉ.
+                    </p>
+                    <p>
+                        Reach out to me on social media or at
+                        <a style="color:#77ACF1"
+                            href="mailto:aditya.ag1234@gmail.com?subject=A contact form your website">
+                            aditya.ag1234@gmail.com</a>
+                    </p>
+
+                    <div class="pt-2 d-md-flex justify-content-md-start">
+                        <div class="home__social">
+                            <a href="https://www.linkedin.com/in/adityaagarwal1999/" class="px-2">
+                                <img
+                                    src="https://img.icons8.com/external-justicon-flat-justicon/40/000000/external-linkedin-social-media-justicon-flat-justicon.png" /></a>
+                            <a href="https://www.hackerrank.com/aditya_ag1234?hr_r=1" class="px-2">
+                                <img src="https://img.icons8.com/windows/40/000000/hackerrank.png" /></a>
+                            <a href="https://github.com/adiagarwalrock" class="px-2">
+                                <img src="https://img.icons8.com/doodle/40/000000/github--v1.png" /></a>
+                            <!-- <a href="https://www.kaggle.com/adiagarwalrock" class="px-2">
+                            <img src="https://img.icons8.com/windows/40/000000/kaggle.png" /></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <h2 class="about__subtitle">I'm Aditya 😃</h2>
-            <p class="about__text">Learning and Exploring fascinates me.<br>I like meeting more people and connecting.
-                I am still a student but have biG plans for The Future.
-                <br>If you are intrigued, you can view my profile or head to the Resume section.
-                <br><br>Reach out to me on social media or at<a style="color:#2975cc"
-                    href="mailto:aditya.ag1234@gmail.com"> aditya.ag1234@gmail.com</a>.
-            </p>
-        </div>
     </div>
 </section>
+<!--===== HOME =====-->
+
 
 <!--===== SKILLS =====-->
 {% include "skills.html" %}
+<!--===== SKILLS =====-->
 
 
 <!--===== PROJECTS =====-->
-<section class="projects section" id="projects">
-    <h2 class="section-title">3. Projects</h2>
-    <div class="projects__container bd-grid">
-        <div class="projects__img">
-            <img src="{{ url_for('static', filename='img/work1.jpg') }}" alt="">
-        </div>
-        <div class="projects__img">
-            <img src="{{ url_for('static', filename='img/work2.jpg') }}" alt="">
-        </div>
-        <div class="projects__img">
-            <img src="{{ url_for('static', filename='img/work3.jpg') }}" alt="">
-        </div>
-    </div>
-</section>
+{% include "project.html" %}
+<!--===== PROJECTS =====-->
 
-<!--===== RESUME BUTTON =====-->
-<section class="skills section" styles="margin: 20px">
-    <div class="download_button">
-        <center>
-            <a href="{{ url_for('resume_page') }}">
-                <input type="button" value="Resume" href="{{ url_for('resume_page') }}" class="download__button button">
-            </a>
-        </center>
-    </div>
-</section>
-
-
-{% endblock %}
-
-
-{% block scripts %}
 
 {% endblock %}

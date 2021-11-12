@@ -1,89 +1,54 @@
-from flask import Flask, render_template, request, redirect, Response, json, flash
-import requests
+from flask import Flask, render_template, redirect, request
+from flask.helpers import url_for
+from dotenv import load_dotenv
+from pathlib import Path
+import os
+
+from views import *
 from bot import Bot
-import config
+
+ENV_PATH = Path('.') / '.env'
+load_dotenv(dotenv_path=ENV_PATH)
+
 
 app = Flask(__name__)
-
-app.config['SECRET_KEY'] = config.SECRET_KEY[0]
-
-
-def is_human(captcha_response):
-    """ Validating recaptcha response from google server
-        Returns True captcha test passed for submitted form else returns False.
-    """
-    secret = config.CAPTCHA[1]
-    payload = {'response': captcha_response, 'secret': secret}
-    response = requests.post(
-        "https://www.google.com/recaptcha/api/siteverify", payload)
-    response_text = json.loads(response.text)
-    return response_text['success']
+app.secret_key = os.environ['APP_SECRET']
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template("index.html")
+    ip_address = request.remote_addr
+    # print("Current IP: ", ip_address)
+    slack_bot = Bot()
+    message="ACCESSED IP: " + ip_address
+    response = slack_bot.contact_slack_bot(message, "PROFILE ALERT", "None")
+    return index_page_view()
 
 
-@app.route('/resume')
+@app.route('/resume/', methods=['GET', 'POST'])
 def resume_page():
     return render_template("resume.html")
 
 
-@app.route('/qwerty/here/nothing/admin/picture/', methods=['GET', 'POST'])
+@app.route(os.environ['ADMIN_URL'], methods=['GET', 'POST'])
 def admin_page():
-    return render_template("administrator.html")
+    return admin_page_view()
 
 
-@app.route('/more')
-def more():
-    return render_template("more.html")
+@app.route(os.environ['ADMIN_URL']+'success/', methods=['GET', 'POST'])
+def success():
+    return redirect(url_for('admin_page'))
 
 
-@app.route('/projects')
-def project_page():
-    return render_template("test.html")
+# @app.route('/more/')
+# def more():
+#     return render_template("more.html")
 
 
-@app.route('/contact', methods=['GET', 'POST'])
-def contact():
-    try:
-        sitekey = config.CAPTCHA[0]
-
-        if request.method == 'POST':
-            name = str(request.form['name'])
-            email = str(request.form['email'])
-            contact = str(request.form['contact'])
-            message = str(request.form['message'])
-            captcha_response = request.form['g-recaptcha-response']
-
-            if is_human(captcha_response):
-                # Process request here
-                messanger = Bot()
-                response = messanger.slack_bot(message, name, email, contact)
-
-                if response:
-                    status = "Detail submitted successfully."
-                    flash(status)
-                    return redirect('/')
-
-                else:
-                    status = "Error incurred while submitting, Please try later !"
-                    flash(status)
-                    return redirect('/')
-
-            else:
-             # Log invalid attempts
-                status = "Sorry ! Please Check I'm not a robot."
-                flash(status)
-
-        else:
-            return render_template("contact.html", sitekey=sitekey)
-
-    except:
-        return redirect('/')
+# @app.route('/contact/', methods=['GET', 'POST'])
+# def contact():
+#     return contact_view()
 
 
 if __name__ == "__main__":
-    app.jinja_env.auto_reload = True
     app.run(debug=True)

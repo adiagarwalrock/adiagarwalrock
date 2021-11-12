@@ -1,0 +1,85 @@
+* {
+  font-family: monospace;
+  box-sizing: border-box;
+}
+
+html.sr .load-hidden {
+  visibility: hidden;
+}
+
+.about__text {
+  list-style-type: none;
+}
+
+.about__text li:before {
+  content: '-';
+  /* position: absolute; */
+  /* margin-left: 10px; */
+}
+
+.translucent_card {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 8px 32px 0 rgb(39, 50, 209);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  border: 2px solid rgb(38, 57, 224);
+}
+
+.url {
+  text-decoration: none;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.skills__names {
+  -webkit-backdrop-filter: blur( 20px);
+  backdrop-filter: blur( 15px);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.skills__data {
+  border-radius: 10px;
+  border-width: 1.5px;
+  border-style: solid;
+  font-size: 16px;
+  /* word-wrap: break-word; */
+  margin: 5px;
+  display: inline-block;
+  background-color: black;
+  padding: 5px 2px;
+  align-items: center;
+}
+
+.project__card {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.project__desc__card {
+  height: 70px;
+}
+
+.project__card__title {
+  height: 70px;
+}
+
+.floating-social-btn {
+  border-radius: 26.5px;
+  background-color: #001f61;
+  border: 1px solid #001f61;
+  box-shadow: 0 16px 22px -17px #03153b;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 12px 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}

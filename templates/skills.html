@@ -1,117 +1,32 @@
-<section class="skills section" id="skills">
-    <h2 class="section-title">2. Skills</h2>
-    <div styles=="margin: 20px" align="center">
-
-        <!-- ===LANGUAGES=== -->
+<section class="pt-5 pb-2 my-2" id="skills">
+    <div class="text-center text-light">
         <div>
-            <h2 class="skills__subtitle">Languages</h2>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/python.png') }}" class="skills__icon">
-                    <span class="skills__name">Python</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/java.png') }}" class="skills__icon">
-                    <span class="skills__name">Java</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/c++.png') }}" class="skills__icon">
-                    <span class="skills__name">C++</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===DATABASES=== -->
-        <div>
-            <h2 class="skills__subtitle">Databases</h2>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/mysql.png') }}" class="skills__icon">
-                    <span class="skills__name">MySQL</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/sqlite.png') }}" class="skills__icon">
-                    <span class="skills__name">SQLite</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/neo4j.png') }}" class="skills__icon">
-                    <span class="skills__name">Neo4j</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===TECHNOLOGIES=== -->
-        <div>
-            <h2 class="skills__subtitle">Technologies</h2>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/tensorflow.png') }}" class="skills__icon">
-                    <!-- <i <span class="iconify" data-icon="logos-tensorflow" data-inline="false"></span>></i> -->
-                    <span class="skills__name">TensorFlow</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/flask.png') }}" class="skills__icon">
-                    <span class="skills__name">Flask</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/opencv.png') }}" class="skills__icon">
-                    <span class="skills__name">OpenCV</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/cnn.png') }}" class="skills__icon">
-                    <span class="skills__name">Neural Networks</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/django.png') }}" class="skills__icon">
-                    <span class="skills__name">Django</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <img src="{{ url_for('static', filename='icons/docker.png') }}" class="skills__icon">
-                    <span class="skills__name">Docker</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===WEB TECHNOLOGIES=== -->
-        <div>
-            <h2 class="skills__subtitle"> Web Technologies</h2>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <!-- <img src="{{ url_for('static', filename='icons/html.png') }}" class="skills__icon"> -->
-                    <i class='bx bxl-html5 skills__icon'></i>
-                    <span class="skills__name">HTML</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <!-- <img src="{{ url_for('static', filename='icons/css.png') }}" class="skills__icon"> -->
-                    <i class='bx bxl-css3 skills__icon'></i>
-                    <span class="skills__name">CSS3</span>
-                </div>
-            </div>
-            <div class="skills__data">
-                <div class="skills__names">
-                    <!-- <img src="{{ url_for('static', filename='icons/javascript.png') }}" class="skills__icon"> -->
-                    <i class='bx bxl-javascript skills__icon'></i>
-                    <span class="skills__name">JAVASCRIPT</span>
+            <div class="container">
+                <center>
+                    <h2 class="display-5">1. Skills 👨‍💻</h2>
+                </center>
+                <hr>
+                <div class="row row-cols-1 row-cols-md-2">
+                    {% for cat in skill_category %}
+                    <div class="col all__skills pb-4">
+                        <div class="mt-3">
+                            <p class="text-center">
+                            <h3 class="">> {{cat | capitalize}}</h3>
+                            </p>
+                            {% for item in skills_data[cat] %}
+                            <span class="skills__data">
+                                <div class="py-1 px-2">
+                                    {% if item != 'nan' %}
+                                    {% set path_img = 'icons/' + item + '.png'%}
+                                    <img src="{{ url_for('static', filename=path_img)}}" alt="{{item}}">
+                                    {{item}}
+                                    {%endif%}
+                                </div>
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
