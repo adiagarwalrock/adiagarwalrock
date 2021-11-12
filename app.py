@@ -1,10 +1,11 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 from flask.helpers import url_for
 from dotenv import load_dotenv
 from pathlib import Path
 import os
 
 from views import *
+from bot import Bot
 
 ENV_PATH = Path('.') / '.env'
 load_dotenv(dotenv_path=ENV_PATH)
@@ -16,15 +17,12 @@ app.secret_key = os.environ['APP_SECRET']
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    # context = index_page_view()
+    ip_address = request.remote_addr
+    # print("Current IP: ", ip_address)
+    slack_bot = Bot()
+    message="ACCESSED IP: " + ip_address
+    response = slack_bot.contact_slack_bot(message, "PROFILE ALERT", "None")
     return index_page_view()
-    # return render_template("v3.html", **context)
-
-
-# @app.route('/v3/', methods=['GET', 'POST'])
-# def v3():
-#     context = index_page_view()
-#     return render_template("index.html", **context)
 
 
 @app.route('/resume/', methods=['GET', 'POST'])

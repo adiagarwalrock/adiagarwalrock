@@ -39,7 +39,7 @@ def admin_page_view():
         if request.form.get('landing_page_submit'):
             # Edit Fav Projects to pin
             landing_page_items = request.form.getlist('landing_page')
-            print("landing_page: ", landing_page_items)
+            # print("landing_page: ", landing_page_items)
 
             with open(FAV_PROJ_DB_PATH, 'w', newline='') as file:
                 writer = csv.writer(file)
@@ -50,12 +50,12 @@ def admin_page_view():
             # Add New Skill
             new_skill = request.form.get('new_skill')
             skill_category = request.form.get('skill_category')
-            print("\nSKILL: ", new_skill, skill_category)
+            # print("\nSKILL: ", new_skill, skill_category)
 
             with open("data.json", "r+") as jsonfile:
                 data = json.load(jsonfile)
                 data['skills'][skill_category].append(new_skill)
-                print(data)
+                # print(data)
                 jsonfile.truncate(0)
                 jsonfile.seek(0)
                 json.dump(data, jsonfile)

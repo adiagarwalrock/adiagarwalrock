@@ -36,6 +36,10 @@ function countChar(val) {
 };
 
 
+$(window).on("load", function () { $(".loader-wrapper").fadeOut("slow"); });
+
+
+
 $("textarea").keyup(function () {
   var characterCount = $(this).val().length,
     current = $("#current"),

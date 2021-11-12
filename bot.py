@@ -19,7 +19,7 @@ class Bot():
                 name, email, contact, message)
             self.client.chat_postMessage(
                 channel='#portfolio_website', text=notification)
-            print(notification)
+            # print(notification)
             return True
 
         except:
