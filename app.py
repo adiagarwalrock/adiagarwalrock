@@ -21,7 +21,7 @@ def index():
     # print("Current IP: ", ip_address)
     slack_bot = Bot()
     message="ACCESSED IP: " + ip_address
-    response = slack_bot.contact_slack_bot(message, "PROFILE ALERT", "None")
+    # response = slack_bot.contact_slack_bot(message, "PROFILE ALERT", "None")
     return index_page_view()
 
 
