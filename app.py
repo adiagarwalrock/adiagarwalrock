@@ -18,10 +18,8 @@ app.secret_key = os.environ['APP_SECRET']
 @app.route('/', methods=['GET', 'POST'])
 def index():
     ip_address = request.remote_addr
-    # print("Current IP: ", ip_address)
     slack_bot = Bot()
     message="ACCESSED IP: " + ip_address
-    # response = slack_bot.contact_slack_bot(message, "PROFILE ALERT", "None")
     return index_page_view()
 
 
@@ -38,16 +36,6 @@ def admin_page():
 @app.route(os.environ['ADMIN_URL']+'success/', methods=['GET', 'POST'])
 def success():
     return redirect(url_for('admin_page'))
-
-
-# @app.route('/more/')
-# def more():
-#     return render_template("more.html")
-
-
-# @app.route('/contact/', methods=['GET', 'POST'])
-# def contact():
-#     return contact_view()
 
 
 if __name__ == "__main__":
