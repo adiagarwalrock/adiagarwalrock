@@ -98,9 +98,11 @@ def index_page_view():
         captcha_response = request.form['g-recaptcha-response']
 
         if is_human(captcha_response):
-            slack_bot = Bot()
-            response = slack_bot.contact_slack_bot(
-                message, name, email, contact)
+            # slack_bot = Bot()
+            # response = slack_bot.contact_slack_bot(
+            #     message, name, email, contact)
+            
+            response = False
 
             if response:
                 status = "Detail submitted successfully."
