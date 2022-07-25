@@ -6,13 +6,13 @@
 [![linkedIn](https://img.shields.io/badge/LinkedIn-adityaagarwal1999-blue)](https://www.linkedin.com/in/adityaagarwal1999/)
 [![GitHub](https://img.shields.io/badge/GitHub-adiagawralrock-lightgrey)](https://github.com/adiagarwalrock)
 
-- 🔭 I'm aiming to obtain my Post-Graduate Degree in Computer Science.
+- 🔭 Incoming Grad student @ Stevens Institute of Technology with major in **Machine Learning**.
 
-- 🌱 I’m currently learning **Django_rest_framework, Applied_Machine_Learning**
+- 🌱 I’m currently learning **Django_rest_framework & Applied_Machine_Learning**
  
 - 💻 I am a self-taught programmer and I am always looking to learn new things.
 
-- 💬 Ask me about **python, flask, SQL.**
+- 💬 Ask me about **Python, Flask, Django, SQL.**
 
 - 📫 How to reach me **aditya.ag1234@gmail.com**
 
