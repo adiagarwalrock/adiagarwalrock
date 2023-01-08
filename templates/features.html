@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+404
+{% endblock %}
+
+
+
+{% block main %}
+
+<h1>
+    404<span class="blinking-cursor">_</span>
+</h1>
+
+<img style="max-height: 200px; border-radius: 50%; float: right;"
+    src="{{ url_for('static', filename='img/aditya_profile.jpg') }}" loading="eager" alt="@adi_agarwal"
+    class="user-select-none align-center home__img img-fluid  img__border" loading="lazy">
+
+
+{% endblock %}

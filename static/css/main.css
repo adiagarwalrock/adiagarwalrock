@@ -1,6 +1,16 @@
 * {
-  font-family: monospace;
-  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+  }
+  
+  body {
+    background: rgb(5, 3, 37);
+    background: linear-gradient(150deg, rgba(5, 3, 37, 0.9867297260701156) 0%, rgba(31, 31, 150, 1) 32%, rgba(0, 103, 79, 1) 83%);
+  }
+  
+  main {
+    width: 100%;
+    min-height: 100vh;
 }
 
 html.sr .load-hidden {
@@ -13,8 +23,6 @@ html.sr .load-hidden {
 
 .about__text li:before {
   content: '-';
-  /* position: absolute; */
-  /* margin-left: 10px; */
 }
 
 .translucent_card {
@@ -27,16 +35,21 @@ html.sr .load-hidden {
 }
 
 .url {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .inline {
   display: inline-block;
 }
 
+.hero__img {
+  display: block;
+  box-sizing: border-box;
+  border: 5px solid #2a1ed3;
+}
 .skills__names {
-  -webkit-backdrop-filter: blur( 20px);
-  backdrop-filter: blur( 15px);
+  -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(15px);
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -57,6 +70,7 @@ html.sr .load-hidden {
 .project__card {
   background: #ffffff;
   border-radius: 10px;
+  color: black;
   border: 1px solid rgb(255, 255, 255);
 }
 
@@ -68,18 +82,84 @@ html.sr .load-hidden {
   height: 70px;
 }
 
-.floating-social-btn {
-  border-radius: 26.5px;
-  background-color: #001f61;
-  border: 1px solid #001f61;
-  box-shadow: 0 16px 22px -17px #03153b;
+.list-group-item {
+  background-color: transparent;
+  border-top: 1px solid #ddd;
+  border-radius: 0;
   color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 20px;
-  padding: 12px 20px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
 }
+
+
+/* BLINKING CURSOR */
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 30px;
+  color: #ffffff;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: white;
+  }
+}
+
+@-moz-keyframes "blink" {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: white;
+  }
+}
+
+@-webkit-keyframes "blink" {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: white;
+  }
+}
+
+@-ms-keyframes "blink" {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: white;
+  }
+}
+
+@-o-keyframes "blink" {
+
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: white;
+  }
+}
+/* IMAGE BORDER */

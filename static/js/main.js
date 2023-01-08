@@ -1,9 +1,9 @@
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
   origin: "top",
-  distance: "80px",
-  duration: 2000,
-  reset: true,
+  distance: "60px",
+  duration: 1500,
+  reset: false,
 });
 
 /*SCROLL HOME*/
@@ -15,6 +15,9 @@ sr.reveal(".home__social-icon", { delay: 200 });
 // sr.reveal(".about__img", {});
 // sr.reveal(".about__subtitle", { delay: 400 });
 sr.reveal(".about__text", { delay: 400 });
+
+/*SCROLL EDUCATION*/
+sr.reveal(".education", { delay: 200 });
 
 /*SCROLL SKILLS*/
 sr.reveal(".all__skills", { delay: 200 });
@@ -76,3 +79,7 @@ $("textarea").keyup(function () {
 });
 
 
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', 'particles.json', function () {
+  console.log('callback - particles.js config loaded');
+});
