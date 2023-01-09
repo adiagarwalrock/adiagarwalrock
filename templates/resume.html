@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+@adi_agarwal - Resume
+{% endblock %}
+
+
+{% block main %}
+
+
+<div>
+    <center>
+        <a class="btn btn-success btn-lg" href="{{ url_for('static', filename='doc/aditya_agarwal_cv.pdf') }}">
+            GET RESUME
+        </a>
+    </center>
+</div>
+
+{% endblock %}
