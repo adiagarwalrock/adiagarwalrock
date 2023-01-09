@@ -7,27 +7,17 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
-from bot import Bot, Github_Bot
+from bot import Github_Bot
 
 
 ENV_PATH = Path('.') / '.env'
 load_dotenv(dotenv_path=ENV_PATH)
 
-SITEKEY = os.environ['CAPTCHA_SITE']
+
 
 FAV_PROJ_DB_PATH = 'static/db/landing_page_projects.csv'
 CERT_DB_PATH = 'static/db/certs.csv'
 SKILLS_PATH = "data.json"
-
-
-def is_human(captcha_response):
-    # Captcha Verification
-    secret = os.environ['CAPTCHA_SECRET']
-    payload = {'response': captcha_response, 'secret': secret}
-    response = requests.post(
-        "https://www.google.com/recaptcha/api/siteverify", payload)
-    response_text = json.loads(response.text)
-    return response_text['success']
 
 
 def admin_page_view():
@@ -60,13 +50,7 @@ def admin_page_view():
     context = {
         "content": github_repos
     }
-    return render_template("administrator.html", **context)
-
-
-def project_page_view():
-    github_bot = Github_Bot()
-    github_repos = github_bot.get_public_repo()
-    return render_template("projects.html", content=github_repos)
+    return render_template("admin.html", **context)
 
 
 def index_page_view():
@@ -97,32 +81,12 @@ def index_page_view():
         message = str(request.form['message'])[:500]
         captcha_response = request.form['g-recaptcha-response']
 
-        if is_human(captcha_response):
-            # slack_bot = Bot()
-            # response = slack_bot.contact_slack_bot(
-            #     message, name, email, contact)
-            
-            response = False
-
-            if response:
-                status = "Detail submitted successfully."
-                flash(status)
-                return redirect('/')
-            else:
-                status = "Error incurred while submitting, Please try later !"
-                flash(status)
-                return redirect('/')
-
-        else:
-            status = "Sorry ! Please check the CAPTCHA"
-            flash(status)
-
     context = {
         "content": github_repos,
         "projects_data": projects_data,
         "cert_data": cert_data,
         "skill_category": data['categories'],
-        "sitekey": SITEKEY,
+        # "sitekey": SITEKEY,
         "skills_data": data['skills'],
     }
 
