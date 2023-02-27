@@ -14,7 +14,7 @@
 
 - 💬 Ask me about **Python, Flask, Django, SQL.**
 
-- 📫 How to reach me **adiagarwal1509@gmail.com**
+- 📫 How to reach me **aagarw14@stevens.edu**
 
 - ⚡ Fun fact **I love to Paint and Game && have a tendency called 'cracked'.**
 
