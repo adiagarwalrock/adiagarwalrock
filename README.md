@@ -3,7 +3,7 @@
 <h3 align="center">A passionate software_developer from India ⚛ Still a novice but have biG plans for the future.</h3>
     
 [![Website](https://img.shields.io/badge/Website-adityaagarwal.me-success)](http://www.adityaagarwal.me/)
-[![linkedIn](https://img.shields.io/badge/LinkedIn-adityaagarwal1999-blue)](https://www.linkedin.com/in/adityaagarwal1999/)
+[![linkedIn](https://img.shields.io/badge/LinkedIn-adiagarwal1509-blue)](https://www.linkedin.com/in/adiagarwal1509/)
 [![GitHub](https://img.shields.io/badge/GitHub-adiagawralrock-lightgrey)](https://github.com/adiagarwalrock)
 
 - 🔭 Incoming Grad student @ Stevens Institute of Technology with major in **Machine Learning**.
@@ -21,11 +21,11 @@
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
-<a href="https://twitter.com/adityaag1234" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="adityaag1234" height="30" width="40" /></a>
-<a href="https://linkedin.com/in/adityaagarwal1999" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="adityaagarwal1999" height="30" width="40" /></a>
-<a href="https://stackoverflow.com/users/11073827" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="11073827" height="30" width="40" /></a>
-<a href="https://instagram.com/adityaagarwal.me" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="adityaagarwal.me" height="30" width="40" /></a>
-<a href="https://www.hackerrank.com/aditya_ag1234" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="aditya_ag1234" height="30" width="40" /></a>
+<a href="https://twitter.com/adityaag1234" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="adityaag1234" height="30" width="40" /></a>
+<a href="https://linkedin.com/in/adiagarwal1509" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="adiagarwal1509" height="30" width="40" /></a>
+<a href="https://stackoverflow.com/users/11073827" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="11073827" height="30" width="40" /></a>
+<a href="https://instagram.com/adityaagarwal.me" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="adityaagarwal.me" height="30" width="40" /></a>
+<a href="https://www.hackerrank.com/aditya_ag1234" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="aditya_ag1234" height="30" width="40" /></a>
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
@@ -34,5 +34,5 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=adiagarwalrock&show_icons=true&theme=dark&title_color=ffffff&text_color=ffffff&hide_border=true&locale=en" alt="adiagarwalrock" /></p>
 
 [website]: http://www.adityaagarwal.me/
-[linkedin]: https://www.linkedin.com/in/adityaagarwal1999/
+[linkedin]: https://www.linkedin.com/in/adiagarwal1509/
 [github]: https://github.com/adiagarwalrock
