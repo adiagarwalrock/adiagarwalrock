@@ -50,8 +50,8 @@
 
                 </div>
             </div>
-            </div>
-            </div>
+        </div>
+    </div>
 
     <div class="row">
         <p class="about__text">
@@ -68,10 +68,10 @@
             <li>✌ If you are intrigued, Let's
                 <a class="text-light" href="https://www.linkedin.com/in/adityaagarwal1999/">connect</a>.
             </li>
-            </ul>
-            </p>
-            </div>
-            </section>
+        </ul>
+        </p>
+    </div>
+</section>
 
 
 <section class="py-3 education" id="education">
@@ -173,22 +173,22 @@
                             <a href="{{item.html_url}}" class="url fs-4 text-dark fw-bold">
                                 {{item.full_name.split('/')[1]}}
                             </a>
-                            </h5>
-                            <div card="card-text">
+                        </h5>
+                        <div card="card-text">
                             <p class="card-text text-dark fs-5 project__desc__card">
                                 {% if item.description %}
                                 {{item.description[:45]}}...
                                 {% else %}
                                 no description
                                 {% endif %}
-                                </p>
-                                </div>
+                            </p>
+                        </div>
                     </div>
-                    </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
 
         <div class="py-2 my-2">
             <center>
@@ -199,8 +199,8 @@
                 </a>
             </center>
         </div>
-        </div>
-        </section>
+    </div>
+</section>
 
 
 <section class="py-3 certifi__all" id="certificates">
@@ -223,8 +223,8 @@
             <span class="badge bg-success rounded-pill">{{item[3]}}</span>
         </li>
         {% endfor %}
-        </ol>
-        </section>
+    </ol>
+</section>
 
 
 {% endblock %}

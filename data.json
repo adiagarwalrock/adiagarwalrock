@@ -1,38 +1,104 @@
 {
-    "categories": [
-        "Languages",
-        "Databases",
-        "Technologies",
-        "Web Development",
-        "Frameworks"
-    ],
     "skills": {
-        "Languages": [
-            "Python 3.x",
-            "Core Java",
-            "C++"
+        "categories": [
+            "Languages",
+            "Databases",
+            "Technologies",
+            "Web Development",
+            "Frameworks"
         ],
-        "Databases": [
-            "MySQL",
-            "SQLite",
-            "Neo4j",
-            "MongoDB"
-        ],
-        "Technologies": [
-            "OpenCV",
-            "Neural Networks",
-            "Docker"
-        ],
-        "Web Development": [
-            "HTML5",
-            "CSS3",
-            "Java Script"
-        ],
-        "Frameworks": [
-            "Tensorflow",
-            "Flask",
-            "Django",
-            "Bootstrap"
+        "skills": {
+            "Languages": [
+                "Python 3.x",
+                "Core Java",
+                "C++"
+            ],
+            "Databases": [
+                "MySQL",
+                "SQLite",
+                "Neo4j",
+                "MongoDB",
+                "Vector Databases"
+            ],
+            "Technologies": [
+                "OpenCV",
+                "Neural Networks",
+                "Docker"
+            ],
+            "Web Development": [
+                "HTML5",
+                "CSS3",
+                "Java Script"
+            ],
+            "Frameworks": [
+                "Tensorflow",
+                "Flask",
+                "Django",
+                "Bootstrap",
+                "Llama-Index"
+            ]
+        }
+    },
+    "github_projects": {
+        "projects": [
+            "adiagarwalrock/critiQs",
+            "adiagarwalrock/gpt-bot",
+            "adiagarwalrock/intro-to-tensorflow-for-ai-coursera"
         ]
-    }
+    },
+    "certificates": [
+        {
+            "name": "Building a Recommendation System with Python Machine Learning & AI",
+            "platform": "LinkedIn Learning",
+            "date": "Jul-21"
+        },
+        {
+            "name": "Introduction to TensorFlow for AI, ML and Deep Learning",
+            "platform": "Coursera",
+            "provider": "deeplearning.ai",
+            "date": "Jun-20"
+        },
+        {
+            "name": "Structuring Machine Learning Projects",
+            "platform": "Coursera",
+            "provider": "deeplearning.ai",
+            "date": "May-20"
+        },
+        {
+            "name": "Python Data Structures",
+            "platform": "Coursera",
+            "provider": "University of Michigan",
+            "date": "May-20"
+        },
+        {
+            "name": "Data Visualization",
+            "platform": "Coursera",
+            "provider": "University of Illinois at Urbana Champaign",
+            "date": "Jun-20"
+        },
+        {
+            "name": "Data Warehouse Concepts, Design and Data Integration",
+            "platform": "Coursera",
+            "provider": "University of Colorado",
+            "date": "Jul-20"
+        },
+        {
+            "name": "Java Programming: Solving Problems with Software",
+            "platform": "Coursera",
+            "provider": "Duke University",
+            "date": "Aug-20"
+        },
+        {
+            "name": "Neural Networks and Deep Learning",
+            "platform": "Coursera",
+            "provider": "deeplearning.ai",
+            "date": "Apr-20"
+        },
+        {
+            "name": "Machine Learning for All",
+            "platform": "Coursera",
+            "provider": "University of London",
+            "date": "May-20"
+        }
+    ]
 }
