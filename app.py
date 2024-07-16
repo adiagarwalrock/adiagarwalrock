@@ -1,4 +1,11 @@
-from flask import Flask, render_template, redirect, request, Response
+from flask import (
+    Flask,
+    render_template,
+    redirect,
+    request,
+    Response,
+    send_from_directory,
+)
 from flask.helpers import url_for
 from dotenv import load_dotenv
 from pathlib import Path
@@ -72,6 +79,11 @@ def sitemap():
 </urlset>"""
 
     return Response(xml, mimetype="application/xml")
+
+
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory(os.getcwd(), "Robots.txt")
 
 
 if __name__ == "__main__":
