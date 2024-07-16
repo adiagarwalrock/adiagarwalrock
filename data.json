@@ -16,14 +16,14 @@
             "Databases": [
                 "MySQL",
                 "SQLite",
-                "Neo4j",
                 "MongoDB",
-                "Vector Databases"
+                "Vector Databases",
+                "Neo4j"
             ],
             "Technologies": [
-                "OpenCV",
                 "Neural Networks",
-                "Docker"
+                "Docker",
+                "OpenCV"
             ],
             "Web Development": [
                 "HTML5",

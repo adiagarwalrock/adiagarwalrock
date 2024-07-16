@@ -86,4 +86,4 @@ def index_page_view():
         "skills_data": data["skills"]["skills"],
     }
 
-    return render_template("v3.html", **context)
+    return render_template("v4.html", **context)

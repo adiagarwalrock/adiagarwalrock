@@ -2,15 +2,19 @@
   font-family: 'Courier New', Courier, monospace;
     color: #ffffff;
   }
-  
+
   body {
-    background: rgb(5, 3, 37);
-    background: linear-gradient(150deg, rgba(5, 3, 37, 0.9867297260701156) 0%, rgba(31, 31, 150, 1) 32%, rgba(0, 103, 79, 1) 83%);
+    background: rgba(0, 0, 0, 0.884);
   }
-  
+
   main {
     width: 100%;
     min-height: 100vh;
+}
+a {
+  /* no decorations */
+  text-decoration: none;
+  color: #ffffff;
 }
 
 html.sr .load-hidden {
@@ -22,7 +26,7 @@ html.sr .load-hidden {
 }
 
 .about__text li:before {
-  content: '-';
+  content: '- ';
 }
 
 .translucent_card {
