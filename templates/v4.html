@@ -2,10 +2,11 @@
 
 
 {% block title %}
-@adi_agarwal
+@adi_agarwal | Personal Website | Programming Insights & Machine Learning
 {% endblock %}
 
-
+{% block meta_description %}Welcome to my personal website where I share insights on programming, machine learning, and
+more.{% endblock %}
 
 {% block main %}
 
@@ -48,10 +49,9 @@
                     </div>
                     <div class="inline">
                         <a href="mailto:aagarw14@stevens.edu?subject=Let's Connect!" class="px-2">
-                            <img src="https://img.icons8.com/tapes/35/000000/experimental-email-tapes.png" />
+                            <img src="https://img.icons8.com/?size=35&id=PyVmwJx682vD&format=png&color=000000" />
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -138,15 +138,15 @@
                     <p class="h3">- {{cat | capitalize}}</p>
                     <div>
                         {% for item in skills_data[cat] %}
-                        <div classs="p-2" style="display:inline;">
+                        <div class="p-2" style="display:inline;">
                             <span style="border-radius: 10px;" class="skills__data fs-5">
                                 {% if item != 'nan' %}
-                                {% set path_img = 'icons/' + item + '.png'%}
+                                {% set path_img = 'icons/' + item + '.png' %}
                                 <span class="text-nowrap">
                                     <img style="border-radius:20px;" width="40px" class="py-1 px-2"
-                                        src="{{ url_for('static', filename=path_img)}}" alt="<{{item}}'s image>">
+                                        src="{{ url_for('static', filename=path_img) }}" alt="{{ item }}'s image">
                                     <span class="pe-3 text-light">
-                                        {{item}}
+                                        {{ item }}
                                     </span>
                                 </span>
                                 {% endif %}

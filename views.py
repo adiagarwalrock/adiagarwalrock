@@ -71,19 +71,13 @@ def index_page_view():
         for row in reader:
             cert_data.append(row)
 
-    if request.method == "POST":
-        name = str(request.form["name"])
-        email = str(request.form["email"])
-        contact = str(request.form["contact"])
-        message = str(request.form["message"])[:500]
-        captcha_response = request.form["g-recaptcha-response"]
-
     context = {
         "content": github_repos,
         "projects_data": projects_data,
         "cert_data": cert_data,
         "skill_category": data["skills"]["categories"],
         "skills_data": data["skills"]["skills"],
+        "canonical_url": request.url,
     }
 
     return render_template("v4.html", **context)
