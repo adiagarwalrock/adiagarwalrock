@@ -19,8 +19,7 @@ load_dotenv(dotenv_path=ENV_PATH)
 
 app = Flask(__name__)
 app.secret_key = os.environ["APP_SECRET"]
-app.config["TEMPLATES_AUTO_RELOAD"] = True
-app.config["EXPLAIN_TEMPLATE_LOADING"] = True
+
 
 @app.route("/", methods=["GET"])
 def index():
@@ -87,4 +86,4 @@ def robots():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
