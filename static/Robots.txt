@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Allow: /resume
+Sitemap: https://www.adiagarwal.me/sitemap.xml

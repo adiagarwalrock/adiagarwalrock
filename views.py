@@ -1,7 +1,5 @@
-from flask import render_template, request, redirect, json, flash
+from flask import render_template, request, redirect, json
 from flask.helpers import url_for
-import requests
-import json
 import csv
 import os
 from dotenv import load_dotenv

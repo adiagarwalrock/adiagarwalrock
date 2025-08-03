@@ -1,13 +1,93 @@
 <!DOCTYPE html>
-<html class="sr" lang="en">
+
+<html lang="en">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description"
-            content="{% block meta_description %}Aditya Agarwal | Machine Learning Engineer | NYC | #open-to-work{% endblock %}">
+        
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="{% block meta_description %}Aditya Agarwal - AI/ML Engineer specializing in Conversational AI and Advanced RAG Systems. Building self-reflective AI systems in NYC. #OpenToWork{% endblock %}">
+        <meta name="keywords" content="{% block meta_keywords %}Aditya Agarwal, AI Engineer, Machine Learning, Conversational AI, RAG Systems, Vector Databases, NLP, Python, New York, NYC, AI/ML Engineer{% endblock %}">
+        <meta name="author" content="Aditya Agarwal">
+        <meta name="robots" content="index, follow">
+        <meta name="language" content="English">
+        <meta name="revisit-after" content="7 days">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+        <meta property="og:url" content="{{ canonical_url or request.url }}">
+        <meta property="og:title" content="{% block og_title %}{{ self.title() or 'Aditya Agarwal | AI/ML Engineer | Conversational AI Specialist' }}{% endblock %}">
+        <meta property="og:description" content="{% block og_description %}{{ self.meta_description() }}{% endblock %}">
+        <meta property="og:image" content="{% block og_image %}{{ url_for('static', filename='img/aditya_profile.jpg', _external=True) }}{% endblock %}">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:site_name" content="Aditya Agarwal Portfolio">
+        <meta property="og:locale" content="en_US">
+        
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="{% block twitter_card %}summary_large_image{% endblock %}">
+        <meta name="twitter:url" content="{{ canonical_url or request.url }}">
+        <meta name="twitter:title" content="{% block twitter_title %}{{ self.og_title() }}{% endblock %}">
+        <meta name="twitter:description" content="{% block twitter_description %}{{ self.og_description() }}{% endblock %}">
+        <meta name="twitter:image" content="{% block twitter_image %}{{ self.og_image() }}{% endblock %}">
+        <meta name="twitter:creator" content="@adiagarwalrock">
+        <meta name="twitter:site" content="@adiagarwalrock">
+        
+        <!-- LinkedIn -->
+        <meta property="article:author" content="Aditya Agarwal">
+        <meta property="profile:first_name" content="Aditya">
+        <meta property="profile:last_name" content="Agarwal">
+        <meta property="profile:username" content="adityaagarwal1999">
+        
+        <!-- Schema.org structured data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Aditya Agarwal",
+            "jobTitle": "AI/ML Engineer",
+            "description": "AI/ML Engineer specializing in Conversational AI and Advanced RAG Systems",
+            "url": "{{ canonical_url or request.url }}",
+            "image": "{{ url_for('static', filename='img/aditya_profile.jpg', _external=True) }}",
+            "sameAs": [
+                "https://www.linkedin.com/in/adityaagarwal1999/",
+                "https://github.com/adiagarwalrock",
+                "https://www.hackerrank.com/aditya_ag1234"
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "New York",
+                "addressRegion": "NY",
+                "addressCountry": "US"
+            },
+            "alumniOf": [
+                {
+                    "@type": "Organization",
+                    "name": "Stevens Institute of Technology",
+                    "sameAs": "https://www.stevens.edu/"
+                },
+                {
+                    "@type": "Organization", 
+                    "name": "Alliance University",
+                    "sameAs": "https://www.alliance.edu.in/"
+                }
+            ],
+            "knowsAbout": [
+                "Machine Learning",
+                "Artificial Intelligence", 
+                "Conversational AI",
+                "RAG Systems",
+                "Vector Databases",
+                "Natural Language Processing",
+                "Python",
+                "Deep Learning"
+            ]
+        }
+        </script>
 
-        <link rel="canonical" href="{{ canonical_url }}">
+        <link rel="canonical" href="{{ canonical_url or request.url }}">
+
         <!-- =====FAVICON===== -->
         <link rel="shortcut icon" href="{{ url_for('static', filename='icons/logo.png') }}">
 
@@ -17,24 +97,143 @@
         <link rel="apple-touch-icon" sizes="152x152"
             href="{{ url_for('static', filename='icons/touch-icon-152x152-precomposed.png') }}" />
 
-        <!-- =====Bootstrap CSS===== -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-        <!-- =====Bootstrap js===== -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-            crossorigin="anonymous"></script>
+        <!-- Custom Styles -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+            :root {
+                --violet: 250 100% 60%;
+                --blue: 214 100% 60%;
+            }
 
-        <!-- =====BOX ICONS===== -->
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-            crossorigin="anonymous" />
-        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+                overflow-x: hidden;
+            }
+
+            .gradient-bg {
+                background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+                position: relative;
+            }
+
+            .gradient-bg::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background:
+                    radial-gradient(circle at 25% 25%, hsl(var(--violet) / 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, hsl(var(--blue) / 0.1) 0%, transparent 50%);
+                pointer-events: none;
+            }
+
+            .text-gradient-primary {
+                background: linear-gradient(135deg, hsl(var(--violet)), hsl(var(--blue)));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .profile-image {
+                border-radius: 50%;
+                border: 3px solid hsl(var(--violet) / 0.3);
+                box-shadow: 0 10px 30px hsl(var(--violet) / 0.2);
+                animation: float 3s ease-in-out infinite;
+            }
+
+            @keyframes float {
+
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
+            .fade-in {
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeIn 0.8s ease forwards;
+            }
+
+            .fade-in-delay-1 {
+                animation-delay: 0.1s;
+            }
+
+            .fade-in-delay-2 {
+                animation-delay: 0.2s;
+            }
+
+            .fade-in-delay-3 {
+                animation-delay: 0.3s;
+            }
+
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .section-header {
+                position: relative;
+                display: inline-block;
+            }
+
+            .section-header::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: linear-gradient(90deg, hsl(var(--violet)), hsl(var(--blue)));
+                border-radius: 2px;
+            }
+
+            /* Blinking cursor for error page */
+            .blinking-cursor {
+                font-weight: 100;
+                font-size: 30px;
+                color: #ffffff;
+                -webkit-animation: 1s blink step-end infinite;
+                -moz-animation: 1s blink step-end infinite;
+                -ms-animation: 1s blink step-end infinite;
+                -o-animation: 1s blink step-end infinite;
+                animation: 1s blink step-end infinite;
+            }
+
+            @keyframes blink {
+                from, to {
+                    color: transparent;
+                }
+                50% {
+                    color: white;
+                }
+            }
+
+            @-webkit-keyframes blink {
+                from, to {
+                    color: transparent;
+                }
+                50% {
+                    color: white;
+                }
+            }
+
+        </style>
 
         {% block head %}
         {% endblock %}
@@ -43,31 +242,26 @@
             {% block title %}
             {% endblock %}
         </title>
-        <script src="https://unpkg.com/scrollreveal"></script>
-        </head>
 
+    </head>
 
-    <body class="container-sm pt-5">
+    <body class="gradient-bg text-white">
+        <div class="min-h-screen flex flex-col">
+            <div class="container mx-auto px-4 py-8 max-w-6xl flex-grow">
+                <main class="relative z-10">
+                    {% block main %}
+                    {% endblock %}
+                </main>
 
-        <script src="http://code.jquery.com/jquery-1.5.js"></script>
-<!-- <script>
-    setTimeout(function () {
-        location.reload(true);
-    }, 20000); // 10000 milliseconds = 10 seconds
-</script> -->
+                <footer class="mt-16 border-t border-gray-800 pt-8">
+                    {% include "footer.html" %}
+                </footer>
+            </div>
+        </div>
 
-        <main id="particles-js">
-            {% block main %}s
-            {% endblock %}
-        </main>
-
-        <footer id="footer" class="footer mt-4" style="margin: 0; padding:0;">
-            {% include "footer.html" %}
-        </footer>
+        <!-- Modern JavaScript -->
+        <script src="{{ url_for('static', filename='js/modern.js') }}"></script>
 
     </body>
-    <!--===== JS =====-->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <script src="http://www.jsdelivr.com/#!particles.js"></script>
 
 </html>

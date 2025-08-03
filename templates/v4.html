@@ -1,233 +1,635 @@
 {% extends 'base.html' %}
 
-
 {% block title %}
-@adi_agarwal | Personal Website | Programming Insights & Machine Learning
+Aditya Agarwal | AI/ML Engineer | Conversational AI & RAG Systems Expert | NYC
 {% endblock %}
 
-{% block meta_description %}Welcome to my personal website where I share insights on programming, machine learning, and
-more.{% endblock %}
+{% block meta_description %}
+Aditya Agarwal - AI/ML Engineer specializing in Conversational AI and Advanced RAG Systems. Currently building self-reflective AI systems at an early-stage startup in NYC. Expert in Vector Databases, NLP, and Production ML. Open to new opportunities. #OpenToWork
+{% endblock %}
+
+{% block meta_keywords %}
+Aditya Agarwal, AI Engineer, Machine Learning Engineer, Conversational AI, RAG Systems, Vector Databases, NLP, Natural Language Processing, Python, Deep Learning, Stevens Institute of Technology, New York, NYC, AI/ML Engineer, Self-Reflective AI, Production ML, Transformer Models, OpenToWork
+{% endblock %}
+
+{% block og_title %}
+Aditya Agarwal | AI/ML Engineer | Conversational AI & Advanced RAG Systems
+{% endblock %}
+
+{% block og_description %}
+AI/ML Engineer specializing in Conversational AI and Advanced RAG Systems. Building self-reflective AI systems in NYC. Expert in Vector Databases, NLP, and Production ML.
+{% endblock %}
+
+{% block twitter_title %}
+Aditya Agarwal | AI/ML Engineer | Conversational AI Expert
+{% endblock %}
+
+{% block twitter_description %}
+AI/ML Engineer building self-reflective AI systems. Expert in Conversational AI, RAG Systems, and Vector Databases. Based in NYC. #OpenToWork
+{% endblock %}
 
 {% block main %}
 
-
-
-<section class="py-3" id="intro">
-    <div class="row flex-lg-row-reverse d-flex justify-content-between py-auto">
-        <div class="col-10 col-sm-8 col-lg-6" style="align-items: center!important;">
-            <center>
-                <img style="max-height: 200px; border-radius: 50%; float: right;"
-                    src="{{ url_for('static', filename='img/aditya_profile.jpg') }}" loading="lazy" alt="@adi_agarwal"
-                    class="user-select-none align-center home__img img-fluid" loading="lazy">
-            </center>
-        </div>
-
-        <div class="col-lg-6 my-3">
-            <h1 class="user-select-none home__title">Hello World,<br>I'm <span class="badge bg-light text-dark">Aditya
-                    Agarwal</span>😃</h1>
-            <h3 class="user-select-none home__title mt-1">A <span class="badge bg-primary">Backend Developer</span>
-                and<br><span class="badge bg-primary mt-1">Machine Learning
-                    Engineer</span></h3>
-            <h5><span class="user-select-none home__title text-success mt-1">📍 New York City, NY</span></h>
-            <div class="row">
-                <div class="py-2 px-0 home__social-icon">
-                    <div class="inline">
-                        <a href="https://www.linkedin.com/in/adiagarwal1509/" target="_blank" class="px-2">
-                            <img src="https://img.icons8.com/color/35/000000/linkedin.png" />
-                        </a>
-                    </div>
-                    <div class="inline">
-                        <a href="https://github.com/adiagarwalrock" target="_blank" class="px-2">
-                            <img src="https://img.icons8.com/doodle/35/000000/github--v1.png" />
-                        </a>
-                    </div>
-                    <div class="inline">
-                        <a href="https://www.hackerrank.com/aditya_ag1234?hr_r=1" target="_blank" class="px-2">
-                            <img
-                                src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/35/null/external-hackerrank-is-a-technology-company-that-focuses-on-competitive-programming-logo-color-tal-revivo.png" />
-                        </a>
-                    </div>
-                    <div class="inline">
-                        <a href="mailto:aagarw14@stevens.edu?subject=Let's Connect!" class="px-2">
-                            <img src="https://img.icons8.com/?size=35&id=PyVmwJx682vD&format=png&color=000000" />
-                        </a>
-                    </div>
-                </div>
+<!-- Hero Section -->
+<section class="py-20" id="intro">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Profile Image -->
+        <div class="flex justify-center lg:order-2">
+            <div class="fade-in">
+                <img class="profile-image w-64 h-64 object-cover"
+                    src="{{ url_for('static', filename='img/aditya_profile.jpg') }}" loading="lazy"
+                    alt="Aditya Agarwal">
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <p class="about__text">
-        <ul class="text-justify fs-4 lead py-1 about__text" styles="list-style-type: '-';">
-            <li>🥅 <strong>2024 Goals:</strong> Make a positive impact on millions through my <u>work</u></li>
-            <li>🎨 <strong>Current Focus:</strong> Experimenting with <span class="badge bg-primary">Generative AI</span> and <span
-                    class="badge bg-success">Transformer
-                    Models</span></li>
-            <li>💻 <strong>Lifelong Learner:</strong> <u>Self-taught programmer</u> always eager to <u>learn new things</u></li>
-            <li>🤝 <strong>People Person:</strong> Enjoy meeting new people and building <u>connections</u></li>
-            <li>⚛️ <strong>Ambitious Novice:</strong> Still early in my journey but have <u>big plans for the future</u></li>
-            <li>🎮 <strong>Gamer & Tinkerer:</strong> Love playing <u>MMOs</u> and tinkering with <u>new tech!</u></li>
-            <li>✌️ <strong>Let's Connect:</strong> Intrigued? Reach out and let's <a class="text-primary"
-                    href="https://www.linkedin.com/in/adityaagarwal1999/">connect</a>!</li>
-        </ul>
-        </p>
-    </div>
-</section>
+        <!-- Hero Content -->
+        <div class="lg:order-1">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 fade-in">
+                Hello World,<br>
+                I'm <span
+                    class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-violet-500 to-blue-500 text-white rounded-lg text-2xl md:text-3xl lg:text-4xl">Aditya
+                    Agarwal</span> 👋
+            </h1>
 
+            <h2 class="text-xl md:text-2xl mb-6 fade-in-delay-1">
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-gradient-to-r from-violet-500 to-blue-500 text-white rounded-md text-sm font-medium">AI/ML
+                    Engineer</span> specializing in
+                <span class="text-gradient-primary font-semibold">Conversational AI</span> and
+                <span class="text-gradient-primary font-semibold">Advanced RAG Systems</span>
+            </h2>
 
-<section class="py-3 education" id="education">
-    <h2 class="user-select-none fw-bold"> > Education 🎓</h2>
-    <hr>
-    <ol class="list-group list-group-flush py-2">
-        <li class="list-group-item border-0 d-flex education justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-                <div class="fw-bold fs-4">📜 Masters in Machine Learning</div>
-                <div class="fs-5">
-                    <div>Stevens Institute of Technology</div>
-                    <div>
-                        <details>
-                            <summary>Relevant Courses</summary>
-                            <ul>
-                                <li>Text Mining and Information Retrieval</li>
-                                <li>Natural Language Processing</li>
-                                <li>Artificial Intelligence</li>
-                                <li>Machine Learning: Fundamentals and Application</li>
-                                <li>Knowledge Discovery and Data Mining</li>
-                            </ul>
-                        </details>
-                    </div>
-                </div>
+            <p class="text-lg text-gray-300 mb-6 fade-in-delay-2 max-w-2xl">
+                I design conversational scripting systems that guide language models through continuous self-reflection,
+                making AI interactions feel natural while capturing valuable user insights.
+            </p>
+
+            <div class="mb-8 fade-in-delay-3">
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">📍
+                    New York City, NY</span>
             </div>
-            <span class="badge bg-success fs-5 rounded-pill">Sep 2022 &rightarrow; May 2024</span>
-        </li>
-        <li class="list-group-item border-0 d-flex education justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-                <div class="fw-bold fs-4">📃 Bachelors in Computer Science and Engineering</div>
-                <div class="fs-5">
-                    <div>Alliance University</div>
-                    <div>
-                        <details>
-                            <summary>Relevant Courses</summary>
-                            <ul>
-                                <li>Database Management Systems</li>
-                                <li>Operating Systems</li>
-                                <li>Data Structures</li>
-                                <li>Big data Analytics</li>
-                                <li>Data Management and Data Warehousing</li>
-                                <li>Engineering Mathematics (Probability, Statistics, Calculus)</li>
-                                <li>Cloud Computing</li>
-                            </ul>
-                        </details>
-                    </div>
-                </div>
-            </div>
-            <span class="badge bg-success fs-5 rounded-pill">Aug 2017 &rightarrow; Jul 2021</span>
-        </li>
-    </ol>
-</section>
 
-<section class="py-3 all__skills" id="skills">
-    <h2 class="user-select-none fw-bold"> > Skills 👨‍💻</h2>
-    <hr>
-    <div>
-        <div class="row row-cols-1 row-cols-md-2">
-            {% for cat in skill_category %}
-            <div class="col all__skills pb-4">
-                <div class="mt-3">
-                    <p class="h3">- {{cat | capitalize}}</p>
-                    <div>
-                        {% for item in skills_data[cat] %}
-                        <div class="p-2" style="display:inline;">
-                            <span style="border-radius: 10px;" class="skills__data fs-5">
-                                {% if item != 'nan' %}
-                                {% set path_img = 'icons/' + item + '.png' %}
-                                <span class="text-nowrap">
-                                    <img style="border-radius:20px;" width="40px" class="py-1 px-2"
-                                        src="{{ url_for('static', filename=path_img) }}" alt="{{ item }}'s image">
-                                    <span class="pe-3 text-light">
-                                        {{ item }}
-                                    </span>
-                                </span>
-                                {% endif %}
-                            </span>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="py-3" id="projects">
-    <h2 class="user-select-none fw-bold">> Projects ✍</h2>
-    <hr>
-    <div class="">
-        <div class="row">
-            {% for item in content%}
-            {% if item.full_name in projects_data %}
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-dark project__card mt-3 mb-2">
-                    <div class="card-body">
-                        <h5 class="card-title project__card__title">
-                            <img src="https://img.icons8.com/glyph-neue/30/000000/repository.png"
-                                alt="repository-image" />
-                            <a href="{{item.html_url}}" class="url fs-4 text-dark fw-bold">
-                                {{item.full_name.split('/')[1]}}
-                            </a>
-                        </h5>
-                        <div card="card-text">
-                            <p class="card-text text-dark fs-5 project__desc__card">
-                                {% if item.description %}
-                                {{item.description[:45]}}...
-                                {% else %}
-                                no description
-                                {% endif %}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
-
-        <div class="py-2 my-2">
-            <center>
-                <a href="https://www.github.com/adiagarwalrock" class="btn btn-primary btn-lg">
-                    <span class="p-2">
-                        More projects...
-                    </span>
+            <!-- Social Links -->
+            <div class="flex gap-4 fade-in-delay-3">
+                <a href="https://www.linkedin.com/in/adityaagarwal1999/" target="_blank"
+                    class="w-12 h-12 bg-gray-800 border border-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:border-violet-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300">
+                    <img src="https://img.icons8.com/color/35/000000/linkedin.png" alt="LinkedIn" />
                 </a>
-            </center>
+                <a href="https://github.com/adiagarwalrock" target="_blank"
+                    class="w-12 h-12 bg-gray-800 border border-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:border-violet-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300">
+                    <img src="https://img.icons8.com/doodle/35/000000/github--v1.png" alt="GitHub" />
+                </a>
+                <a href="https://www.hackerrank.com/aditya_ag1234?hr_r=1" target="_blank"
+                    class="w-12 h-12 bg-gray-800 border border-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:border-violet-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300">
+                    <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/35/null/external-hackerrank-is-a-technology-company-that-focuses-on-competitive-programming-logo-color-tal-revivo.png"
+                        alt="HackerRank" />
+                </a>
+                <a href="mailto:adiagarwal1509@gmail.com?subject=Let's Connect!"
+                    class="w-12 h-12 bg-gray-800 border border-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:border-violet-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300">
+                    <img src="https://img.icons8.com/?size=35&id=PyVmwJx682vD&format=png&color=000000" alt="Email" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Cards -->
+    <div class="grid md:grid-cols-2 gap-6 mt-16">
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 fade-in-delay-1">
+            <h3 class="text-xl font-semibold mb-3">🚀 <strong>Current Role:</strong> AI/ML Engineer at early-stage
+                startup</h3>
+            <p class="text-gray-400">Leading Search & Retrieval systems using advanced RAG implementations with high
+                accuracy. Building self-reflective AI systems as the sole SDE.</p>
+        </div>
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 fade-in-delay-1">
+            <h3 class="text-xl font-semibold mb-3">🎯 <strong>Expertise:</strong> Conversational AI Architecture</h3>
+            <p class="text-gray-400">I design conversational scripting systems where AI guides users through natural
+                conversations while achieving specific goals through continuous self-reflection.</p>
+        </div>
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 fade-in-delay-2">
+            <h3 class="text-xl font-semibold mb-3">💡 <strong>Innovation:</strong> Self-Reflective AI Systems</h3>
+            <p class="text-gray-400">Developing AI that can adapt and improve its approach in real-time, making data
+                collection feel like natural conversation rather than interrogation.</p>
+        </div>
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 fade-in-delay-2">
+            <h3 class="text-xl font-semibold mb-3">🔧 <strong>Technical Focus:</strong> Advanced RAG & LLM Optimization
+            </h3>
+            <p class="text-gray-400">Implementing cutting-edge retrieval systems with <span
+                    class="inline-flex items-center px-2 py-1 bg-gradient-to-r from-violet-500 to-blue-500 text-white rounded text-xs font-medium">Vector
+                    Databases</span>, <span
+                    class="inline-flex items-center px-2 py-1 bg-gradient-to-r from-violet-500 to-blue-500 text-white rounded text-xs font-medium">Transformer
+                    Models</span>, and <span
+                    class="inline-flex items-center px-2 py-1 bg-green-600 text-white rounded text-xs font-medium">Production
+                    ML</span>.</p>
+        </div>
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 fade-in-delay-3">
+            <h3 class="text-xl font-semibold mb-3">📚 <strong>Learning Philosophy:</strong> Build while Learning</h3>
+            <p class="text-gray-400">Self-taught engineer who learns by building. Currently mastering production ML
+                systems while developing innovative conversational AI solutions.</p>
+        </div>
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 fade-in-delay-3">
+            <h3 class="text-xl font-semibold mb-3">🌟 <strong>Let's Connect:</strong> <a
+                    class="text-gradient-primary font-medium hover:underline"
+                    href="https://www.linkedin.com/in/adityaagarwal1999/">Ready to innovate together?</a></h3>
+            <p class="text-gray-400">Always excited to discuss AI, share ideas, and collaborate on cutting-edge projects
+                that push the boundaries of what's possible.</p>
         </div>
     </div>
 </section>
 
 
-<section class="py-3 certifi__all" id="certificates">
-    <h2 class="user-select-none fw-bold">> Certificates 📜</h2>
-    <hr>
-    <ol class="list-group list-group-numbered list-group-flush">
-        {% for item in cert_data %}
-        <li class="list-group-item border-0 fs-4 certifi__all d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-                <div class="fw-bold">{{item[0]}}</div>
-                <figcaption class="blockquote">
-                    {% if item[2] != '' %}
-                    {{item[2]}} |
-                    {% endif %}
-                    <cite title="{{item[1]}}">
-                        {{item[1]}}
-                    </cite>
-                </figcaption>
+<!-- Documents Section -->
+<section class="py-16" id="documents">
+    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8 fade-in text-center">
+        <h2 class="text-3xl font-bold mb-4 section-header text-gradient-primary">Professional Documents 📄</h2>
+        <p class="text-gray-400 mb-8">Download my latest resume and cover letter</p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <a href="https://drive.google.com/file/d/YOUR_RESUME_FILE_ID/view?usp=sharing" target="_blank"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                    <path
+                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                </svg>
+                Download Resume
+            </a>
+
+            <a href="https://drive.google.com/file/d/YOUR_COVER_LETTER_FILE_ID/view?usp=sharing" target="_blank"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
+                </svg>
+                View Cover Letter
+            </a>
+        </div>
+
+        <div class="p-4 rounded-lg bg-violet-500/10 border border-violet-500/20">
+            <p class="text-sm text-gray-400">
+                <strong>Note:</strong> These documents are regularly updated to reflect my latest achievements and
+                experience.
+                Last updated: <span class="text-gradient-primary font-medium">January 2025</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section class="py-16" id="education">
+    <h2 class="text-3xl font-bold mb-8 section-header fade-in">Education 🎓</h2>
+
+    <div class="space-y-6">
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 fade-in-delay-1">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                <div class="flex-1">
+                    <h3 class="text-xl font-bold mb-2">📜 Master of Science in Machine Learning</h3>
+                    <p class="text-lg text-gray-400 mb-2">Stevens Institute of Technology, NJ</p>
+                    <p class="text-sm text-gray-500 mb-4">GPA: 3.5/4.0</p>
+                    <details class="text-sm">
+                        <summary class="cursor-pointer text-gradient-primary font-medium mb-2">Key Coursework & Skills
+                        </summary>
+                        <ul class="list-disc list-inside space-y-1 text-gray-400 ml-4">
+                            <li>Text Mining and Information Retrieval</li>
+                            <li>Natural Language Processing</li>
+                            <li>Artificial Intelligence</li>
+                            <li>Machine Learning: Fundamentals and Application</li>
+                            <li>Knowledge Discovery and Data Mining</li>
+                            <li>Advanced AI/ML Research Projects</li>
+                        </ul>
+                    </details>
+                </div>
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">Sep
+                    2022 → May 2024</span>
             </div>
-            <span class="badge bg-success rounded-pill">{{item[3]}}</span>
-        </li>
+        </div>
+
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 fade-in-delay-2">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                <div class="flex-1">
+                    <h3 class="text-xl font-bold mb-2">📃 Bachelor of Engineering in Computer Science</h3>
+                    <p class="text-lg text-gray-400 mb-4">Alliance University, Bangalore</p>
+                    <details class="text-sm">
+                        <summary class="cursor-pointer text-gradient-primary font-medium mb-2">Core Subjects
+                        </summary>
+                        <ul class="list-disc list-inside space-y-1 text-gray-400 ml-4">
+                            <li>Database Management Systems</li>
+                            <li>Operating Systems</li>
+                            <li>Data Structures and Algorithms</li>
+                            <li>Big Data Analytics</li>
+                            <li>Data Management and Data Warehousing</li>
+                            <li>Engineering Mathematics (Probability, Statistics, Calculus)</li>
+                            <li>Cloud Computing</li>
+                            <li>Software Engineering</li>
+                        </ul>
+                    </details>
+                </div>
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">Aug
+                    2017 → Jul 2021</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Professional Experience Section -->
+<section class="py-16" id="experience">
+    <h2 class="text-3xl font-bold mb-12 section-header fade-in">Professional Experience 💼</h2>
+
+    <div class="space-y-8">
+        <!-- Current Role - Machine Learning Engineer -->
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 fade-in-delay-1">
+            <div class="flex items-start gap-4">
+                <div class="text-2xl">🚀</div>
+                <div class="flex-1">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gradient-primary">Machine Learning Engineer</h3>
+                            <p class="text-lg text-gray-400">Soopra.ai, San Francisco</p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">August 2024 - Present</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Agentic Systems</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Vector Databases</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">RAG Pipelines</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Security Controls</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">High Availability</span>
+                    </div>
+
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Architected scalable AI infrastructure implementing Agentic systems with custom recommendation engines, improving engagement by 35%
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Developed production-grade AI pipelines for PDF document processing with vector database integration
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Built resilient data processing systems creating prototype Agent-first social media platform with high availability architecture
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Implemented security controls for AI service deployments, ensuring compliance with data governance standards
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Developed conversational AI security scripts achieving 30% improvement in user satisfaction and 20% reduction in onboarding time
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Software Developer Intern -->
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 fade-in-delay-2">
+            <div class="flex items-start gap-4">
+                <div class="text-2xl">💼</div>
+                <div class="flex-1">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gradient-primary">Software Developer Intern</h3>
+                            <p class="text-lg text-gray-400">Soopra.ai, San Francisco</p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">June 2023 - May 2024</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">RAG Pipelines</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Event-Driven Architecture</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">ETL Infrastructure</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Real-time Processing</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">95% Accuracy</span>
+                    </div>
+
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Engineered enterprise RAG pipelines with vector databases for multi-source data ingestion, achieving 95% embedding accuracy
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Designed event-driven chat systems utilizing domain-driven architecture, increasing user engagement by 25%
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Built scalable ETL infrastructure for real-time social media data extraction and processing using messaging patterns
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Implemented decay-function algorithms for reverse chronological retrieval with intelligent response routing
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Reduced data loading time by 15% through optimized messaging patterns and data processing workflows
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full-Stack Developer -->
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 fade-in-delay-3">
+            <div class="flex items-start gap-4">
+                <div class="text-2xl">🌐</div>
+                <div class="flex-1">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gradient-primary">Full-Stack Developer</h3>
+                            <p class="text-lg text-gray-400">SA Consultant, Bangalore</p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">October 2021 - June 2022</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Django</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">PostgreSQL</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">RESTful APIs</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">AWS RDS</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Heroku</span>
+                    </div>
+
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Delivered enterprise web application using Django framework with object-oriented design principles
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Increased team efficiency by 30% and improved client communication through secure RESTful APIs
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Implemented billing and monitoring systems with PostgreSQL backend, enhancing project documentation accuracy
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Deployed cloud-native solution on Heroku with AWS RDS integration for high availability
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Provided audit trails for compliance and ensured data security for distributed teams
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research Intern -->
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 fade-in-delay-4">
+            <div class="flex items-start gap-4">
+                <div class="text-2xl">🔬</div>
+                <div class="flex-1">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gradient-primary">Research Intern</h3>
+                            <p class="text-lg text-gray-400">National Institute of Technology, Rourkela</p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">June 2019 - July 2019</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Recommendation Algorithms</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Collaborative Filtering</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">ML Models</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Netflix Challenge</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Data Analytics</span>
+                    </div>
+
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Researched recommendation algorithms focusing on collaborative filtering and machine learning models
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Worked on the Netflix Challenge, gaining foundational knowledge in AI/ML systems
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Developed data-driven security analytics and pattern recognition skills
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Built expertise in machine learning fundamentals and recommendation system architecture
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Established foundation for future work in AI/ML and data science applications
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-16" id="skills">
+    <h2 class="text-3xl font-bold mb-12 section-header fade-in">Skills & Technologies 👨‍💻</h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+        {% for cat in skill_category %}
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 fade-in-delay-{{ loop.index }}">
+            <h3 class="text-xl font-semibold mb-6 text-gradient-primary">{{ cat | capitalize }}</h3>
+            <div class="flex flex-wrap gap-3">
+                {% for item in skills_data[cat] %}
+                {% if item != 'nan' %}
+                {% set path_img = 'icons/' + item + '.png' %}
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="{{ url_for('static', filename=path_img) }}" alt="{{ item }}'s image"
+                        class="w-6 h-6 rounded">
+                    <span>{{ item }}</span>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
         {% endfor %}
-    </ol>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-16" id="projects">
+    <h2 class="text-3xl font-bold mb-12 section-header fade-in">Featured Projects ✨</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {% for item in content%}
+        {% if item.full_name in projects_data %}
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 h-full flex flex-col hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 fade-in-delay-{{ loop.index }}">
+            <div class="flex items-center gap-3 mb-4">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="text-gray-400">
+                    <path
+                        d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z" />
+                </svg>
+                <h3 class="text-lg font-semibold">{{ item.full_name.split('/')[1] }}</h3>
+            </div>
+
+            <p class="text-gray-400 mb-6 flex-grow">
+                {% if item.description %}
+                {{ item.description }}
+                {% else %}
+                A featured project showcasing modern development practices and innovative solutions.
+                {% endif %}
+            </p>
+
+            <div class="flex justify-between items-center">
+                <a href="{{ item.html_url }}" target="_blank"
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-transparent border border-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
+                    View Project
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                        <path fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                    </svg>
+                </a>
+                {% if item.language %}
+                <span
+                    class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">{{ item.language }}</span>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="text-center fade-in">
+        <a href="https://www.github.com/adiagarwalrock" target="_blank"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            Explore All Projects
+        </a>
+    </div>
+</section>
+
+
+<!-- GitHub Activity Section -->
+<section class="py-16" id="github-activity">
+    <h2 class="text-3xl font-bold mb-12 section-header fade-in">GitHub Activity 📊</h2>
+
+    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8 fade-in">
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Contribution Graph -->
+            <div class="lg:col-span-2">
+                <h3 class="text-xl font-semibold mb-6 text-gradient-primary">Contribution Graph</h3>
+                <div class="p-4 bg-gray-800/50 border border-gray-700 rounded-lg overflow-x-auto">
+                    <img src="https://ghchart.rshah.org/4f46e5/adiagarwalrock" alt="GitHub Contribution Graph"
+                        class="w-full h-auto rounded transition-transform hover:scale-105" loading="lazy">
+                </div>
+                <p class="text-sm text-gray-400 mt-4">
+                    Consistent coding activity across various projects and contributions to open source.
+                </p>
+            </div>
+
+            <!-- GitHub Stats -->
+            <div>
+                <h3 class="text-xl font-semibold mb-6 text-gradient-primary">GitHub Stats</h3>
+                <div class="space-y-4">
+                    <div class="p-3 bg-gray-800/50 border border-gray-700 rounded-lg">
+                        <img src="https://github-readme-stats.vercel.app/api?username=adiagarwalrock&show_icons=true&theme=dark&bg_color=00000000&text_color=ffffff&icon_color=4f46e5&title_color=4f46e5&border_color=333"
+                            alt="GitHub Stats" class="w-full h-auto rounded" loading="lazy">
+                    </div>
+                    <div class="p-3 bg-gray-800/50 border border-gray-700 rounded-lg">
+                        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adiagarwalrock&layout=compact&theme=dark&bg_color=00000000&text_color=ffffff&title_color=4f46e5&border_color=333"
+                            alt="Top Languages" class="w-full h-auto rounded" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-800">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+                <div>
+                    <h4 class="font-semibold text-lg">Recent Activity</h4>
+                    <p class="text-sm text-gray-400">Building the future with code, one commit at a time</p>
+                </div>
+                <a href="https://github.com/adiagarwalrock" target="_blank"
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-transparent border border-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    View Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="py-16" id="certificates">
+    <h2 class="text-3xl font-bold mb-12 section-header fade-in">Certifications & Awards 🏆</h2>
+
+    <div class="space-y-4">
+        {% for item in cert_data %}
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 fade-in-delay-{{ loop.index }}">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                <div class="flex-1">
+                    <h3 class="text-lg font-semibold text-gradient-primary mb-2">{{ item[0] }}</h3>
+                    <div class="text-sm text-gray-400">
+                        {% if item[2] != '' %}
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">{{ item[2] }}</span>
+                        •
+                        {% endif %}
+                        <cite>{{ item[1] }}</cite>
+                    </div>
+                </div>
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">{{ item[3] }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </section>
 
 

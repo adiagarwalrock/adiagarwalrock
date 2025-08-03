@@ -3,7 +3,6 @@ from flask import (
     render_template,
     redirect,
     request,
-    Response,
     send_from_directory,
 )
 from flask.helpers import url_for
@@ -54,32 +53,13 @@ def add_expires_header(response):
         response.headers["Cache-Control"] = "public, max-age=2592000"
     return response
 
+@app.route('/robots.txt')
+def robots_txt():
+    return send_from_directory(app.static_folder, 'Robots.txt')
 
-@app.route("/sitemap.xml")
-def sitemap():
-    base_url = request.host_url.rstrip("/")  # Get the base URL
-    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>{base_url}/</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>{base_url}/resume</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-</urlset>"""
-
-    return Response(xml, mimetype="application/xml")
-
-
-@app.route("/robots.txt")
-def robots():
-    return send_from_directory(os.getcwd(), "Robots.txt")
+@app.route('/sitemap.xml')
+def sitemap_xml():
+    return send_from_directory(app.static_folder, 'sitemap.xml')
 
 
 if __name__ == "__main__":
