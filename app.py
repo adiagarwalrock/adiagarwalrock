@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 import os
 
+from config import Config
 from views import *
 
 ENV_PATH = Path(".") / ".env"
@@ -63,4 +64,4 @@ def sitemap_xml():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=Config.DEBUG)

@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Aditya Agarwal - AI/ML Engineer specializing in Conversational AI and Advanced RAG Systems. Building self-reflective AI systems in NYC. #OpenToWork">
+        <meta name="keywords" content="Aditya Agarwal, AI Engineer, Machine Learning, Conversational AI, RAG Systems, Vector Databases, NLP, Python, New York, NYC, AI/ML Engineer">
+        <meta name="author" content="Aditya Agarwal">
+        <meta name="robots" content="index, follow">
+        <meta name="language" content="English">
+        <meta name="revisit-after" content="7 days">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://adiagarwalrock.github.io/adiagarwalrock/">
+        <meta property="og:title" content="Aditya Agarwal | AI/ML Engineer | Conversational AI Specialist">
+        <meta property="og:description" content="Aditya Agarwal - AI/ML Engineer specializing in Conversational AI and Advanced RAG Systems. Building self-reflective AI systems in NYC. #OpenToWork">
+        <meta property="og:image" content="https://adiagarwalrock.github.io/adiagarwalrock/static/img/aditya_profile.jpg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:site_name" content="Aditya Agarwal Portfolio">
+        <meta property="og:locale" content="en_US">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:url" content="https://adiagarwalrock.github.io/adiagarwalrock/">
+        <meta name="twitter:title" content="Aditya Agarwal | AI/ML Engineer | Conversational AI Specialist">
+        <meta name="twitter:description" content="Aditya Agarwal - AI/ML Engineer specializing in Conversational AI and Advanced RAG Systems. Building self-reflective AI systems in NYC. #OpenToWork">
+        <meta name="twitter:image" content="https://adiagarwalrock.github.io/adiagarwalrock/static/img/aditya_profile.jpg">
+        <meta name="twitter:creator" content="@adityaag1234">
+        <meta name="twitter:site" content="@adityaag1234">
+
+        <!-- LinkedIn -->
+        <meta property="article:author" content="Aditya Agarwal">
+        <meta property="profile:first_name" content="Aditya">
+        <meta property="profile:last_name" content="Agarwal">
+        <meta property="profile:username" content="adityaagarwal1999">
+
+        <!-- Schema.org structured data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Aditya Agarwal",
+            "jobTitle": "AI/ML Engineer",
+            "description": "AI/ML Engineer specializing in Conversational AI and Advanced RAG Systems",
+            "url": "https://adiagarwalrock.github.io/adiagarwalrock/",
+            "image": "https://adiagarwalrock.github.io/adiagarwalrock/static/img/aditya_profile.jpg",
+            "sameAs": [
+                "https://www.linkedin.com/in/adityaagarwal1999/",
+                "https://github.com/adiagarwalrock",
+                "https://www.hackerrank.com/aditya_ag1234"
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "New York",
+                "addressRegion": "NY",
+                "addressCountry": "US"
+            },
+            "alumniOf": [
+                {
+                    "@type": "Organization",
+                    "name": "Stevens Institute of Technology",
+                    "sameAs": "https://www.stevens.edu/"
+                },
+                {
+                    "@type": "Organization",
+                    "name": "Alliance University",
+                    "sameAs": "https://www.alliance.edu.in/"
+                }
+            ],
+            "knowsAbout": [
+                "Machine Learning",
+                "Artificial Intelligence",
+                "Conversational AI",
+                "RAG Systems",
+                "Vector Databases",
+                "Natural Language Processing",
+                "Python",
+                "Deep Learning"
+            ]
+        }
+        </script>
+
+        <link rel="canonical" href="https://adiagarwalrock.github.io/adiagarwalrock/">
+
+        <!-- =====FAVICON===== -->
+        <link rel="shortcut icon" href="static/icons/logo.png">
+
+        <!-- =====TOUCH-ICON===== -->
+        <link rel="apple-touch-icon" sizes="120x120" href="static/icons/touch-icon-120x120-precomposed.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="static/icons/touch-icon-152x152-precomposed.png" />
+
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <!-- Custom Styles -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+            :root {
+                --violet: 250 100% 60%;
+                --blue: 214 100% 60%;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+                overflow-x: hidden;
+            }
+
+            .gradient-bg {
+                background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+                position: relative;
+            }
+
+            .gradient-bg::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background:
+                    radial-gradient(circle at 25% 25%, hsl(var(--violet) / 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, hsl(var(--blue) / 0.1) 0%, transparent 50%);
+                pointer-events: none;
+                z-index: 2;
+            }
+
+            /* Full Viewport Grid Pattern */
+            .grid-background {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                opacity: 0.7;
+                background:
+                    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                    radial-gradient(circle at 160px 160px, rgba(168, 85, 247, 0.6) 2px, transparent 2px),
+                    radial-gradient(circle at 200px 40px, rgba(168, 85, 247, 0.4) 1px, transparent 1px),
+                    radial-gradient(circle at 320px 80px, rgba(59, 130, 246, 0.6) 2px, transparent 2px),
+                    radial-gradient(circle at 200px 120px, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
+                    radial-gradient(circle at 200px 200px, rgba(168, 85, 247, 0.6) 2px, transparent 2px),
+                    radial-gradient(circle at 400px 400px, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
+                    radial-gradient(circle at 480px 600px, rgba(168, 85, 247, 0.6) 2px, transparent 2px),
+                    radial-gradient(circle at 600px 400px, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
+                    radial-gradient(circle at 240px 360px, rgba(168, 85, 247, 0.6) 2px, transparent 2px),
+                    radial-gradient(circle at 360px 240px, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
+                    radial-gradient(circle at 800px 200px, rgba(168, 85, 247, 0.5) 2px, transparent 2px),
+                    radial-gradient(circle at 1000px 400px, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
+                    radial-gradient(circle at 1200px 300px, rgba(168, 85, 247, 0.5) 2px, transparent 2px),
+                    radial-gradient(circle at 1400px 500px, rgba(59, 130, 246, 0.4) 1px, transparent 1px);
+                background-size: 40px 40px;
+                transform: skewY(-12deg);
+                transform-origin: top left;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+            .text-gradient-primary {
+                background: linear-gradient(135deg, hsl(var(--violet)), hsl(var(--blue)));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .profile-image {
+                border-radius: 50%;
+                border: 3px solid hsl(var(--violet) / 0.3);
+                box-shadow: 0 10px 30px hsl(var(--violet) / 0.2);
+                animation: float 3s ease-in-out infinite;
+            }
+
+            @keyframes float {
+                0%, 100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
+            .section-header {
+                position: relative;
+                display: inline-block;
+            }
+
+            .section-header::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: linear-gradient(90deg, hsl(var(--violet)), hsl(var(--blue)));
+                border-radius: 2px;
+            }
+
+            /* Box Reveal Animation */
+            .box-reveal {
+                position: relative;
+                overflow: hidden;
+                display: inline-block;
+            }
+
+            .box-reveal::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, hsl(var(--violet)), hsl(var(--blue)));
+                transform: translateX(-100%);
+                animation: box-reveal 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+                animation-delay: var(--delay, 0s);
+                z-index: 1;
+            }
+
+            .box-reveal > * {
+                opacity: 0;
+                animation: text-reveal 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+                animation-delay: calc(var(--delay, 0s) + 0.6s);
+                position: relative;
+                z-index: 2;
+            }
+
+            @keyframes box-reveal {
+                0% {
+                    transform: translateX(-100%);
+                }
+                50% {
+                    transform: translateX(0%);
+                }
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+
+            @keyframes text-reveal {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Box reveal variants with different delays */
+            .box-reveal-1 { --delay: 0s; }
+            .box-reveal-2 { --delay: 0.3s; }
+            .box-reveal-3 { --delay: 0.6s; }
+            .box-reveal-4 { --delay: 0.9s; }
+
+            /* Ripple Button Animation */
+            .ripple-button {
+                position: relative;
+                overflow: hidden;
+                isolation: isolate;
+            }
+
+            .ripple-button::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, transparent 70%);
+                transform: translate(-50%, -50%);
+                transition: width 0.6s ease-out, height 0.6s ease-out;
+                z-index: -1;
+            }
+
+            .ripple-button:hover::before {
+                width: 300px;
+                height: 300px;
+            }
+
+            .ripple-button::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+                transform: translate(-50%, -50%);
+                transition: width 0.8s ease-out, height 0.8s ease-out;
+                transition-delay: 0.1s;
+                z-index: -1;
+            }
+
+            .ripple-button:hover::after {
+                width: 400px;
+                height: 400px;
+            }
+
+            /* Blur Fade Animation */
+            .blur-fade {
+                opacity: 0;
+                filter: blur(8px);
+                transform: translateY(30px);
+                transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+                transition-delay: var(--delay, 0s);
+            }
+
+            .blur-fade.animate {
+                opacity: 1;
+                filter: blur(0px);
+                transform: translateY(0);
+            }
+
+            /* Blur fade variants with different delays */
+            .blur-fade-1 { --delay: 0s; }
+            .blur-fade-2 { --delay: 0.1s; }
+            .blur-fade-3 { --delay: 0.2s; }
+            .blur-fade-4 { --delay: 0.3s; }
+            .blur-fade-5 { --delay: 0.4s; }
+            .blur-fade-6 { --delay: 0.5s; }
+            .blur-fade-7 { --delay: 0.6s; }
+            .blur-fade-8 { --delay: 0.7s; }
+        </style>
+
+        <title>Aditya Agarwal | AI/ML Engineer | Conversational AI & RAG Systems Expert | NYC</title>
+    </head>
+
+    <body class="gradient-bg text-white">
+        <!-- Full Viewport Grid Pattern -->
+        <div class="grid-background"></div>
+
+        <div class="min-h-screen flex flex-col">
+            <div class="container mx-auto px-4 py-8 max-w-6xl flex-grow">
+                <main class="relative z-10">
+                    
+<!-- Hero Section -->
+<section class="py-20" id="intro">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Profile Image -->
+        <div class="flex justify-center lg:order-2">
+            <div class="fade-in">
+                <img class="profile-image w-64 h-64 object-cover"
+                    src="static/img/aditya_profile.jpg" loading="lazy"
+                    alt="Aditya Agarwal">
+            </div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="lg:order-1">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                <div class="box-reveal box-reveal-1">
+                    <span>Hello World,</span>
+                </div>
+                <br>
+                <div class="box-reveal box-reveal-2">
+                    <span>I'm <span
+                        class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-violet-500 to-blue-500 text-white rounded-lg text-2xl md:text-3xl lg:text-4xl">Aditya
+                        Agarwal</span> 👋</span>
+                </div>
+            </h1>
+
+            <h2 class="text-xl md:text-2xl mb-6">
+                <div class="box-reveal box-reveal-3">
+                    <span><span
+                        class="inline-flex items-center px-3 py-1 bg-gradient-to-r from-violet-500 to-blue-500 text-white rounded-md text-sm font-medium">AI/ML
+                        Engineer</span> specializing in
+                    <span class="text-gradient-primary font-semibold">Conversational AI</span> and
+                    <span class="text-gradient-primary font-semibold">Advanced RAG Systems</span></span>
+                </div>
+            </h2>
+
+            <p class="text-lg text-gray-300 mb-6 blur-fade blur-fade-4 max-w-2xl">
+                I design conversational scripting systems that guide language models through continuous self-reflection,
+                making AI interactions feel natural while capturing valuable user insights.
+            </p>
+
+            <div class="mb-8 blur-fade blur-fade-5">
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">📍
+                    New York City, NY</span>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex gap-4 blur-fade blur-fade-6">
+                <a href="https://www.linkedin.com/in/adityaagarwal1999/" target="_blank"
+                    class="ripple-button w-12 h-12 bg-gray-800 border border-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:border-violet-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300">
+                    <img src="https://img.icons8.com/color/35/000000/linkedin.png" alt="LinkedIn" />
+                </a>
+                <a href="https://github.com/adiagarwalrock" target="_blank"
+                    class="ripple-button w-12 h-12 bg-gray-800 border border-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:border-violet-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300">
+                    <img src="https://img.icons8.com/doodle/35/000000/github--v1.png" alt="GitHub" />
+                </a>
+                <a href="https://www.hackerrank.com/aditya_ag1234?hr_r=1" target="_blank"
+                    class="ripple-button w-12 h-12 bg-gray-800 border border-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:border-violet-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300">
+                    <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/35/null/external-hackerrank-is-a-technology-company-that-focuses-on-competitive-programming-logo-color-tal-revivo.png"
+                        alt="HackerRank" />
+                </a>
+                <a href="mailto:adiagarwal1509@gmail.com?subject=Let's Connect!"
+                    class="ripple-button w-12 h-12 bg-gray-800 border border-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:border-violet-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300">
+                    <img src="https://img.icons8.com/?size=35&id=PyVmwJx682vD&format=png&color=000000" alt="Email" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Cards -->
+    <div class="grid md:grid-cols-2 gap-6 mt-16">
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 blur-fade blur-fade-1">
+            <h3 class="text-xl font-semibold mb-3">🚀 <strong>Current Role:</strong> AI/ML Engineer at early-stage
+                startup</h3>
+            <p class="text-gray-400">Leading Search & Retrieval systems using advanced RAG implementations with high
+                accuracy. Building self-reflective AI systems as the sole SDE.</p>
+        </div>
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 blur-fade blur-fade-2">
+            <h3 class="text-xl font-semibold mb-3">🎯 <strong>Expertise:</strong> Conversational AI Architecture</h3>
+            <p class="text-gray-400">I design conversational scripting systems where AI guides users through natural
+                conversations while achieving specific goals through continuous self-reflection.</p>
+        </div>
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 blur-fade blur-fade-3">
+            <h3 class="text-xl font-semibold mb-3">💡 <strong>Innovation:</strong> Self-Reflective AI Systems</h3>
+            <p class="text-gray-400">Developing AI that can adapt and improve its approach in real-time, making data
+                collection feel like natural conversation rather than interrogation.</p>
+        </div>
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 blur-fade blur-fade-4">
+            <h3 class="text-xl font-semibold mb-3">🔧 <strong>Technical Focus:</strong> Advanced RAG & LLM Optimization
+            </h3>
+            <p class="text-gray-400">Implementing cutting-edge retrieval systems with <span
+                    class="inline-flex items-center px-2 py-1 bg-gradient-to-r from-violet-500 to-blue-500 text-white rounded text-xs font-medium">Vector
+                    Databases</span>, <span
+                    class="inline-flex items-center px-2 py-1 bg-gradient-to-r from-violet-500 to-blue-500 text-white rounded text-xs font-medium">Transformer
+                    Models</span>, and <span
+                    class="inline-flex items-center px-2 py-1 bg-green-600 text-white rounded text-xs font-medium">Production
+                    ML</span>.</p>
+        </div>
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 blur-fade blur-fade-5">
+            <h3 class="text-xl font-semibold mb-3">📚 <strong>Learning Philosophy:</strong> Build while Learning</h3>
+            <p class="text-gray-400">Self-taught engineer who learns by building. Currently mastering production ML
+                systems while developing innovative conversational AI solutions.</p>
+        </div>
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 blur-fade blur-fade-6">
+            <h3 class="text-xl font-semibold mb-3">🌟 <strong>Let's Connect:</strong> <a
+                    class="text-gradient-primary font-medium hover:underline"
+                    href="https://www.linkedin.com/in/adityaagarwal1999/">Ready to innovate together?</a></h3>
+            <p class="text-gray-400">Always excited to discuss AI, share ideas, and collaborate on cutting-edge projects
+                that push the boundaries of what's possible.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Documents Section -->
+<section class="py-16" id="documents">
+    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8 blur-fade blur-fade-1 text-center">
+        <h2 class="text-3xl font-bold mb-4 section-header text-gradient-primary">Professional Documents 📄</h2>
+        <p class="text-gray-400 mb-8">Download my latest resume and cover letter</p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <a href="https://drive.google.com/file/d/YOUR_RESUME_FILE_ID/view?usp=sharing" target="_blank"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                    <path
+                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                </svg>
+                Download Resume
+            </a>
+
+            <a href="https://drive.google.com/file/d/YOUR_COVER_LETTER_FILE_ID/view?usp=sharing" target="_blank"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
+                </svg>
+                View Cover Letter
+            </a>
+        </div>
+
+        <div class="p-4 rounded-lg bg-violet-500/10 border border-violet-500/20">
+            <p class="text-sm text-gray-400">
+                <strong>Note:</strong> These documents are regularly updated to reflect my latest achievements and
+                experience.
+                Last updated: <span class="text-gradient-primary font-medium">January 2025</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section class="py-16" id="education">
+    <h2 class="text-3xl font-bold mb-8 section-header blur-fade blur-fade-1">Education 🎓</h2>
+
+    <div class="space-y-6">
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-2">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                <div class="flex-1">
+                    <h3 class="text-xl font-bold mb-2">📜 Master of Science in Machine Learning</h3>
+                    <p class="text-lg text-gray-400 mb-2">Stevens Institute of Technology, NJ</p>
+                    <p class="text-sm text-gray-500 mb-4">GPA: 3.5/4.0</p>
+                    <details class="text-sm">
+                        <summary class="cursor-pointer text-gradient-primary font-medium mb-2">Key Coursework & Skills
+                        </summary>
+                        <ul class="list-disc list-inside space-y-1 text-gray-400 ml-4">
+                            <li>Text Mining and Information Retrieval</li>
+                            <li>Natural Language Processing</li>
+                            <li>Artificial Intelligence</li>
+                            <li>Machine Learning: Fundamentals and Application</li>
+                            <li>Knowledge Discovery and Data Mining</li>
+                            <li>Advanced AI/ML Research Projects</li>
+                        </ul>
+                    </details>
+                </div>
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">Sep
+                    2022 → May 2024</span>
+            </div>
+        </div>
+
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-3">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                <div class="flex-1">
+                    <h3 class="text-xl font-bold mb-2">📃 Bachelor of Engineering in Computer Science</h3>
+                    <p class="text-lg text-gray-400 mb-4">Alliance University, Bangalore</p>
+                    <details class="text-sm">
+                        <summary class="cursor-pointer text-gradient-primary font-medium mb-2">Core Subjects
+                        </summary>
+                        <ul class="list-disc list-inside space-y-1 text-gray-400 ml-4">
+                            <li>Database Management Systems</li>
+                            <li>Operating Systems</li>
+                            <li>Data Structures and Algorithms</li>
+                            <li>Big Data Analytics</li>
+                            <li>Data Management and Data Warehousing</li>
+                            <li>Engineering Mathematics (Probability, Statistics, Calculus)</li>
+                            <li>Cloud Computing</li>
+                            <li>Software Engineering</li>
+                        </ul>
+                    </details>
+                </div>
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">Aug
+                    2017 → Jul 2021</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Professional Experience Section -->
+<section class="py-16" id="experience">
+    <h2 class="text-3xl font-bold mb-12 section-header blur-fade blur-fade-1">Professional Experience 💼</h2>
+
+    <div class="space-y-8">
+        <!-- Current Role - Machine Learning Engineer -->
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-2">
+            <div class="flex items-start gap-4">
+                <div class="text-2xl">🚀</div>
+                <div class="flex-1">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gradient-primary">Machine Learning Engineer</h3>
+                            <p class="text-lg text-gray-400">Soopra.ai, San Francisco</p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">August 2024 - Present</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Agentic Systems</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Vector Databases</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">RAG Pipelines</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Security Controls</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">High Availability</span>
+                    </div>
+
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Architected scalable AI infrastructure implementing Agentic systems with custom recommendation engines, improving engagement by 35%
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Developed production-grade AI pipelines for PDF document processing with vector database integration
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Built resilient data processing systems creating prototype Agent-first social media platform with high availability architecture
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Implemented security controls for AI service deployments, ensuring compliance with data governance standards
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Developed conversational AI security scripts achieving 30% improvement in user satisfaction and 20% reduction in onboarding time
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Software Developer Intern -->
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-3">
+            <div class="flex items-start gap-4">
+                <div class="text-2xl">💼</div>
+                <div class="flex-1">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gradient-primary">Software Developer Intern</h3>
+                            <p class="text-lg text-gray-400">Soopra.ai, San Francisco</p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">June 2023 - May 2024</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">RAG Pipelines</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Event-Driven Architecture</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">ETL Infrastructure</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Real-time Processing</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">95% Accuracy</span>
+                    </div>
+
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Engineered enterprise RAG pipelines with vector databases for multi-source data ingestion, achieving 95% embedding accuracy
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Designed event-driven chat systems utilizing domain-driven architecture, increasing user engagement by 25%
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Built scalable ETL infrastructure for real-time social media data extraction and processing using messaging patterns
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Implemented decay-function algorithms for reverse chronological retrieval with intelligent response routing
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Reduced data loading time by 15% through optimized messaging patterns and data processing workflows
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full-Stack Developer -->
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-4">
+            <div class="flex items-start gap-4">
+                <div class="text-2xl">🌐</div>
+                <div class="flex-1">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gradient-primary">Full-Stack Developer</h3>
+                            <p class="text-lg text-gray-400">SA Consultant, Bangalore</p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">October 2021 - June 2022</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Django</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">PostgreSQL</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">RESTful APIs</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">AWS RDS</span>
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Heroku</span>
+                    </div>
+
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Delivered enterprise web application using Django framework with object-oriented design principles
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Increased team efficiency by 30% and improved client communication through secure RESTful APIs
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Implemented billing and monitoring systems with PostgreSQL backend, enhancing project documentation accuracy
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Deployed cloud-native solution on Heroku with AWS RDS integration for high availability
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Provided audit trails for compliance and ensured data security for distributed teams
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-16" id="skills">
+    <h2 class="text-3xl font-bold mb-12 section-header blur-fade blur-fade-1">Skills & Technologies 👨‍💻</h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-1">
+            <h3 class="text-xl font-semibold mb-6 text-gradient-primary">Languages</h3>
+            <div class="flex flex-wrap gap-3">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/Python 3.x.png" alt="Python 3.x's image"
+                        class="w-6 h-6 rounded">
+                    <span>Python 3.x</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/Core Java.png" alt="Core Java's image"
+                        class="w-6 h-6 rounded">
+                    <span>Core Java</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/C++.png" alt="C++'s image"
+                        class="w-6 h-6 rounded">
+                    <span>C++</span>
+                </div>
+            </div>
+        </div>
+        
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-2">
+            <h3 class="text-xl font-semibold mb-6 text-gradient-primary">Databases</h3>
+            <div class="flex flex-wrap gap-3">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/MySQL.png" alt="MySQL's image"
+                        class="w-6 h-6 rounded">
+                    <span>MySQL</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/SQLite.png" alt="SQLite's image"
+                        class="w-6 h-6 rounded">
+                    <span>SQLite</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/MongoDB.png" alt="MongoDB's image"
+                        class="w-6 h-6 rounded">
+                    <span>MongoDB</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/Vector Databases.png" alt="Vector Databases's image"
+                        class="w-6 h-6 rounded">
+                    <span>Vector Databases</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/Neo4j.png" alt="Neo4j's image"
+                        class="w-6 h-6 rounded">
+                    <span>Neo4j</span>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-3">
+            <h3 class="text-xl font-semibold mb-6 text-gradient-primary">Technologies</h3>
+            <div class="flex flex-wrap gap-3">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/Neural Networks.png" alt="Neural Networks's image"
+                        class="w-6 h-6 rounded">
+                    <span>Neural Networks</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/Docker.png" alt="Docker's image"
+                        class="w-6 h-6 rounded">
+                    <span>Docker</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/OpenCV.png" alt="OpenCV's image"
+                        class="w-6 h-6 rounded">
+                    <span>OpenCV</span>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-4">
+            <h3 class="text-xl font-semibold mb-6 text-gradient-primary">Frameworks</h3>
+            <div class="flex flex-wrap gap-3">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/Tensorflow.png" alt="Tensorflow's image"
+                        class="w-6 h-6 rounded">
+                    <span>Tensorflow</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/Flask.png" alt="Flask's image"
+                        class="w-6 h-6 rounded">
+                    <span>Flask</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/Django.png" alt="Django's image"
+                        class="w-6 h-6 rounded">
+                    <span>Django</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/Bootstrap.png" alt="Bootstrap's image"
+                        class="w-6 h-6 rounded">
+                    <span>Bootstrap</span>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-700 hover:border-violet-500/50 hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <img src="static/icons/Llama-Index.png" alt="Llama-Index's image"
+                        class="w-6 h-6 rounded">
+                    <span>Llama-Index</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-16" id="projects">
+    <h2 class="text-3xl font-bold mb-12 section-header blur-fade blur-fade-1">Featured Projects ✨</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 h-full flex flex-col hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 blur-fade blur-fade-1">
+            <div class="flex items-center gap-3 mb-4">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="text-gray-400">
+                    <path
+                        d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z" />
+                </svg>
+                <h3 class="text-lg font-semibold">cardZen</h3>
+            </div>
+
+            <p class="text-gray-400 mb-6 flex-grow">
+                A modern card-based learning platform with interactive features and progress tracking.
+            </p>
+
+            <div class="flex justify-between items-center">
+                <a href="https://github.com/adiagarwalrock/cardZen" target="_blank"
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-transparent border border-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
+                    View Project
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                        <path fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                    </svg>
+                </a>
+                <span
+                    class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Python</span>
+            </div>
+        </div>
+
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 h-full flex flex-col hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 blur-fade blur-fade-2">
+            <div class="flex items-center gap-3 mb-4">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="text-gray-400">
+                    <path
+                        d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z" />
+                </svg>
+                <h3 class="text-lg font-semibold">critiQs</h3>
+            </div>
+
+            <p class="text-gray-400 mb-6 flex-grow">
+                Critical thinking platform for analyzing and evaluating complex questions and scenarios.
+            </p>
+
+            <div class="flex justify-between items-center">
+                <a href="https://github.com/adiagarwalrock/critiQs" target="_blank"
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-transparent border border-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
+                    View Project
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                        <path fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                    </svg>
+                </a>
+                <span
+                    class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">JavaScript</span>
+            </div>
+        </div>
+
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 h-full flex flex-col hover:bg-gray-800/50 hover:border-violet-500/50 hover:-translate-y-1 transition-all duration-300 blur-fade blur-fade-3">
+            <div class="flex items-center gap-3 mb-4">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="text-gray-400">
+                    <path
+                        d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z" />
+                </svg>
+                <h3 class="text-lg font-semibold">gpt-bot</h3>
+            </div>
+
+            <p class="text-gray-400 mb-6 flex-grow">
+                Intelligent chatbot powered by GPT technology for natural language conversations.
+            </p>
+
+            <div class="flex justify-between items-center">
+                <a href="https://github.com/adiagarwalrock/gpt-bot" target="_blank"
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-transparent border border-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
+                    View Project
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                        <path fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                    </svg>
+                </a>
+                <span
+                    class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">Python</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center blur-fade blur-fade-7">
+        <a href="https://www.github.com/adiagarwalrock" target="_blank"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            Explore All Projects
+        </a>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="py-16" id="certificates">
+    <h2 class="text-3xl font-bold mb-12 section-header blur-fade blur-fade-1">Certifications & Awards 🏆</h2>
+
+    <div class="space-y-4">
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-1">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                <div class="flex-1">
+                    <h3 class="text-lg font-semibold text-gradient-primary mb-2">Building a Recommendation System with Python Machine Learning & AI</h3>
+                    <div class="text-sm text-gray-400">
+                        <cite>LinkedIn Learning</cite>
+                    </div>
+                </div>
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">Jul-21</span>
+            </div>
+        </div>
+
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-2">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                <div class="flex-1">
+                    <h3 class="text-lg font-semibold text-gradient-primary mb-2">Introduction to TensorFlow for AI, ML and Deep Learning</h3>
+                    <div class="text-sm text-gray-400">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">deeplearning.ai</span>
+                        •
+                        <cite>Coursera</cite>
+                    </div>
+                </div>
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">Jun-20</span>
+            </div>
+        </div>
+
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-3">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                <div class="flex-1">
+                    <h3 class="text-lg font-semibold text-gradient-primary mb-2">Neural Networks and Deep Learning</h3>
+                    <div class="text-sm text-gray-400">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">deeplearning.ai</span>
+                        •
+                        <cite>Coursera</cite>
+                    </div>
+                </div>
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">Apr-20</span>
+            </div>
+        </div>
+
+        <div
+            class="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-800/50 hover:border-violet-500/50 transition-all duration-300 blur-fade blur-fade-4">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                <div class="flex-1">
+                    <h3 class="text-lg font-semibold text-gradient-primary mb-2">Machine Learning for All</h3>
+                    <div class="text-sm text-gray-400">
+                        <span
+                            class="inline-flex items-center px-2 py-1 bg-gray-800 border border-gray-700 rounded text-xs font-medium">University of London</span>
+                        •
+                        <cite>Coursera</cite>
+                    </div>
+                </div>
+                <span
+                    class="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-md text-sm font-medium">May-20</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GitHub Activity Section -->
+<section class="py-16" id="github-activity">
+    <h2 class="text-3xl font-bold mb-12 section-header blur-fade blur-fade-1">GitHub Activity 📊</h2>
+
+    <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-8 blur-fade blur-fade-2">
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Contribution Graph -->
+            <div class="lg:col-span-2">
+                <h3 class="text-xl font-semibold mb-6 text-gradient-primary">Contribution Graph</h3>
+                <div class="p-4 bg-gray-800/50 border border-gray-700 rounded-lg overflow-x-auto">
+                    <img src="https://ghchart.rshah.org/4f46e5/adiagarwalrock" alt="GitHub Contribution Graph"
+                        class="w-full h-auto rounded transition-transform hover:scale-105" loading="lazy">
+                </div>
+                <p class="text-sm text-gray-400 mt-4">
+                    Consistent coding activity across various projects and contributions to open source.
+                </p>
+            </div>
+
+            <!-- GitHub Stats -->
+            <div>
+                <h3 class="text-xl font-semibold mb-6 text-gradient-primary">GitHub Stats</h3>
+                <div class="space-y-4">
+                    <div class="p-3 bg-gray-800/50 border border-gray-700 rounded-lg">
+                        <img src="https://adiagarwal-grh.vercel.app/api?username=adiagarwalrock&show_icons=true&theme=dark&title_color=ffffff&text_color=ffffff&hide_border=true&locale=en&show=reviews,prs_merged,prs_merged_percentagehide=stars&include_all_commits=true&line_height=20&ring_color=fc7bac"
+                            alt="GitHub Stats" class="w-full h-auto rounded" loading="lazy">
+                    </div>
+                    <div class="p-3 bg-gray-800/50 border border-gray-700 rounded-lg">
+                        <img src="https://adiagarwal-grh.vercel.app/api/top-langs/?username=adiagarwalrock&layout=donut&hide=javascript,css"
+                            alt="Top Languages" class="w-full h-auto rounded" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-800">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+                <div>
+                    <h4 class="font-semibold text-lg">Recent Activity</h4>
+                    <p class="text-sm text-gray-400">Building the future with code, one commit at a time</p>
+                </div>
+                <a href="https://github.com/adiagarwalrock" target="_blank"
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-transparent border border-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    View Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+                </main>
+
+                <footer class="mt-16 border-t border-gray-800 pt-8">
+                    <div class="text-center text-gray-400">
+                        <p>&copy; 2025 Aditya Agarwal. All rights reserved.</p>
+                        <p class="mt-2">Built with passion and caffeine ☕</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Modern JavaScript -->
+        <script>
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all blur-fade elements
+            document.addEventListener('DOMContentLoaded', () => {
+                const blurFadeElements = document.querySelectorAll('.blur-fade');
+                blurFadeElements.forEach(element => observer.observe(element));
+            });
+        </script>
+
+    </body>
+
+</html>

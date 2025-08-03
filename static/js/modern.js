@@ -15,12 +15,18 @@ document.addEventListener('DOMContentLoaded', function() {
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -100px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Add blur-fade animation
+                if (entry.target.classList.contains('blur-fade')) {
+                    entry.target.classList.add('animate');
+                }
+                
+                // Legacy support for old animations
                 entry.target.classList.add('animate-in');
                 
                 // Stagger animations for child elements
@@ -28,14 +34,17 @@ function initScrollAnimations() {
                 staggerItems.forEach((item, index) => {
                     setTimeout(() => {
                         item.classList.add('animate-in');
+                        if (item.classList.contains('blur-fade')) {
+                            item.classList.add('animate');
+                        }
                     }, index * 100);
                 });
             }
         });
     }, observerOptions);
 
-    // Observe all animated elements
-    document.querySelectorAll('.fade-in, .fade-in-delay-1, .fade-in-delay-2, .fade-in-delay-3, .stagger-item').forEach(el => {
+    // Observe all animated elements - including new blur-fade elements
+    document.querySelectorAll('.fade-in, .fade-in-delay-1, .fade-in-delay-2, .fade-in-delay-3, .stagger-item, .blur-fade').forEach(el => {
         observer.observe(el);
     });
 }
