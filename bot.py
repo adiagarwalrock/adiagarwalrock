@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 
-ENV_PATH = Path('.') / '.env'
-load_dotenv(dotenv_path=ENV_PATH)
+# ENV_PATH = Path('.') / '.env'
+# load_dotenv(dotenv_path=ENV_PATH)
 
 
 class Github_Bot():
