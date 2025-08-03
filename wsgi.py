@@ -31,8 +31,9 @@ if __name__ == "__main__":
     port: int = Config.PORT
     workers: int = Config.WORKERS
     timeout: int = Config.TIMEOUT
+    host: str = Config.HOST
     options: Dict[str, Any] = {
-        "bind": f"0.0.0.0:{port}",
+        "bind": f"{host}:{port}",
         "workers": workers,
         "worker_class": "sync",
         "timeout": timeout,
