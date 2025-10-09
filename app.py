@@ -10,8 +10,8 @@ from dotenv import load_dotenv
 from pathlib import Path
 import os
 
-from config import Config
-from views import *
+from flask_app.config import Config
+from flask_app.views import *
 
 ENV_PATH = Path(".") / ".env"
 load_dotenv(dotenv_path=ENV_PATH)
@@ -19,6 +19,7 @@ load_dotenv(dotenv_path=ENV_PATH)
 
 app = Flask(__name__)
 app.secret_key = os.environ["APP_SECRET"]
+app.static_folder = "static"
 
 
 @app.route("/", methods=["GET"])
@@ -54,13 +55,30 @@ def add_expires_header(response):
         response.headers["Cache-Control"] = "public, max-age=2592000"
     return response
 
-@app.route('/robots.txt')
-def robots_txt():
-    return send_from_directory(app.static_folder, 'Robots.txt')
 
-@app.route('/sitemap.xml')
+@app.route("/robots.txt")
+def robots_txt():
+    assert app.static_folder is not None
+    return send_from_directory(app.static_folder, "Robots.txt")
+
+
+@app.route("/sitemap.xml")
 def sitemap_xml():
-    return send_from_directory(app.static_folder, 'sitemap.xml')
+    assert app.static_folder is not None
+    return send_from_directory(app.static_folder, "sitemap.xml")
+
+
+@app.route("/humans.txt")
+def humans_txt():
+    assert app.static_folder is not None
+    return send_from_directory(app.static_folder, "humans.txt")
+
+
+@app.route("/security.txt")
+@app.route("/.well-known/security.txt")
+def security_txt():
+    assert app.static_folder is not None
+    return send_from_directory(app.static_folder, "security.txt")
 
 
 if __name__ == "__main__":

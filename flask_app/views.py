@@ -1,12 +1,10 @@
-from flask import render_template, request, redirect, json
-from flask.helpers import url_for
 import csv
-import os
-from dotenv import load_dotenv
 from pathlib import Path
 
-from bot import Github_Bot
-
+from dotenv import load_dotenv
+from flask import json, redirect, render_template, request
+from flask.helpers import url_for
+from github import Github
 
 ENV_PATH = Path(".") / ".env"
 load_dotenv(dotenv_path=ENV_PATH)
@@ -15,6 +13,14 @@ load_dotenv(dotenv_path=ENV_PATH)
 FAV_PROJ_DB_PATH = "static/db/landing_page_projects.csv"
 CERT_DB_PATH = "static/db/certs.csv"
 SKILLS_PATH = "data.json"
+
+
+class Github_Bot:
+
+    def get_public_repo(self):
+        github_obj = Github()
+        user = github_obj.get_user("adiagarwalrock")
+        return user.get_repos()
 
 
 def admin_page_view():

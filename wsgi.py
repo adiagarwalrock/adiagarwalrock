@@ -4,7 +4,7 @@ import logging
 from typing import Any, Dict
 import gunicorn.app.base
 from app import app
-from config import Config
+from flask_app.config import Config
 
 
 class GunicornApp(gunicorn.app.base.BaseApplication):
@@ -17,9 +17,10 @@ class GunicornApp(gunicorn.app.base.BaseApplication):
 
     def load_config(self) -> None:
         """Load configuration options into Gunicorn config."""
-        for key, value in self.options.items():
-            if key in self.cfg.settings and value is not None:
-                self.cfg.set(key, value)
+        if self.cfg is not None:
+            for key, value in self.options.items():
+                if key in self.cfg.settings and value is not None:
+                    self.cfg.set(key, value)
 
     def load(self) -> Any:
         """Return the application instance."""
