@@ -91,7 +91,10 @@ export const rotate = (matrix: number[][]): number[][] => {
     for (let x = 0; x < cols; x++) {
       const cell = matrix[y]?.[x];
       if (cell !== undefined && newMatrix[x]) {
-        newMatrix[x][rows - 1 - y] = cell;
+        const targetRow = newMatrix[x];
+        if (targetRow) {
+          targetRow[rows - 1 - y] = cell;
+        }
       }
     }
   }

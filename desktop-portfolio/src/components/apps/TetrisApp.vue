@@ -47,11 +47,16 @@ const gameOver = ref(false);
 const displayBoard = computed(() => {
   const newBoard = board.value.map((row) => [...row]); // Deep copy the board
 
-  if (currentPiece.value) {
-    currentPiece.value.shape.forEach((row, y) => {
+  const piece = currentPiece.value;
+  if (piece) {
+    piece.shape.forEach((row, y) => {
       row.forEach((cell, x) => {
-if (currentPiece.value && newBoard[currentPiece.value.y + y]) {
-          newBoard[currentPiece.value.y + y][currentPiece.value.x + x] = FILLED_CELL; // Mark as filled for rendering
+        if (cell !== EMPTY_CELL) {
+          const boardY = piece.y + y;
+          const boardX = piece.x + x;
+          if (boardY >= 0 && boardY < BOARD_HEIGHT && newBoard[boardY]) {
+            newBoard[boardY][boardX] = FILLED_CELL;
+          }
         }
       });
     });
@@ -154,7 +159,11 @@ const mergePieceToBoard = () => {
   currentPiece.value.shape.forEach((row, y) => {
     row.forEach((cell, x) => {
       if (cell !== EMPTY_CELL && currentPiece.value) {
-        board.value[currentPiece.value!.y + y][currentPiece.value!.x + x] = currentPiece.value.color;
+        const boardY = currentPiece.value.y + y;
+        const boardX = currentPiece.value.x + x;
+        if (boardY >= 0 && boardY < BOARD_HEIGHT && board.value[boardY]) {
+          board.value[boardY][boardX] = currentPiece.value.color;
+        }
       }
     });
   });
