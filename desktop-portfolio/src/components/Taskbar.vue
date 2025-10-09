@@ -74,6 +74,9 @@ import browserIcon from '../assets/icons/browser.png';
 import filesIcon from '../assets/icons/files.png';
 import githubIcon from '../assets/icons/github.png';
 import linkedinIcon from '../assets/icons/linkedin.png';
+import terminalIcon from '../assets/icons/terminal.png';
+import tetrisIcon from '../assets/icons/tetris.png';
+import wordIcon from '../assets/icons/word.png';
 import type { AppId, WindowState } from '../stores/windows';
 import { useWindowsStore } from '../stores/windows';
 
@@ -167,6 +170,39 @@ const windowDefaults: Record<AppId, WindowOpenPayload> = {
     y: 200,
     w: 420,
     h: 320,
+    minimized: false,
+    maximized: false,
+  },
+  word: {
+    appId: 'word',
+    title: 'Word Processor',
+    icon: wordIcon,
+    x: 300,
+    y: 200,
+    w: 700,
+    h: 500,
+    minimized: false,
+    maximized: false,
+  },
+  terminal: {
+    appId: 'terminal',
+    title: 'Terminal',
+    icon: terminalIcon,
+    x: 320,
+    y: 220,
+    w: 600,
+    h: 400,
+    minimized: false,
+    maximized: false,
+  },
+  tetris: {
+    appId: 'tetris',
+    title: 'Tetris',
+    icon: tetrisIcon,
+    x: 340,
+    y: 240,
+    w: 400,
+    h: 500,
     minimized: false,
     maximized: false,
   },

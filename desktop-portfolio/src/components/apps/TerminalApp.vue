@@ -227,6 +227,7 @@ const execute = () => {
   if (!raw) return;
 
   const [command, ...rest] = raw.split(/\s+/);
+  if (!command) return;
   const args = rest.join(' ');
   const handler = commandHandlers[command.toLowerCase()];
   current.value = '';

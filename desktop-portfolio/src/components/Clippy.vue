@@ -127,7 +127,7 @@ const fallbackAssetBase = 'https://cdn.jsdelivr.net/gh/pi0/clippyjs@master/asset
 const loadAgent = (basePath = localAssetBase, alreadyRetried = false) => {
   clippy.load(
     'Clippy',
-    (agent) => {
+    (agent: any) => {
       agentRef.value = agent;
       applyFixedPosition();
       if (resizeHandler) {
@@ -144,7 +144,7 @@ const loadAgent = (basePath = localAssetBase, alreadyRetried = false) => {
       }
       showDialog("Welcome to Adi's portfolio! I am Clippy, your personal assistant.");
     },
-    (error) => {
+    (error: any) => {
       if (!alreadyRetried && basePath === localAssetBase) {
         console.warn('Local Clippy assets missing, falling back to CDN.', error);
         loadAgent(fallbackAssetBase, true);

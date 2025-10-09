@@ -57,8 +57,8 @@ onMounted(() => {
         return false; // prevent default close
       },
       onfocus: () => store.focus(props.window.id),
-      onmove: (x, y) => store.move(props.window.id, x, y),
-      onresize: (w, h) => store.resize(props.window.id, w, h),
+      onmove: (x: any, y: any) => store.move(props.window.id, x, y),
+      onresize: (w: any, h: any) => store.resize(props.window.id, w, h),
       onminimize: (minimized: boolean) => store.setMinimized(props.window.id, minimized),
     });
 

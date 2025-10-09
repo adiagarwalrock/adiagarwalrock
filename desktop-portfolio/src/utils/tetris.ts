@@ -82,18 +82,15 @@ export const getRandomTetromino = () => {
 };
 
 // Function to rotate a tetromino
-export const rotate = (matrix: number[][], dir: number) => {
-  // Transpose rows and columns
-  for (let y = 0; y < matrix.length; ++y) {
-    for (let x = 0; x < y; ++x) {
-      [matrix[x][y], matrix[y][x]] = [matrix[y][x], matrix[x][y]];
+export const rotate = (matrix: number[][]): number[][] => {
+  const rows = matrix.length;
+  const cols = matrix[0]?.length ?? 0;
+  const newMatrix = Array.from({ length: cols }, () => Array(rows).fill(0));
+
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < cols; x++) {
+      newMatrix[x][rows - 1 - y] = matrix[y][x];
     }
   }
-
-  // Reverse rows or columns based on direction
-  if (dir > 0) {
-    return matrix.map((row) => row.reverse());
-  } else {
-    return matrix.reverse();
-  }
+  return newMatrix;
 };

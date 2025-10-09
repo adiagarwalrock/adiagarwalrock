@@ -137,7 +137,7 @@ const verifyIframeAccess = () => {
   if (!iframeRef.value) return;
   try {
     const doc = iframeRef.value.contentDocument;
-    if (!doc || doc.readyState === 'uninitialized') {
+    if (!doc) {
       isBlocked.value = true;
     }
   } catch (error) {
