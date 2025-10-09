@@ -87,6 +87,8 @@
         </script>
 
         <link rel="canonical" href="https://adiagarwalrock.github.io/adiagarwalrock/">
+        <link rel="security.txt" href="/static/security.txt">
+        <link rel="author" href="/static/humans.txt">
 
         <!-- =====FAVICON===== -->
         <link rel="shortcut icon" href="static/icons/logo.png">
@@ -869,6 +871,223 @@
 <!-- Projects Section -->
 <section class="py-16" id="projects">
     <h2 class="text-3xl font-bold mb-12 section-header blur-fade blur-fade-1">Featured Projects ✨</h2>
+
+<style>
+    .timeline-container {
+        position: relative;
+        padding: 2rem 0;
+    }
+
+    .timeline-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(180deg, hsl(var(--violet)), hsl(var(--blue)));
+        border-radius: 2px;
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 3rem;
+    }
+
+    .timeline-item:nth-child(odd) {
+        padding-left: calc(50% + 2rem);
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(even) {
+        padding-right: calc(50% + 2rem);
+        text-align: right;
+    }
+
+    .timeline-dot {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: #1a1a1a;
+        border: 3px solid hsl(var(--violet));
+        border-radius: 50%;
+        z-index: 1;
+        transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover .timeline-dot {
+        background-color: hsl(var(--violet));
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    .timeline-content {
+        position: relative;
+        background: rgba(26, 26, 26, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid #333;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover .timeline-content {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px hsl(var(--violet) / 0.2);
+        border-color: hsl(var(--violet) / 0.5);
+    }
+
+    .timeline-date {
+        font-weight: 600;
+        color: hsl(var(--violet));
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline-description {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+
+    .timeline-item:hover .timeline-description {
+        max-height: 500px; /* Adjust as needed */
+    }
+</style>
+
+<!-- Timeline Section -->
+<section class="py-16" id="timeline">
+    <h2 class="text-3xl font-bold mb-12 section-header blur-fade blur-fade-1">Career Timeline 🚀</h2>
+    <div class="timeline-container">
+        <!-- Education -->
+        <div class="timeline-item blur-fade blur-fade-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-date">Sep 2022 → May 2024</div>
+                <div class="timeline-title">📜 Master of Science in Machine Learning</div>
+                <div class="timeline-description">
+                    <p class="text-lg text-gray-400 mb-2">Stevens Institute of Technology, NJ</p>
+                    <p class="text-sm text-gray-500 mb-4">GPA: 3.5/4.0</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-400 ml-4">
+                        <li>Text Mining and Information Retrieval</li>
+                        <li>Natural Language Processing</li>
+                        <li>Artificial Intelligence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item blur-fade blur-fade-3">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-date">Aug 2017 → Jul 2021</div>
+                <div class="timeline-title">📃 Bachelor of Engineering in Computer Science</div>
+                <div class="timeline-description">
+                    <p class="text-lg text-gray-400 mb-4">Alliance University, Bangalore</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-400 ml-4">
+                        <li>Database Management Systems</li>
+                        <li>Operating Systems</li>
+                        <li>Data Structures and Algorithms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Work Experience -->
+        <div class="timeline-item blur-fade blur-fade-4">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-date">August 2024 - Present</div>
+                <div class="timeline-title">🚀 Machine Learning Engineer</div>
+                <div class="timeline-description">
+                    <p class="text-lg text-gray-400">Soopra.ai, San Francisco</p>
+                    <ul class="space-y-2 text-gray-400 mt-4">
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Architected scalable AI infrastructure with custom recommendation engines.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Developed production-grade AI pipelines for PDF document processing.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item blur-fade blur-fade-5">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-date">June 2023 - May 2024</div>
+                <div class="timeline-title">💼 Software Developer Intern</div>
+                <div class="timeline-description">
+                    <p class="text-lg text-gray-400">Soopra.ai, San Francisco</p>
+                    <ul class="space-y-2 text-gray-400 mt-4">
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Engineered enterprise RAG pipelines with vector databases.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Designed event-driven chat systems using domain-driven architecture.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item blur-fade blur-fade-6">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-date">October 2021 - June 2022</div>
+                <div class="timeline-title">🌐 Full-Stack Developer</div>
+                <div class="timeline-description">
+                    <p class="text-lg text-gray-400">SA Consultant, Bangalore</p>
+                    <ul class="space-y-2 text-gray-400 mt-4">
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Delivered enterprise web application using Django framework.
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-violet-400 mt-1">▶</span>
+                            Increased team efficiency by 30% with secure RESTful APIs.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Projects -->
+        <div class="timeline-item blur-fade blur-fade-7">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-date">2023 (Assumed)</div>
+                <div class="timeline-title">✨ cardZen</div>
+                <div class="timeline-description">
+                    <p class="text-gray-400">A modern card-based learning platform with interactive features and progress tracking.</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-item blur-fade blur-fade-8">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-date">2023 (Assumed)</div>
+                <div class="timeline-title">✨ critiQs</div>
+                <div class="timeline-description">
+                    <p class="text-gray-400">Critical thinking platform for analyzing and evaluating complex questions and scenarios.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="text-center text-gray-500 mt-8 blur-fade blur-fade-8">
+        Note: Project dates are assumed as they were not specified.
+    </p>
+</section>
+
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         <div

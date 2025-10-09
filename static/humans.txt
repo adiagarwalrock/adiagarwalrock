@@ -1,0 +1,12 @@
+/* TEAM */
+
+Aditya Agarwal
+Contact: adiagarwal1509@gmail.com
+GitHub: @adiagarwalrock
+
+/* SITE */
+
+Last update: 2025-08-03
+Language: English
+Doctype: HTML5
+Tools: Visual Studio Code, Git, GitHub
