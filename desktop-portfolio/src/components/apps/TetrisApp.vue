@@ -50,14 +50,7 @@ const displayBoard = computed(() => {
   if (currentPiece.value) {
     currentPiece.value.shape.forEach((row, y) => {
       row.forEach((cell, x) => {
-        if (
-          cell !== EMPTY_CELL &&
-          currentPiece.value &&
-          currentPiece.value.y + y >= 0 &&
-          currentPiece.value.y + y < BOARD_HEIGHT &&
-          currentPiece.value.x + x >= 0 &&
-          currentPiece.value.x + x < BOARD_WIDTH
-        ) {
+if (currentPiece.value && newBoard[currentPiece.value.y + y]) {
           newBoard[currentPiece.value.y + y][currentPiece.value.x + x] = FILLED_CELL; // Mark as filled for rendering
         }
       });
@@ -69,9 +62,10 @@ const displayBoard = computed(() => {
 const getCellColor = (x: number, y: number): string => {
   if (currentPiece.value) {
     for (let row = 0; row < currentPiece.value.shape.length; row++) {
-      for (let col = 0; col < currentPiece.value.shape[row].length; col++) {
-        if (
-          currentPiece.value.shape[row][col] !== EMPTY_CELL &&
+      const rowShape = currentPiece.value.shape[row];
+      if (!rowShape) continue;
+      for (let col = 0; col < rowShape.length; col++) {
+        if (rowShape[col] !== EMPTY_CELL &&
           currentPiece.value.x + col === x &&
           currentPiece.value.y + row === y
         ) {
@@ -81,7 +75,8 @@ const getCellColor = (x: number, y: number): string => {
     }
   }
   // If not part of current piece, check the board
-  if (board.value[y][x] !== EMPTY_CELL) {
+  const boardRow = board.value[y];
+  if (boardRow && boardRow[x] !== EMPTY_CELL) {
     // For simplicity, we'll just use a generic filled color for merged pieces
     // In a more advanced game, you'd store the color of the merged piece
     return 'gray'; 
@@ -105,7 +100,7 @@ const spawnPiece = (): Piece => {
   return {
     shape: newPiece.shape,
     color: newPiece.color,
-    x: Math.floor(BOARD_WIDTH / 2) - Math.floor(newPiece.shape[0].length / 2),
+    x: Math.floor(BOARD_WIDTH / 2) - Math.floor((newPiece.shape[0]?.length ?? 0) / 2),
     y: 0,
   };
 };
@@ -131,15 +126,22 @@ const drop = () => {
 
 const checkCollision = (x: number, y: number, shape: number[][]): boolean => {
   for (let row = 0; row < shape.length; row++) {
-    for (let col = 0; col < shape[row].length; col++) {
-      if (
-        shape[row][col] !== EMPTY_CELL &&
-        (y + row >= BOARD_HEIGHT ||
-          x + col < 0 ||
-          x + col >= BOARD_WIDTH ||
-          board.value[y + row][x + col] !== EMPTY_CELL)
-      ) {
-        return true;
+    const shapeRow = shape[row];
+    if (!shapeRow) continue;
+    for (let col = 0; col < shapeRow.length; col++) {
+      const shapeCell = shapeRow[col];
+      if (shapeCell !== EMPTY_CELL) {
+        const boardY = y + row;
+        const boardX = x + col;
+
+        if (boardY >= BOARD_HEIGHT || boardX < 0 || boardX >= BOARD_WIDTH) {
+          return true;
+        }
+
+        const boardCell = board.value[boardY]?.[boardX];
+        if (boardCell !== undefined && boardCell !== EMPTY_CELL) {
+          return true;
+        }
       }
     }
   }
@@ -151,7 +153,7 @@ const mergePieceToBoard = () => {
 
   currentPiece.value.shape.forEach((row, y) => {
     row.forEach((cell, x) => {
-      if (cell !== EMPTY_CELL) {
+      if (cell !== EMPTY_CELL && currentPiece.value) {
         board.value[currentPiece.value!.y + y][currentPiece.value!.x + x] = currentPiece.value.color;
       }
     });
@@ -161,7 +163,7 @@ const mergePieceToBoard = () => {
 const clearLines = () => {
   let linesCleared = 0;
   for (let y = BOARD_HEIGHT - 1; y >= 0; y--) {
-    if (board.value[y].every((cell) => cell !== EMPTY_CELL)) {
+    if (board.value[y]?.every((cell) => cell !== EMPTY_CELL)) {
       // Line is full, clear it
       board.value.splice(y, 1);
       board.value.unshift(Array(BOARD_WIDTH).fill(EMPTY_CELL));
@@ -191,7 +193,7 @@ const movePiece = (dir: number) => {
 const rotatePiece = () => {
   if (!currentPiece.value || gameOver.value) return;
 
-  const rotatedShape = rotate(currentPiece.value.shape, 1);
+  const rotatedShape = rotate(currentPiece.value.shape);
   if (!checkCollision(currentPiece.value.x, currentPiece.value.y, rotatedShape)) {
     currentPiece.value.shape = rotatedShape;
   }

@@ -78,7 +78,7 @@ export const getRandomTetromino = () => {
   const randShape = tetrominoShapes[
     Math.floor(Math.random() * tetrominoShapes.length)
   ];
-  return TETROMINOES[randShape];
+  return TETROMINOES[randShape as keyof typeof TETROMINOES];
 };
 
 // Function to rotate a tetromino
@@ -89,7 +89,10 @@ export const rotate = (matrix: number[][]): number[][] => {
 
   for (let y = 0; y < rows; y++) {
     for (let x = 0; x < cols; x++) {
-      newMatrix[x][rows - 1 - y] = matrix[y][x];
+      const cell = matrix[y]?.[x];
+      if (cell !== undefined && newMatrix[x]) {
+        newMatrix[x][rows - 1 - y] = cell;
+      }
     }
   }
   return newMatrix;

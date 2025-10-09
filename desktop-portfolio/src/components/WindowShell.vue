@@ -25,7 +25,7 @@ import TetrisApp from './apps/TetrisApp.vue';
 const props = defineProps<{ window: WindowState }>();
 const store = useWindowsStore();
 const winboxContent = ref<HTMLElement | null>(null);
-let winbox: WinBox | null = null;
+let winbox: any = null;
 
 const appContent = computed(() => {
   switch (props.window.appId) {
