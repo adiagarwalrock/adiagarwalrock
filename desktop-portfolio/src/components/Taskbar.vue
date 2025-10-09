@@ -70,14 +70,6 @@
 
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue';
-import browserIcon from '../assets/icons/browser.png';
-import filesIcon from '../assets/icons/files.png';
-import githubIcon from '../assets/icons/github.png';
-import linkedinIcon from '../assets/icons/linkedin.png';
-import terminalIcon from '../assets/icons/terminal.png';
-import tetrisIcon from '../assets/icons/tetris.png';
-import wordIcon from '../assets/icons/word.png';
-import type { AppId } from '../stores/windows';
 import { useWindowsStore } from '../stores/windows';
 
 const store = useWindowsStore();
@@ -136,6 +128,10 @@ const shutDown = () => {
   if (confirmed) {
     [...store.windows].forEach(win => store.close(win.id));
   }
+};
+
+const goToSimpleMode = () => {
+  window.location.href = 'https://www.adityaagarwal.me/';
 };
 
 const runCommand = () => {
@@ -246,6 +242,13 @@ const startMenuItems: StartMenuEntry[] = [
     action: runCommand,
   },
   { type: 'separator', key: 'sep-2' },
+  {
+    type: 'item',
+    key: 'simple-mode',
+    label: 'Simple Mode',
+    iconColor: '#008080',
+    action: goToSimpleMode,
+  },
   {
     type: 'item',
     key: 'logoff',
