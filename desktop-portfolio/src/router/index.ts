@@ -5,7 +5,7 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      path: '/',
+      path: '/:appId?',
       name: 'desktop',
       component: DesktopView,
     },

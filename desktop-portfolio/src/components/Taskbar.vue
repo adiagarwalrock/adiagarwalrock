@@ -77,12 +77,12 @@ import linkedinIcon from '../assets/icons/linkedin.png';
 import terminalIcon from '../assets/icons/terminal.png';
 import tetrisIcon from '../assets/icons/tetris.png';
 import wordIcon from '../assets/icons/word.png';
-import type { AppId, WindowState } from '../stores/windows';
+import type { AppId } from '../stores/windows';
 import { useWindowsStore } from '../stores/windows';
 
 const store = useWindowsStore();
 const windows = computed(() => store.windows);
-const { focus, open } = store;
+const { focus } = store;
 
 const formatDateTime = (date: Date) => {
   const day = String(date.getDate()).padStart(2, '0');
@@ -111,127 +111,17 @@ const toggleStartMenu = () => {
 };
 
 const openAboutWindow = () => {
-  bringAppToFront('about');
-};
-
-type WindowOpenPayload = Omit<WindowState, 'id' | 'z' | 'focused' | 'createdAt'>;
-
-const windowDefaults: Record<AppId, WindowOpenPayload> = {
-  files: {
-    appId: 'files',
-    title: 'Files',
-    icon: filesIcon,
-    x: 160,
-    y: 120,
-    w: 640,
-    h: 480,
-    minimized: false,
-    maximized: false,
-  },
-  browser: {
-    appId: 'browser',
-    title: 'Browser',
-    icon: browserIcon,
-    x: 220,
-    y: 140,
-    w: 820,
-    h: 560,
-    minimized: false,
-    maximized: false,
-    url: 'https://www.google.com/webhp?igu=1',
-  },
-  linkedin: {
-    appId: 'linkedin',
-    title: 'LinkedIn',
-    icon: linkedinIcon,
-    x: 260,
-    y: 160,
-    w: 780,
-    h: 540,
-    minimized: false,
-    maximized: false,
-  },
-  github: {
-    appId: 'github',
-    title: 'GitHub',
-    icon: githubIcon,
-    x: 280,
-    y: 180,
-    w: 780,
-    h: 540,
-    minimized: false,
-    maximized: false,
-  },
-  about: {
-    appId: 'about',
-    title: 'About',
-    icon: filesIcon,
-    x: 200,
-    y: 200,
-    w: 420,
-    h: 320,
-    minimized: false,
-    maximized: false,
-  },
-  word: {
-    appId: 'word',
-    title: 'Word Processor',
-    icon: wordIcon,
-    x: 300,
-    y: 200,
-    w: 700,
-    h: 500,
-    minimized: false,
-    maximized: false,
-  },
-  terminal: {
-    appId: 'terminal',
-    title: 'Terminal',
-    icon: terminalIcon,
-    x: 320,
-    y: 220,
-    w: 600,
-    h: 400,
-    minimized: false,
-    maximized: false,
-  },
-  tetris: {
-    appId: 'tetris',
-    title: 'Tetris',
-    icon: tetrisIcon,
-    x: 340,
-    y: 240,
-    w: 400,
-    h: 500,
-    minimized: false,
-    maximized: false,
-  },
-};
-
-const bringAppToFront = (appId: AppId, overrides: Partial<WindowOpenPayload> = {}) => {
-  const existing = windows.value.find(win => win.appId === appId);
-  if (existing) {
-    if (overrides.url) {
-      existing.url = overrides.url;
-    }
-    focus(existing.id);
-    return;
-  }
-  const baseConfig = windowDefaults[appId];
-  open({
-    ...baseConfig,
-    ...overrides,
-  });
+  store.openApp('about');
 };
 
 const openBrowserWith = (url: string) => {
-  bringAppToFront('browser', { url });
+  store.openApp('browser', { url });
 };
 
-const openFiles = () => bringAppToFront('files');
-const openGitHub = () => bringAppToFront('github');
-const openLinkedIn = () => bringAppToFront('linkedin');
-const openAbout = () => bringAppToFront('about');
+const openFiles = () => store.openApp('files');
+const openGitHub = () => store.openApp('github');
+const openLinkedIn = () => store.openApp('linkedin');
+const openAbout = () => store.openApp('about');
 
 const logOff = () => {
   store.windows.forEach(win => {
