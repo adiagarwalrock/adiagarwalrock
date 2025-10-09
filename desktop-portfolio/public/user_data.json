@@ -1,0 +1,166 @@
+{
+  "name": "Aditya Agarwal",
+  "title": "Founding Machine Learning Engineer & AI/ML Specialist",
+  "location": "Jersey City, NJ",
+  "summary": [
+    "Experienced Machine Learning Engineer with a strong background in AI/ML, Cloud & Infrastructure, and Full-Stack Development.",
+    "Passionate about building scalable and secure solutions that drive innovation and efficiency."
+  ],
+  "values": [
+    "Designing experiences that feel familiar, fast, and delightful.",
+    "Automating away toil so teams can stay focused on creative work.",
+    "Telling clear stories with data, visuals, and engineering craft."
+  ],
+  "skills": [
+    {
+      "category": "Languages & Frameworks",
+      "items": [
+        "Python",
+        "Django",
+        "Flask",
+        "Java",
+        "JavaScript",
+        "TensorFlow"
+      ]
+    },
+    {
+      "category": "AI/ML & Security",
+      "items": [
+        "RAG Pipelines",
+        "Agentic Systems",
+        "BERT",
+        "NLP",
+        "Vector Databases",
+        "LangChain",
+        "Llama-Index",
+        "Content Analysis",
+        "Threat Detection",
+        "Data Governance",
+        "Automated Monitoring",
+        "Security Controls"
+      ]
+    },
+    {
+      "category": "Cloud & Infrastructure",
+      "items": [
+        "AWS",
+        "GCP",
+        "Docker",
+        "Terraform",
+        "High Availability Architecture"
+      ]
+    },
+    {
+      "category": "Data & Distributed Systems",
+      "items": [
+        "MongoDB",
+        "MySQL",
+        "PostgreSQL",
+        "ETL Pipelines",
+        "Real-time Processing",
+        "Event-Driven Architecture",
+        "Microservices"
+      ]
+    },
+    {
+      "category": "Development Practices",
+      "items": [
+        "Git",
+        "CI/CD",
+        "DevOps",
+        "REST APIs",
+        "Agile",
+        "Infrastructure-as-Code"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founding Machine Learning Engineer",
+      "company": "Soopra.ai",
+      "period": "August 2024 - Present",
+      "location": "San Francisco",
+      "highlights": [
+        "Architected scalable AI infrastructure implementing Agentic systems with custom recommendation engines for personalized user experiences, improving engagement by 35%",
+        "Developed production-grade AI pipelines for PDF document processing with vector database integration, enabling contextually relevant retrieval and enhancing security posture through automated content analysis",
+        "Built resilient data processing systems creating Agent-first social media platform with high availability and distributed computing principles",
+        "Implemented security controls for AI service deployments, ensuring compliance with data governance standards and threat detection capabilities",
+        "Developed conversational AI security scripts that enhanced user interaction monitoring and data extraction with governance controls, achieving 30% improvement in user satisfaction and 20% reduction in onboarding time through automated security validation"
+      ]
+    },
+    {
+      "role": "Software Developer Intern",
+      "company": "Soopra.ai",
+      "period": "June 2023 - May 2024",
+      "location": "San Francisco",
+      "highlights": [
+        "Engineered enterprise RAG pipelines with vector databases for multi-source data ingestion, implementing decay-function algorithms for reverse chronological retrieval with 95% embedding accuracy",
+        "Designed event-driven chat systems utilizing domain-driven architecture to dynamically determine conversation flow, increasing user engagement by 25% through intelligent response routing",
+        "Built scalable ETL infrastructure for real-time social media data extraction and processing using messaging patterns, reducing data loading time by 15%"
+      ]
+    },
+    {
+      "role": "Full-Stack Developer",
+      "company": "SA Consultant",
+      "period": "October 2021 - June 2022",
+      "location": "Bangalore",
+      "highlights": [
+        "Delivered enterprise web application using Django framework with object-oriented design principles, increasing team efficiency by 30% and improving client communication through secure RESTful APIs",
+        "Implemented billing and monitoring systems with PostgreSQL backend, enhancing project documentation accuracy and providing audit trails for compliance",
+        "Deployed cloud-native solution on Heroku with AWS RDS integration, ensuring high availability, data security, and seamless scalability for distributed teams"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "SOAR - Managed RAG System",
+      "summary": "Built an AI framework using Django, Llama-Index, and Qdrant to turn unstructured documents into a semantic, searchable knowledge graph with low-latency vector search. Developed customization tools for live prompt engineering, model swapping (Claude, GPT-4, etc.), and parameter tuning to optimize AI outputs. Productized solutions as embeddable widgets & REST APIs with automated PDF/CSV reports, Slack alerts, and ticket creation pipelines. Deployed on GCP with Docker/Kubernetes, enabling auto-scaling, security controls, and a roadmap for multimodal (image/table) support.",
+      "links": [
+        "Product Page"
+      ]
+    },
+    {
+      "name": "Toxic Span Detection & Content Security",
+      "summary": "Developed AI-powered security solution using BERT and CRF models for automated toxic content detection in online discussions, enabling proactive threat identification and semi-automated moderation. Implemented ML-based governance controls highlighting malicious spans within content for enhanced attribute and security monitoring.",
+      "links": []
+    },
+    {
+      "name": "critiQs - Secure Review Platform",
+      "summary": "Built cloud-native web application with integrated TMDB database containing 1000+ entries, implementing secure user authentication and recommendation algorithms. Designed scalable architecture with REST APIs and database optimization, enabling high-performance content delivery and user engagement analytics.",
+      "links": [
+        "Live Demo"
+      ]
+    },
+    {
+      "name": "Insight - Enterprise Project Management Platform",
+      "summary": "Led development of Django-based platform with comprehensive project monitoring, billing estimates, and automated reporting capabilities for enhanced operational efficiency. Deployed production system on Heroku with AWS RDS, implementing infrastructure-as-code principles for reliable data management and security compliance.",
+      "links": []
+    },
+    {
+      "name": "Fantastic Computing Machine - ML Platform",
+      "summary": "Created SaaS platform on Flask framework for dynamic ML model deployment, enabling secure model sharing and collaborative development with enhanced deployment efficiency.",
+      "links": []
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Science in Machine Learning",
+      "institution": "Stevens Institute of Technology, NJ",
+      "period": "September 2022 - May 2024",
+      "highlights": []
+    },
+    {
+      "degree": "Bachelor of Engineering in Computer Science",
+      "institution": "Alliance University, Bangalore",
+      "period": "August 2017 - July 2021",
+      "highlights": []
+    }
+  ],
+  "links": {
+    "email": "adiagarwal1509@gmail.com",
+    "website": "www.adityaagarwal.me",
+    "linkedin": "https://www.linkedin.com/in/adityaagarwal1999/",
+    "github": "https://github.com/adiagarwalrock",
+    "resume": "/resume/Aditya_Agarwal_Resume.pdf"
+  }
+}
