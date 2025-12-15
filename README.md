@@ -12,7 +12,6 @@
 [![GitHub](https://img.shields.io/badge/GitHub-adiagawralrock-lightgrey)](https://github.com/adiagarwalrock)
 </center>
 
-
 - 🎓 I'm a proud graduate from **Stevens Institute of Technology**, where I leveled up my skills with a Master's in **Machine Learning**.
 
 - 👨‍💻 By day, I'm a **Machine Learning Engineer** at [**soopra.ai**](https://soopra.ai), where I'm on a quest to build self-reflective AI and supercharge search with some RAG goodness.
@@ -21,16 +20,16 @@
 
 - 💬 Got a cool idea or just want to geek out about **Python, AI/ML, or Agentic Systems**? My DMs are open!
 
-- 📧 You can slide into my inbox at **adiagarwal1509@gmail.com**.
+- 📧 You can slide into my inbox at **<adiagarwal1509@gmail.com>**.
 
 - ⚡ **Fun Fact:** When I'm not teaching machines to talk, you can probably find me lost in a video game. I fully embrace my 'quirky' side.
 
 (╯°□°）╯︵ ┻━┻
 
-
 <hr>
 
 ### Connect with me
+
 <p>
 <a href="https://twitter.com/adityaag1234" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="adityaag1234" height="30" width="40" /></a>
 <a href="https://linkedin.com/in/adiagarwal1509" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="adiagarwal1509" height="30" width="40" /></a>
@@ -41,6 +40,7 @@
 <hr>
 
 ### Languages and Tools
+
 <p>
 <a href="https://www.python.org" target="_blank" rel="noreferrer"><img src="static/icons/Python 3.x.png" alt="python" width="40" height="40"/></a>
 <a href="https://www.java.com" target="_blank" rel="noreferrer"><img src="static/icons/Core Java.png" alt="java" width="40" height="40"/></a>
@@ -67,7 +67,3 @@
 ![Top Langs](https://adiagarwal-grh.vercel.app/api/top-langs/?username=adiagarwalrock&layout=donut&hide=javascript,css)
 
 ![Aditya Agarwal's GitHub stats](https://adiagarwal-grh.vercel.app/api?username=adiagarwalrock&show_icons=true&theme=dark&title_color=ffffff&text_color=ffffff&hide_border=true&locale=en&show=reviews,prs_merged,prs_merged_percentagehide=stars&include_all_commits=true&line_height=20&ring_color=fc7bac)
-
-[website]: http://www.adityaagarwal.me/
-[linkedin]: https://www.linkedin.com/in/adiagarwal1509/
-[github]: https://github.com/adiagarwalrock
