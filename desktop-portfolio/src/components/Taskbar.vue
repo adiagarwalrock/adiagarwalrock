@@ -1,69 +1,119 @@
 <template>
   <div class="taskbar">
-    <div
-      class="start-menu-container"
-      ref="startMenuContainer"
-      @mouseenter="openStartMenu"
-      @mouseleave="closeStartMenu"
-    >
-      <button
-        type="button"
-        class="start-button"
-        :class="{ active: showStartMenu }"
-        @click.stop="toggleStartMenu"
-        :aria-expanded="showStartMenu"
-        aria-haspopup="true"
-      >
-        Start
-      </button>
-      <div v-if="showStartMenu" class="start-menu" @click.stop>
-        <div class="menu-branding">
-          <div class="brand-logo"></div>
-          <span class="brand-text">Windows98</span>
-          <div class="brand-footer">
-            <span class="brand-start">Start</span>
-            <div class="brand-icons">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-        </div>
-        <div class="menu-body">
-          <div class="user-card">
-            <img :src="userAvatar" alt="Aditya Agarwal" loading="lazy" />
-            <div class="user-meta">
-              <span class="user-caption">Logged in as</span>
+    <div class="start-menu-container" ref="startMenuContainer" @mouseenter="openStartMenu" @mouseleave="closeStartMenu">
+      <div class="start-button" :class="{ active: showStartMenu }" @click.stop="toggleStartMenu" role="button"
+        tabindex="0">
+        <img src="../assets/icons/xp/win-logo.svg" class="start-icon" alt="" />
+        <span class="start-text">start</span>
+      </div>
+
+      <transition name="slide-up">
+        <div v-if="showStartMenu" class="start-menu" @click.stop>
+          <div class="xp-menu-header">
+            <div class="user-profile">
+              <div class="user-avatar-frame">
+                <img :src="userAvatar" alt="User Avatar" class="user-avatar" />
+              </div>
               <span class="user-name">Aditya Agarwal</span>
             </div>
           </div>
-          <ul class="menu-items">
-            <template v-for="item in startMenuItems" :key="item.key">
-              <li
-                v-if="item.type === 'item'"
-                class="menu-item"
-                :class="{ 'has-submenu': item.hasSubmenu }"
-                @click="handleItemClick(item)"
-              >
-                <span class="item-icon" :style="{ backgroundColor: item.iconColor }"></span>
-                <span class="item-label">{{ item.label }}</span>
-                <span v-if="item.hasSubmenu" class="submenu-arrow">&gt;</span>
-              </li>
-              <li v-else class="menu-separator" aria-hidden="true"></li>
-            </template>
-          </ul>
+          <div class="xp-menu-body">
+            <div class="xp-left-column">
+              <ul class="xp-apps-list">
+                <li v-for="item in pinnedItems" :key="item.key" class="xp-menu-item" @click="handleItemClick(item)">
+                  <div class="xp-icon-placeholder" :style="{ backgroundColor: item.iconColor }"></div>
+                  <div class="xp-item-text">
+                    <span class="xp-item-title">{{ item.label }}</span>
+                    <span v-if="item.subLabel" class="xp-item-subtitle">{{ item.subLabel }}</span>
+                  </div>
+                </li>
+              </ul>
+              <div class="xp-separator"></div>
+              <div class="all-programs-container">
+                <div class="xp-menu-item all-programs"
+                  @click="openBrowserWith('https://www.google.com/search?igu=1&q=Aditya+Agarwal')">
+                  <span class="xp-item-title">All Programs</span>
+                  <span class="xp-arrow-green">▶</span>
+                </div>
+              </div>
+            </div>
+            <div class="xp-right-column">
+              <ul class="xp-system-list">
+                <li class="xp-menu-item" @click="openFiles">
+                  <span class="xp-item-title bold">My Documents</span>
+                </li>
+                <li class="xp-menu-item" @click="openFiles">
+                  <span class="xp-item-title bold">My Recent Documents</span>
+                  <span class="xp-arrow">▶</span>
+                </li>
+                <li class="xp-menu-item" @click="openFiles">
+                  <span class="xp-item-title bold">My Computer</span>
+                </li>
+                <li class="xp-menu-item" @click="openFiles">
+                  <span class="xp-item-title bold">My Network Places</span>
+                </li>
+                <div class="xp-separator horizontal"></div>
+                <li class="xp-menu-item" @click="openAbout">
+                  <span class="xp-item-title">Control Panel</span>
+                </li>
+                <li class="xp-menu-item" @click="openAboutWindow">
+                  <span class="xp-item-title">Connect To</span>
+                </li>
+                <li class="xp-menu-item" @click="openAboutWindow">
+                  <span class="xp-item-title">Printers and Faxes</span>
+                </li>
+                <div class="xp-separator horizontal"></div>
+                <li class="xp-menu-item" @click="openAboutWindow">
+                  <span class="xp-item-title">Help and Support</span>
+                </li>
+                <li class="xp-menu-item" @click="openAboutWindow">
+                  <span class="xp-item-title">Search</span>
+                </li>
+                <li class="xp-menu-item" @click="runCommand">
+                  <span class="xp-item-title">Run...</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="xp-menu-footer">
+            <div class="footer-button" @click="logOff">
+              <span class="icon-logoff"></span>
+              <span>Log Off</span>
+            </div>
+            <div class="footer-button" @click="shutDown">
+              <span class="icon-shutdown"></span>
+              <span>Turn Off Computer</span>
+            </div>
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
+
+    <div class="taskbar-divider"></div>
+
+    <div class="quick-launch">
+      <div class="quick-icon desktop-icon" @click="goToSimpleMode" title="Show Desktop"></div>
+      <div class="quick-icon ie-icon" @click="openBrowserWith('https://www.google.com')"
+        title="Launch Internet Explorer"></div>
+    </div>
+
+    <div class="taskbar-divider"></div>
+
     <div class="running-apps">
-      <div v-for="win in windows" :key="win.id" class="app-tab" :class="{ focused: win.focused }" @click="focus(win.id)">
+      <div v-for="win in windows" :key="win.id" class="app-tab" :class="{ focused: win.focused }"
+        @click="focus(win.id)">
         <img :src="win.icon" :alt="win.title" />
-        <span>{{ win.title }}</span>
+        <span class="app-title">{{ win.title }}</span>
       </div>
     </div>
-    <div class="clock">
-      {{ currentTime }}
+
+    <div class="system-tray">
+      <div class="tray-icons">
+        <span class="tray-icon" title="Volume">🔊</span>
+      </div>
+      <div class="clock">
+        {{ currentTime }}
+      </div>
     </div>
   </div>
 </template>
@@ -77,11 +127,8 @@ const windows = computed(() => store.windows);
 const { focus } = store;
 
 const formatDateTime = (date: Date) => {
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = date.toLocaleString('default', { month: 'long' });
-  const year = date.getFullYear();
-  const time = date.toLocaleTimeString('en-US', { hour12: false });
-  return `${day} ${month}, ${year} | ${time}`;
+  const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  return time;
 };
 
 const currentTime = ref(formatDateTime(new Date()));
@@ -90,210 +137,60 @@ let timer: number;
 const startMenuContainer = ref<HTMLElement | null>(null);
 const userAvatar = new URL('../assets/aditya_profile.jpg', import.meta.url).href;
 
-const closeStartMenu = () => {
-  showStartMenu.value = false;
-};
+const closeStartMenu = () => showStartMenu.value = false;
+const openStartMenu = () => { };
+const toggleStartMenu = () => showStartMenu.value = !showStartMenu.value;
 
-const openStartMenu = () => {
-  showStartMenu.value = true;
-};
-
-const toggleStartMenu = () => {
-  showStartMenu.value = !showStartMenu.value;
-};
-
-const openAboutWindow = () => {
-  store.openApp('about');
-};
-
-const openBrowserWith = (url: string) => {
-  store.openApp('browser', { url });
-};
-
-const openFiles = () => store.openApp('files');
-const openGitHub = () => store.openApp('github');
-const openLinkedIn = () => store.openApp('linkedin');
-const openAbout = () => store.openApp('about');
+const openAboutWindow = () => { store.openApp('about'); closeStartMenu(); };
+const openBrowserWith = (url: string) => { store.openApp('browser', { url }); closeStartMenu(); };
+const openFiles = () => { store.openApp('files'); closeStartMenu(); };
+const openGitHub = () => { store.openApp('github'); closeStartMenu(); };
+const openLinkedIn = () => { store.openApp('linkedin'); closeStartMenu(); };
+const openAbout = () => { store.openApp('about'); closeStartMenu(); };
 
 const logOff = () => {
-  store.windows.forEach(win => {
-    if (!win.minimized) {
-      store.setMinimized(win.id, true);
-    }
-  });
+  store.windows.forEach(win => { if (!win.minimized) store.setMinimized(win.id, true); });
+  closeStartMenu();
 };
 
 const shutDown = () => {
-  const confirmed = window.confirm('Shut down the portfolio OS? This will close all open windows.');
-  if (confirmed) {
+  if (window.confirm('Shut down the portfolio OS? This will close all open windows.')) {
     [...store.windows].forEach(win => store.close(win.id));
   }
+  closeStartMenu();
 };
 
-const goToSimpleMode = () => {
-  window.location.href = 'https://www.adityaagarwal.me/';
-};
+const goToSimpleMode = () => window.location.href = 'https://www.adityaagarwal.me/';
 
 const runCommand = () => {
   const command = window.prompt('Type the URL or search query to run:', 'https://www.google.com/webhp?igu=1');
-  if (!command) return;
-  const isFullUrl = /^https?:\/\//i.test(command);
-  const target = isFullUrl
-    ? command
-    : `https://www.google.com/search?igu=1&q=${encodeURIComponent(command)}`;
-  openBrowserWith(target);
+  if (command) {
+    const isFullUrl = /^https?:\/\//i.test(command);
+    const target = isFullUrl ? command : `https://www.google.com/search?igu=1&q=${encodeURIComponent(command)}`;
+    openBrowserWith(target);
+  }
+  closeStartMenu();
 };
 
-interface StartMenuActionItem {
-  type: 'item';
-  key: string;
-  label: string;
-  iconColor: string;
-  hasSubmenu?: boolean;
-  action?: () => void;
-  autoClose?: boolean;
+interface StartMenuItem {
+  key: string; label: string; subLabel?: string; iconColor: string; action?: () => void;
 }
 
-interface StartMenuSeparatorItem {
-  type: 'separator';
-  key: string;
-}
-
-type StartMenuEntry = StartMenuActionItem | StartMenuSeparatorItem;
-
-const startMenuItems: StartMenuEntry[] = [
-  {
-    type: 'item',
-    key: 'windows-update',
-    label: 'Windows Update',
-    iconColor: '#0081d6',
-    action: () => openBrowserWith('https://www.google.com/search?igu=1&q=Windows+Update'),
-  },
-  {
-    type: 'item',
-    key: 'new-office-doc',
-    label: 'New Office Document',
-    iconColor: '#fcd24f',
-    action: openFiles,
-  },
-  {
-    type: 'item',
-    key: 'open-office-doc',
-    label: 'Open Office Document',
-    iconColor: '#f0c06d',
-    action: openFiles,
-  },
-  { type: 'separator', key: 'sep-1' },
-  {
-    type: 'item',
-    key: 'programs',
-    label: 'Programs',
-    iconColor: '#ea6a2e',
-    hasSubmenu: true,
-    action: () => openBrowserWith('https://www.google.com/search?igu=1&q=aditya+agarwal+portfolio+apps'),
-  },
-  {
-    type: 'item',
-    key: 'favorites',
-    label: 'Favorites',
-    iconColor: '#2b9a3b',
-    hasSubmenu: true,
-    action: () => {
-      openGitHub();
-      openLinkedIn();
-    },
-  },
-  {
-    type: 'item',
-    key: 'documents',
-    label: 'Documents',
-    iconColor: '#f2e8c0',
-    hasSubmenu: true,
-    action: openFiles,
-  },
-  {
-    type: 'item',
-    key: 'settings',
-    label: 'Settings',
-    iconColor: '#8287f4',
-    hasSubmenu: true,
-    action: openAbout,
-  },
-  {
-    type: 'item',
-    key: 'find',
-    label: 'Find',
-    iconColor: '#04a3c3',
-    hasSubmenu: true,
-    action: () => openBrowserWith('https://www.google.com/search?igu=1&q=Aditya+Agarwal'),
-  },
-  {
-    type: 'item',
-    key: 'help',
-    label: 'Help',
-    iconColor: '#ffd66c',
-    action: openAbout,
-  },
-  {
-    type: 'item',
-    key: 'run',
-    label: 'Run...',
-    iconColor: '#c1c5ca',
-    action: runCommand,
-  },
-  { type: 'separator', key: 'sep-2' },
-  {
-    type: 'item',
-    key: 'simple-mode',
-    label: 'Simple Mode',
-    iconColor: '#008080',
-    action: goToSimpleMode,
-  },
-  {
-    type: 'item',
-    key: 'logoff',
-    label: 'Log Off...',
-    iconColor: '#f68f1e',
-    action: logOff,
-  },
-  {
-    type: 'item',
-    key: 'shutdown',
-    label: 'Shut Down...',
-    iconColor: '#b95454',
-    action: shutDown,
-  },
-  { type: 'separator', key: 'sep-3' },
-  {
-    type: 'item',
-    key: 'about',
-    label: 'About This Site',
-    iconColor: '#2a62b7',
-    action: openAboutWindow,
-  },
+const pinnedItems: StartMenuItem[] = [
+  { key: 'browser', label: 'Internet', subLabel: 'Browser', iconColor: '#3689e6', action: () => openBrowserWith('https://www.google.com') },
+  { key: 'email', label: 'E-mail', subLabel: 'Outlook Express', iconColor: '#e6bd36', action: openAbout },
+  { key: 'github', label: 'GitHub', iconColor: '#333', action: openGitHub },
+  { key: 'linkedin', label: 'LinkedIn', iconColor: '#0077b5', action: openLinkedIn },
 ];
 
-const handleItemClick = (item: StartMenuEntry) => {
-  if (item.type !== 'item') return;
-  if (item.action) {
-    item.action();
-  }
-  if (item.autoClose ?? true) {
-    closeStartMenu();
-  }
-};
-
+const handleItemClick = (item: StartMenuItem) => { if (item.action) item.action(); closeStartMenu(); };
 const handleGlobalClick = (event: MouseEvent) => {
-  if (startMenuContainer.value && !startMenuContainer.value.contains(event.target as Node)) {
-    closeStartMenu();
-  }
+  if (startMenuContainer.value && !startMenuContainer.value.contains(event.target as Node)) closeStartMenu();
 };
 
 onMounted(() => {
   document.addEventListener('click', handleGlobalClick);
-  timer = window.setInterval(() => {
-    currentTime.value = formatDateTime(new Date());
-  }, 1000);
+  timer = window.setInterval(() => { currentTime.value = formatDateTime(new Date()); }, 1000);
 });
 
 onUnmounted(() => {
@@ -303,273 +200,423 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* ... existing styles ... */
+/* Reset & Fonts */
+* {
+  box-sizing: border-box;
+}
+
+.taskbar,
+.start-menu {
+  font-family: 'Tahoma', sans-serif;
+  user-select: none;
+  font-size: 11px;
+}
+
+/* Taskbar Container */
 .taskbar {
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 40px;
-  background-color: #c0c0c0;
-  border-top: 2px solid #fff;
-  box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  padding: 0 5px;
   width: 100%;
-  z-index: 99999;
-}
-
-.start-menu-container {
-  position: relative;
-}
-
-.start-button {
+    height: 30px;
+    /* XP Taskbar Gradient */
+    background: linear-gradient(to bottom, #245edb 0%, #3f8cf3 9%, #245edb 18%, #245edb 92%, #1941a5 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
-  border: 2px solid #fff;
-  border-right-color: #888;
-  border-bottom-color: #888;
-  background-color: #c0c0c0;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-  color: #000;
-  box-shadow: inset -1px -1px 0 #808080;
+  z-index: 99999;
+  padding: 0;
 }
 
-.start-button::before {
-  content: '';
-  width: 16px;
-  height: 16px;
-  border: 1px solid #000;
-  background:
-    linear-gradient(90deg, #0f77db 50%, #f5cc0a 50%) top / 100% 50% no-repeat,
-    linear-gradient(90deg, #dd1d1d 50%, #0da750 50%) bottom / 100% 50% no-repeat;
+/* Start Button - Pixel Perfect Approximation */
+.start-button {
+  height: 30px;
+    padding: 0 12px 0 6px;
+    background: radial-gradient(circle at 50% 0%, #7ee286 0%, #388e3c 100%);
+    /* Green gradient */
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 2px 0 2px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+    cursor: pointer;
+    color: #fff;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 14px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    transition: filter 0.1s;
+    margin-right: 2px;
+}
+
+.start-button:hover {
+  filter: brightness(1.1);
 }
 
 .start-button.active {
-  border-top-color: #888;
-  border-left-color: #888;
-  border-right-color: #fff;
-  border-bottom-color: #fff;
-  box-shadow: inset 1px 1px 0 #808080;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.4);
+    background: #2e7d32;
+    padding-top: 2px;
 }
 
+.start-icon {
+  width: 18px;
+  height: 18px;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+/* Dividers */
+.taskbar-divider {
+  width: 2px;
+  height: 22px;
+  background: rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 6px;
+  border-radius: 1px;
+}
+
+/* Quick Launch */
+.quick-launch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+    padding-right: 4px;
+}
+
+.quick-icon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  background-size: cover;
+}
+
+.quick-icon:hover {
+  filter: brightness(1.2);
+}
+
+.desktop-icon {
+  background-color: #aaa;
+  mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="2"/></svg>');
+}
+
+/* Placeholder */
+.ie-icon {
+  background-color: #3689e6;
+  border-radius: 50%;
+}
+
+/* Placeholder */
+
+/* Running Apps Area */
+.running-apps {
+  flex: 1;
+  display: flex;
+  align-items: center;
+    padding: 0 4px;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.app-tab {
+  height: 24px;
+  min-width: 140px;
+  max-width: 160px;
+  background: #3c81f3;
+  color: #fff;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  cursor: pointer;
+  font-size: 11px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: background 0.1s;
+}
+
+.app-tab:hover {
+  background: #5396f6;
+}
+
+.app-tab.focused {
+  background: #1e52b7;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  background: #1941a5;
+  }
+  
+  .app-tab img {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+  
+  .app-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* System Tray */
+.system-tray {
+  background: #1290e2;
+  border-left: 1px solid #0d5c94;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  box-shadow: inset 1px 0 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  gap: 8px;
+}
+
+.tray-icon {
+  font-size: 12px;
+}
+
+/* Start Menu */
 .start-menu {
   position: absolute;
-  bottom: 100%;
+  bottom: 30px;
   left: 0;
-  display: flex;
-  min-width: 260px;
-  background-color: #c0c0c0;
-  border: 2px solid #fff;
-  border-right-color: #666;
-  border-bottom-color: #666;
-  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.35);
-  z-index: 100000;
-}
-
-.menu-branding {
-  width: 64px;
-  background: linear-gradient(180deg, #00318c, #0065d0);
-  color: white;
+  width: 380px;
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+    border: 1px solid #003c74;
+  }
+  
+  .xp-menu-header {
+    background: linear-gradient(to bottom, #245edb, #3f8cf3);
+    height: 64px;
+    display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 6px 12px;
-  text-align: center;
+  padding: 0 8px;
+    border-bottom: 2px solid #e55500;
+    /* Orange strip */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.menu-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 8px 0;
-  background: #d7d7d7;
-}
-
-.user-card {
+.user-profile {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 0 16px 12px;
-  border-bottom: 1px solid #a3a2a0;
-  margin-bottom: 6px;
+  gap: 8px;
+  width: 100%;
 }
 
-.user-card img {
+.user-avatar-frame {
   width: 48px;
   height: 48px;
-  border: 2px solid #fff;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
+  background: #fff;
+  border-radius: 4px;
+  padding: 2px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  border: 1px solid #777;
+}
+
+.user-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
   object-fit: cover;
-}
-
-.user-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.user-caption {
-  font-size: 11px;
-  color: #303030;
+  display: block;
 }
 
 .user-name {
+  color: #fff;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 14px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-.brand-logo {
-  width: 32px;
-  height: 32px;
-  border: 2px solid rgba(255, 255, 255, 0.6);
-  background:
-    linear-gradient(90deg, #0f77db 50%, #f5cc0a 50%) top / 100% 50% no-repeat,
-    linear-gradient(90deg, #dd1d1d 50%, #0da750 50%) bottom / 100% 50% no-repeat;
+.xp-menu-body {
+  display: flex;
+  background-color: #fff;
+  border-top: 1px solid #fff;
 }
 
-.brand-text {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px #021f63;
-}
-
-.brand-footer {
+.xp-left-column {
+  flex: 1;
+  padding: 6px;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  align-items: center;
 }
 
-.brand-start {
-  font-size: 12px;
-  letter-spacing: 0.5px;
+.xp-right-column {
+  width: 170px;
+  background-color: #d3e5fa;
+  border-left: 1px solid #9fbce0;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
-.brand-icons {
-  display: grid;
-  grid-template-columns: repeat(2, 8px);
-  grid-template-rows: repeat(2, 8px);
-  gap: 2px;
-}
-
-.brand-icons span {
-  display: block;
-  width: 8px;
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-.brand-icons span:nth-child(1) {
-  background-color: #0f77db;
-}
-
-.brand-icons span:nth-child(2) {
-  background-color: #f5cc0a;
-}
-
-.brand-icons span:nth-child(3) {
-  background-color: #dd1d1d;
-}
-
-.brand-icons span:nth-child(4) {
-  background-color: #0da750;
-}
-
-.menu-items {
-  flex: 1;
+.xp-apps-list,
+.xp-system-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.menu-item {
+.xp-menu-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 6px 18px 6px 12px;
+  padding: 4px;
   cursor: pointer;
-  font-size: 13px;
-  color: #000;
+  color: #333;
+    border: 1px solid transparent;
+    line-height: 1.2;
+  }
+  
+  .xp-menu-item:hover {
+    background-color: #316ac5;
+    color: #fff;
+    border-color: #316ac5;
+  }
+  
+  .xp-left-column .xp-menu-item {
+    margin-bottom: 4px;
+  }
+  
+  .xp-right-column .xp-menu-item {
+    margin-bottom: 2px;
+    height: 28px;
+  }
+  
+  .xp-icon-placeholder {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    background-color: #ccc;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .xp-item-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .xp-item-title {
+    font-size: 11px;
 }
 
-.menu-item:hover {
-  background-color: #000080;
-  color: white;
+.xp-item-title.bold {
+  font-weight: bold;
+  font-size: 11px;
 }
 
-.item-icon {
-  width: 22px;
-  height: 22px;
-  border: 1px solid #333;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.6);
+.xp-item-subtitle {
+  font-size: 10px;
+  color: #888;
 }
 
-.item-label {
-  flex: 1;
+.xp-menu-item:hover .xp-item-subtitle {
+  color: #cce;
 }
 
-.menu-item.has-submenu .submenu-arrow {
+.xp-arrow,
+.xp-arrow-green {
   margin-left: auto;
+  font-size: 8px;
+    opacity: 0.8;
+  }
+  
+  .xp-arrow-green {
+    color: #fff;
+  }
+  
+  .all-programs-container {
+    margin-top: auto;
+    padding-top: 4px;
+    text-align: center;
+  }
+  
+  .all-programs {
+    justify-content: center;
+    padding: 6px;
+    font-weight: bold;
 }
 
-.submenu-arrow {
-  font-size: 12px;
+.all-programs:hover {
+  background-color: #2f71cd;
 }
 
-.menu-separator {
+.xp-separator {
   height: 1px;
-  margin: 6px 12px;
-  background-color: #9a9a9a;
-  border-top: 1px solid #fff;
+  background: linear-gradient(to right, transparent, #d3d3d3, transparent);
+    margin: 6px 0;
 }
 
-.menu-separator::marker {
-  content: '';
+.xp-separator.horizontal {
+  background: #9fbce0;
+  margin: 4px 6px;
+  height: 1px;
+  border-bottom: 1px solid #fff;
 }
 
-.running-apps {
-  flex-grow: 1;
+.xp-menu-footer {
+  background: linear-gradient(to bottom, #3f8cf3, #245edb);
+  height: 38px;
   display: flex;
-  margin: 0 10px;
+  justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    gap: 10px;
+    border-top: 2px solid #e55500;
+    /* Orange strip */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.app-tab {
+.footer-button {
   display: flex;
   align-items: center;
-  padding: 3px 8px;
-  margin: 0 2px;
-  border: 2px solid #c0c0c0;
+  gap: 6px;
+    color: #fff;
+    font-size: 11px;
   cursor: pointer;
+  padding: 4px 6px;
+  }
+  
+  .footer-button:hover {
+    filter: brightness(1.2);
+  }
+  
+  .icon-logoff {
+    width: 18px;
+    height: 18px;
+    background-color: #e6bd36;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .icon-shutdown {
+    width: 18px;
+    height: 18px;
+    background-color: #e4421d;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.app-tab.focused {
-  border-color: #888;
-  border-right-color: #fff;
-  border-bottom-color: #fff;
-  background-color: #e0e0e0;
+/* Animations */
+.slide-up-enter-active {
+  transition: all 0.2s ease-out;
 }
 
-.app-tab img {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
+.slide-up-leave-active {
+  transition: all 0.1s ease-in;
 }
 
-.clock {
-  padding: 5px 10px;
-  border: 2px solid #888;
-  border-right-color: #fff;
-  border-bottom-color: #fff;
+.slide-up-enter-from,
+.slide-up-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
 }
 </style>

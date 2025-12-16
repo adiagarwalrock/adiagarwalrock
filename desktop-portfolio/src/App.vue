@@ -13,8 +13,8 @@ body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  font-family: Georgia, serif;
-  font-size: 12px;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 11px;
 }
 
 #app-container {

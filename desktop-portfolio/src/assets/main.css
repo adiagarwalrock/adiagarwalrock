@@ -1,0 +1,153 @@
+/* Global XP Styling Overrides */
+
+/* WinBox XP Theme Overrides */
+.winbox {
+  border-radius: 8px 8px 0 0;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.4) !important;
+  border: 1px solid #00138c;
+  background-color: #00138c; /* Border color fallback */
+}
+
+.wb-header {
+  /* XP Luna Blue Title Bar Gradient - More Vibrant */
+  background: linear-gradient(to bottom, 
+    #0058ee 0%, 
+    #3593ff 4%, 
+    #288eec 6%, 
+    #127dff 8%, 
+    #0369fc 10%, 
+    #0262ee 14%, 
+    #0057e5 20%, 
+    #0054e3 24%, 
+    #0055eb 56%, 
+    #0054e6 66%, 
+    #0053eb 76%, 
+    #0054e8 86%, 
+    #0053eb 92%, 
+    #0051e4 94%, 
+    #0053eb 100%) !important;
+  height: 30px !important;
+  border-radius: 6px 6px 0 0;
+  border-bottom: none;
+}
+
+.wb-title {
+  font-family: 'Tahoma', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
+  text-shadow: 1px 1px 1px #0f306d;
+  color: white !important;
+  line-height: 30px !important;
+  padding-left: 8px;
+  letter-spacing: 0.5px;
+}
+
+.wb-body {
+  background-color: #ece9d8 !important; /* XP beige background */
+  border-top: none;
+  font-family: 'Tahoma', sans-serif;
+  margin: 0 3px 3px 3px; /* XP inner border effect */
+}
+
+/* Controls */
+.wb-controls {
+  top: 5px !important;
+  right: 6px !important;
+}
+
+/* Base style for all control buttons */
+.wb-min, .wb-max, .wb-close, .wb-full {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  border-radius: 3px;
+  margin-left: 2px;
+  width: 21px !important;
+  height: 21px !important;
+  border: none !important; /* Icons have borders in SVG */
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Close Button (Red) */
+.wb-close {
+  background-image: url('./icons/xp/close.svg') !important;
+}
+.wb-close:hover {
+  filter: brightness(1.1);
+}
+
+/* Max/Restore Button (Blue) */
+.wb-max, .wb-full {
+  background-image: url('./icons/xp/maximize.svg') !important;
+}
+.wb-max:hover, .wb-full:hover {
+  filter: brightness(1.1);
+}
+
+/* Minimize Button (Blue) */
+.wb-min {
+  background-image: url('./icons/xp/minimize.svg') !important;
+}
+.wb-min:hover {
+  filter: brightness(1.1);
+}
+
+/* Desktop Icon Font */
+.desktop-icon span {
+  font-family: 'Tahoma', sans-serif !important;
+  font-size: 11px !important;
+  color: white !important;
+  text-shadow: 1px 1px 2px black !important; /* XP shadow */
+  padding: 2px 4px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.desktop-icon:hover span {
+  background-color: #316ac5;
+  border-color: #316ac5;
+  text-shadow: none !important;
+  color: white !important;
+}
+
+/* Scrollbars - XP Style (Silver/Blue) */
+::-webkit-scrollbar {
+  width: 17px;
+  height: 17px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-left: 1px solid #e0e0e0;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #cce6ff;
+  border: 1px solid #fff;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #99bbe8;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b3d9ff;
+}
+::-webkit-scrollbar-button {
+  background-color: #cce6ff;
+  height: 17px;
+  width: 17px;
+  border: 1px solid #fff;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #99bbe8;
+}
+
+/* Selection */
+::selection {
+  background: #316ac5;
+  color: white;
+}
+
+/* Quick Icons - basic fallbacks if CSS mask fails */
+.quick-icon.desktop-icon {
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" fill="%23333"/><rect x="4" y="6" width="16" height="12" fill="%23245edb"/></svg>');
+}
+.quick-icon.ie-icon {
+  background-color: transparent;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="%233689e6"/><path d="M12 2a10 10 0 0 1 10 10h-2a8 8 0 0 0-8-8V2z" fill="%23ffeb3b"/></svg>');
+}

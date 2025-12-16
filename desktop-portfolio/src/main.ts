@@ -1,5 +1,5 @@
 import './assets/main.css'
-import '98.css/dist/98.css'
+import 'xp.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
