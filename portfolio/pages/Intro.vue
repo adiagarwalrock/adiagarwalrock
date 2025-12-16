@@ -23,7 +23,9 @@
           :class="mounted ? 'scale-100 opacity-100' : 'scale-90 opacity-0'"
         >
           <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shadow-lg border-2 border-white dark:border-zinc-700 ring-1 ring-zinc-200 dark:ring-zinc-600 rotate-3 hover:rotate-0 transition-all duration-300 cursor-pointer">
-            <img src="https://www.adityaagarwal.me/static/img/aditya_profile.jpg" alt="Aditya Agarwal"
+            <img
+              src="/aditya_headshot.jpg"
+              alt="Aditya Agarwal"
                 class="w-full h-full object-cover"
              />
           </div>
