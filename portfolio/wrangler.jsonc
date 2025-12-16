@@ -1,10 +1,13 @@
 {
-  "name": "aditya-agarwal-portfolio",
-  "compatibility_date": "2024-11-12",
+  "name": "aditya-portfolio",
+  "compatibility_date": "2025-01-01",
+  "compatibility_flags": [
+    "fetch_refuses_unknown_protocols",
+    "url_standard_compliant"
+  ],
   "assets": {
     "directory": "./dist",
-    "binding": "ASSETS",
-    "browser_ttl": 31536000
+    "not_found_handling": "single-page-application"
   },
   "observability": {
     "enabled": true,
@@ -20,5 +23,9 @@
       "persist": true,
       "head_sampling_rate": 1
     }
-  }
+  },
+  "placement": {
+    "mode": "smart"
+  },
+  "minify": true
 }

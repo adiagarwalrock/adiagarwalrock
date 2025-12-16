@@ -74,6 +74,15 @@
       };
     </script>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
     </head>  <body>
     <div id="root"></div>
   <script type="module" src="/main.ts"></script>
