@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, watch, onUnmounted } from 'vue';
 import { Moon, Sun, Monitor } from 'lucide-vue-next';
 import Background from './components/Background.vue';
 import Dock from './components/Dock.vue';
@@ -66,12 +66,40 @@ import Projects from './pages/Projects.vue';
 import Experience from './pages/Experience.vue';
 import { Page } from './types';
 
-const currentPage = ref<Page>(Page.INTRO);
+// Routing Helper
+const getPageFromUrl = (): Page => {
+  const path = window.location.pathname.slice(1); // Remove leading slash
+  if (path === 'now') return Page.NOW;
+  if (path === 'projects') return Page.PROJECTS;
+  if (path === 'experience') return Page.EXPERIENCE;
+  return Page.INTRO;
+};
+
+const currentPage = ref<Page>(getPageFromUrl());
 const isDark = ref(false);
 
 const setCurrentPage = (page: Page) => {
   currentPage.value = page;
+  
+  // Update URL
+  const path = page === Page.INTRO ? '/' : `/${page}`;
+  window.history.pushState({ page }, '', path);
 };
+
+// Handle Back/Forward navigation
+const handlePopState = () => {
+  currentPage.value = getPageFromUrl();
+};
+
+// Track page views when currentPage changes
+watch(currentPage, (newPage) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('config', 'G-KFKYTXNP5X', {
+      page_title: newPage,
+      page_path: newPage === Page.INTRO ? '/' : `/${newPage}`,
+    });
+  }
+});
 
 const currentPageComponent = computed(() => {
   switch (currentPage.value) {
@@ -84,6 +112,8 @@ const currentPageComponent = computed(() => {
 });
 
 onMounted(() => {
+  window.addEventListener('popstate', handlePopState);
+
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     isDark.value = true;
     document.documentElement.classList.add('dark');
@@ -91,6 +121,10 @@ onMounted(() => {
     isDark.value = false;
     document.documentElement.classList.remove('dark');
   }
+});
+
+onUnmounted(() => {
+  window.removeEventListener('popstate', handlePopState);
 });
 
 const toggleTheme = () => {
