@@ -71,3 +71,4 @@
 <hr>
 
 ![Aditya Agarwal's GitHub stats](https://adiagarwal-grh.vercel.app/api?username=adiagarwalrock&show_icons=true&theme=dark&title_color=ffffff&text_color=ffffff&hide_border=true&locale=en&show=reviews,prs_merged,prs_merged_percentagehide=stars&include_all_commits=true&line_height=20&ring_color=fc7bac)
+
