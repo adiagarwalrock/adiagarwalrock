@@ -27,5 +27,8 @@
   "placement": {
     "mode": "smart"
   },
-  "minify": true
+  "minify": true,
+  "analytics_engine_datasets": [
+    { "binding": "PORTFOLIO_ANALYTICS", "dataset": "portfolio_analytics" }
+  ]
 }
