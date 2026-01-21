@@ -19,6 +19,6 @@
     "@vue/tsconfig": "^0.8.1",
     "typescript": "~5.8.2",
     "vite": "^6.2.0",
-    "wrangler": "^4.54.0"
+    "wrangler": "^4.59.1"
   }
 }
