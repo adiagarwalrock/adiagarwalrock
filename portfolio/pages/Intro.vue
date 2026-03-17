@@ -10,7 +10,7 @@
             Aditya Agarwal
           </h1>
           <h2 class="text-xl md:text-2xl text-zinc-500 dark:text-zinc-400 font-light mb-4 max-w-xl transition-colors duration-300">
-            Founding Machine Learning Engineer at Soopra.ai
+            Founding Machine Learning Engineer at <a href="https://soopra.ai?utm_source=aditya_agarwal_portfolio" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors underline decoration-zinc-300 dark:decoration-zinc-600 underline-offset-4">Soopra.ai</a>
           </h2>
           <h2
             class="text-xl md:text-2xl text-zinc-500 dark:text-zinc-400 font-light mb-4 max-w-xl transition-colors duration-300">

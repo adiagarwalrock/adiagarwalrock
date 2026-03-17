@@ -18,6 +18,7 @@ export interface Project {
   tech: string[];
   description: string[];
   link?: string;
+  github?: string;
   demo?: string;
 }
 
